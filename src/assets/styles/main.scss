@@ -1,0 +1,30 @@
+//SETUP
+@import './setup/variables';
+@import './setup/functions';
+@import './setup/mixins';
+@import './setup/typography';
+
+// BASE 
+@import './basics/helpers';
+@import './basics/layout';
+@import './basics/base.scss';
+
+// VIEWS
+@import './views/home-page.scss';
+@import './views/stay-details.scss';
+
+
+// CMPS
+@import './cmps/app-header.scss';
+@import './cmps/stay-list.scss';
+@import './cmps/stay-preview.scss';
+@import './cmps/details-imgs.scss';
+@import './cmps/host-details.scss';
+@import './cmps/order-section.scss';
+@import './cmps/air-cover.scss';
+@import './cmps/filter-list.scss';
+@import './cmps/stay-amenities.scss';
+@import './cmps/rating.scss';
+@import './cmps/login-signup.scss';
+@import './cmps/user-nav.scss';
+

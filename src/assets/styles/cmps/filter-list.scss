@@ -1,0 +1,65 @@
+.filter-main {
+
+    height: 79px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 2rem;
+    img {
+        width: 25px;
+        color: $clr-light-grey;
+        opacity: 59%;
+    }
+
+    img:hover {
+        color: $clr-black;
+        opacity: 100%;
+    }
+
+    button {
+        text-decoration: none;
+        text-align: center;
+        padding: 0;
+        border: none;
+        background: none;
+        font-family: 'cereal-medium';
+        color: $clr-grey;
+    }
+
+    button:hover {
+        cursor: pointer;
+        color: $clr-black;
+        opacity: 100%;
+    }
+
+    .filter-list {
+        display: grid;
+        grid-template-columns:
+        repeat(19, 1fr);
+        gap: 0px 30px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .filters-btn {
+        border: 2px solid $clr-light-grey ;
+        font-family: 'cereal-medium';
+        color: $clr-black;
+        font-size: large;
+        width: 160px;
+        height: 60px;
+        border-radius: 15px;
+    }
+
+    .filter-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        color: $clr-black;
+
+    }
+    .filter-div:hover {
+        color: $clr-black;
+    }  
+}
+

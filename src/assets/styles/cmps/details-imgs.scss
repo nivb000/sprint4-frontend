@@ -1,0 +1,55 @@
+.detalis-imgs-main {
+    display: flex;
+    gap: 10px;
+    margin-block-start: 1.9rem;
+    margin-block-end: 2.5rem;
+}
+
+.detalis-imgs-sub {
+    display: flex;
+    gap: 8px;
+}
+
+.detalis-img2-3 .img2,
+.detalis-img4-5 .img4 {
+    padding-block-end: 3px;
+}
+
+.detalis-img2-3 {
+
+}
+
+.detalis-img4-5 {
+
+}
+
+.detalis-img1 {
+    flex-grow: 1;
+}
+
+.img1 {
+    max-width: 655px;
+    aspect-ratio: 1 /0.1;
+    height: 460px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.img2,
+.img3,
+.img4,
+.img5 {
+    height: 228px;
+    aspect-ratio: 1/2;
+}
+.img4 {
+    border-top-right-radius: 15px;
+}
+
+.img5 {
+    border-bottom-right-radius: 15px;
+}
+
+svg {
+    margin-bottom: -2px;
+}

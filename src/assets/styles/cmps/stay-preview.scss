@@ -1,0 +1,72 @@
+.stay-preview {
+    font-family: 'cereal-light';
+    height: 385px;
+
+    img {
+        cursor: pointer;
+        border-radius: 15px;
+        height: 280px;
+        margin-block-end: 0.7rem;
+        aspect-ratio: 1/0.1;
+    }
+
+    .preview-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+
+        h1 {
+            font-size: 0.9rem;
+            letter-spacing: 0.8px;
+        }
+
+        .preview-rating {
+            display: flex;
+        }
+    }
+
+    .preview-subtitle {
+        color: #717171;
+        font-size: 0.9rem;
+    }
+
+    .preview-price {
+        margin-block-start: 0.5rem;
+
+        span {
+            font-family: 'cereal-medium';
+        }
+    }
+}
+
+.swiper {
+    height: 280px;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.swiper-slide {
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.swiper-button-next::after {
+    font-size: 25px;
+}
+
+.swiper-button-prev::after {
+    font-size: 25px;
+}
+
+.swiper-button-next:hover {
+    font-size: 25px;
+    display: flex;
+}
+
+.swiper-button-prev:hover{
+    font-size: 25px;
+    display: flex;
+}

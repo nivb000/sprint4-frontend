@@ -1,0 +1,30 @@
+.stay-amenities {
+  padding: 48px 0;
+  color: $clr-black;
+  h1 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .amenities-list {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+    & > * {
+      padding-bottom: 20px;
+    }
+  }
+  .show-all {
+    font-size: 16px;
+    padding: 13px 23px;
+    background-color: transparent;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid $clr-black;
+    &:hover {
+      cursor: pointer;
+      background-color: #f7f7f7;
+    }
+  }
+}

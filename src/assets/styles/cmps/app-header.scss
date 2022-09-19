@@ -1,0 +1,82 @@
+.app-header {
+    border-bottom: 1px solid $clr-border;
+    margin-block-end: 2rem;
+    .main-header {
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h3 {
+                font-family: 'Mitr-regular';
+                color: $clr-pink;
+                font-size: 1.5rem;
+                letter-spacing: -1px;
+                margin-inline-start: 0.3rem;
+            }
+
+            img {
+                width: 30px;
+            }
+        }
+        .search-container{
+            border: 1px solid $clr-border;
+            box-shadow: $boxShadow;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            width: 350px;
+            cursor: pointer;
+            > *{
+                border: 0;
+                background-color: transparent;
+                height: 45px;
+            }
+            .left, .middle{
+                div{
+                    border-right: 1px solid $clr-light-grey;
+                }
+
+            }
+            .right{
+                display: flex;
+                align-items: center;
+                color: $clr-grey;
+            }
+            .left, .middle, .right{
+                div{
+                    padding: 0 15px 0 15px;
+                }
+            } 
+        }
+        .header-user{
+            display: flex;
+            align-items: center;
+            span{
+                font-size: 0.9rem;
+            }
+            .nav-user{
+                padding: 5px 3px 5px 12px;
+                width: 85px;
+                display: flex;
+                cursor: pointer;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid $clr-light-grey;
+                border-radius: 30px;
+                .nav-icon{
+                    opacity: 0.9;
+                }
+                img{
+                    width: 30px;
+                    margin-inline-end: 0.3rem;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}

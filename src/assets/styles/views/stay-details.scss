@@ -1,0 +1,52 @@
+.deatils-header {
+    h1{
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-block-end: 0.5rem;
+    }
+    .deatils-sub-header {
+        font-size: 0.9rem;
+        color: $clr-black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .rating{
+            font-family: 'cereal-medium';
+        }
+        .subheader-title{
+            display: flex;
+            align-items: center;
+            p{
+                margin: 0 0.1rem;
+            }
+        }
+        .subheader-btns {
+            display: flex;
+            font-family: 'cereal-medium';
+            div{
+                margin-left: 1rem;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                span{
+                    text-decoration: underline;
+                    margin-inline-start: 0.5rem;
+                }
+                svg{
+                    margin-bottom: 1.2px;
+
+                }
+            }
+        }
+    }
+}
+.details-container{
+    display: flex;
+    justify-content: space-between;
+    .left{
+        flex-basis: 60%;
+    }
+    .right{
+        margin-inline-start: 3rem;
+    }
+}

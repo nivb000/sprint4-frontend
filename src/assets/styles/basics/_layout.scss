@@ -1,0 +1,34 @@
+.main-layout{
+    margin: 0 auto;
+    max-width: var(--layoutWidth);
+    padding: 0 5rem 0 5rem;
+}
+
+// .main-layout {
+//     display: grid;
+//     grid-template-columns: $layoutPadding 1fr $layoutPadding ;
+
+//     >* {
+//         grid-column: 2;
+//     }
+
+//     >.full {
+//         grid-column: 1 / -1;
+//     }
+// }
+
+// @include for-normal-layout {
+//     @include mainLayoutGTC($break-normal) // befor mainLayoutGTC
+//     // grid-template-columns:
+//     // minmax($layoutPadding ,1fr)
+//     // minmax(auto,$break-normal)
+//     // minmax($layoutPadding ,1fr)  ;
+// }
+
+// @include for-narrow-layout {
+//     @include mainLayoutGTC($break-narrow)
+// }
+
+// @include for-wide-layout {
+//     @include mainLayoutGTC($break-wide)
+// }

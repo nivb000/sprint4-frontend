@@ -1,0 +1,55 @@
+.host-details {
+  display: flex;
+  flex-direction: column;
+
+  .main-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid $clr-light-grey;
+    padding-block-end: $sectionPadding;
+    .main-details-text{
+      h2{margin-block-end: 0.5rem;}
+    }
+    ul {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .main-details-img {
+      height: 60px;
+      width: 60px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .details-card-one,
+  .details-card-two {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .sub-details-text{
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      margin: 0.5rem 0;
+    }
+
+    p {
+      color: $clr-grey;
+    }
+  }
+  .details-card-one{
+    margin-block-start: $sectionPadding;
+  }
+
+  .details-card-two {
+    border-bottom: 1px solid $clr-light-grey;
+    padding-block-end: $sectionPadding;
+  }
+}
