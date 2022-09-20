@@ -5,6 +5,7 @@ import { StayList } from '../cmps/stay-list'
 import { Loader } from '../cmps/loader'
 import { FilterList } from "../cmps/filter-list"
 import { useLocation } from "react-router-dom"
+import { Footer } from "../cmps/footer"
 const queryString = require('query-string');
 
 
@@ -30,5 +31,6 @@ export const HomePage = () => {
     return <section className="home-page">
         <FilterList />
         <StayList stays={stays} />
+        <Footer/>
     </section>
 }
