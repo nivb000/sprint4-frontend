@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { loginUser, logoutUser } from '../store/user.action'
+import { loginUser } from '../store/user.action'
 
 export const LoginSignup = ({ setLoginModal, user }) => {
 
@@ -20,18 +20,14 @@ export const LoginSignup = ({ setLoginModal, user }) => {
     const handleLogin = (ev) => {
         ev.preventDefault()
         dispatch(loginUser(creds))
-    }
-
-    const handleLogout = () => {
-        dispatch(logoutUser())
+        setLoginModal()
     }
 
 
-    return <section className="login-modal" onSubmit={handleLogin}>
+    return <section className="login-modal">
         <button className="modal-close-btn" onClick={setLoginModal}>X</button>
         <h1>Log In</h1>
-        {!user ? 
-        <form>
+        <form onSubmit={handleLogin}>
             <div className="form-item">
                 {/* <label htmlFor="username">Username</label> */}
                 <input type="text" id="username" name="username" placeholder="Username" onChange={handleChange} />
@@ -41,86 +37,7 @@ export const LoginSignup = ({ setLoginModal, user }) => {
                 <input type="password" id="password" name="password" placeholder="Password" onChange={handleChange} />
             </div>
             <div className="btn-container" onClick={handleLogin}>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
+                {Array(79).fill(<div className="cell"></div>)}
                 <div className="content">
                     <button className="action-btn">
                         Login
@@ -128,8 +45,5 @@ export const LoginSignup = ({ setLoginModal, user }) => {
                 </div>
             </div>
         </form>
-        : 
-        <button onClick={handleLogout}>Logout</button> 
-        }
     </section>
 }

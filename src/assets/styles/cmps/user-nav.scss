@@ -1,7 +1,9 @@
 .user-nav{
     position: absolute;
-    top: 75px;
-    right: 155px;
+    top: 77px;
+    right: 0;
+    margin-inline-end: 9rem;
+    box-shadow: $boxShadow;
     width: 240px;
     background-color: white;
     z-index: 3;
@@ -16,7 +18,7 @@
             cursor: pointer;
             font-size: 0.9rem;
             &:hover{
-                background-color: $clr-border;
+                background-color: rgba(219, 219, 219, 0.279);
             }
         }
         hr{

@@ -1,7 +1,9 @@
 import { LoginSignup } from './login-signup';
+import { useSelector } from 'react-redux';
 
+export const UserNav = ({ setLoginModal, setUserNav, handleLogout }) => {
 
-export const UserNav = ({ setLoginModal, setUserNav }) => {
+    const user = useSelector(state => state.userModule.user)
 
     const handleOnClick = (func) => {
         setUserNav()
@@ -10,8 +12,16 @@ export const UserNav = ({ setLoginModal, setUserNav }) => {
 
     return <div className="user-nav">
         <ul>
-            <li>Sign up</li>
-            <li onClick={() => handleOnClick(setLoginModal)}>Log in</li>
+            {!user ?
+            <>
+                <li>Sign up</li>
+                <li onClick={() => handleOnClick(setLoginModal)}>Log in</li>
+            </> 
+            : <>
+                <li>Trips</li>
+                <li onClick={() => handleOnClick(handleLogout)}>Logout</li>
+            </>
+            }
         <hr />
         <li>Host Your Home</li>
     </ul>

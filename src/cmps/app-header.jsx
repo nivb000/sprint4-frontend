@@ -7,13 +7,14 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import { useState } from 'react'
 import { LoginSignup } from './login-signup';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutUser } from '../store/user.action'
 import { UserNav } from './user-nav';
 
 export const AppHeader = () => {
 
     const user = useSelector(state => state.userModule.user)
-
+    const dispatch = useDispatch()
     const [loginModalIsOpen, setLoginModalIsOpen] = useState(false)
     const [userNavIsOpen, setUserNavIsOpen] = useState(false)
 
@@ -32,6 +33,10 @@ export const AppHeader = () => {
             },
         },
     });
+
+    const handleLogout = () => {
+        dispatch(logoutUser())
+    }
 
 
     return <header className='app-header'>
@@ -75,6 +80,7 @@ export const AppHeader = () => {
         <UserNav 
             setLoginModal={() => setLoginModalIsOpen(prev => !prev)} 
             setUserNav={() => setUserNavIsOpen(prev => !prev)}
+            handleLogout={handleLogout}
         />}
     </header>
 }
