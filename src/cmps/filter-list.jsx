@@ -16,8 +16,18 @@ import shared from '../assets/img/filter-icons/shared-homes.jpeg'
 import ski from '../assets/img/filter-icons/skiing.jpeg'
 import surfing from '../assets/img/filter-icons/surfing.jpeg'
 import tiny from '../assets/img/filter-icons/tiny-homes.jpeg'
+import tropical from '../assets/img/filter-icons/tropical.jpeg'
 import TuneIcon from '@mui/icons-material/Tune';
 import { useSearchParams } from 'react-router-dom';
+
+
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "../assets/styles/cmps/carusel.scss";
+import { Pagination, Navigation } from "swiper";
 
 
 
@@ -32,30 +42,108 @@ export const FilterList = () => {
     }
 
 
-    return <div className="filter-main">
-        <div className="filter-list">
-            <button onClick={handleChange} value="cabins"><img src={cabins} alt='cabins' /> Cabins</button>
-            <button onClick={handleChange} value="pools"><img src={pools} alt='pools' />Pools</button>
-            <button onClick={handleChange} value="beaches"><img src={beaches} alt='beaches' /> Beaches</button>
-            <button onClick={handleChange} value="views"><img src={views} alt='views' /> Views </button>
-            <button onClick={handleChange} value="camping"><img src={camping} alt='camping' /> Camping</button>
-            <button onClick={handleChange} value="caravans"><img src={caravans} alt='caravans' /> Caravans</button>
-            <button onClick={handleChange} value="chef"><img src={chef} alt='chef' />Chef</button>
-            <button onClick={handleChange} value="country"><img src={country} alt='country' />Country</button>
-            <button onClick={handleChange} value="desert"><img src={desert} alt='desert' />Desert</button>
-            <button onClick={handleChange} value="design"><img src={design} alt='design' />Design</button>
-            <button onClick={handleChange} value="city"><img src={city} alt='city' />City</button>
-            <button onClick={handleChange} value="island"><img src={island} alt='island' /> Island</button>
-            <button onClick={handleChange} value="mansion"><img src={mansion} alt='mansion' />Mansion</button>
-            <button onClick={handleChange} value="park"><img src={park} alt='park' />Park</button>
-            <button onClick={handleChange} value="shared"><img src={shared} alt='shared' />Shared</button>
-            <button onClick={handleChange} value="ski"><img src={ski} alt='ski' />Ski</button>
-            {/* <button onClick={handleChange} value="surfing"><img src={surfing} alt='surfing' />Surfing</button>
-            <button onClick={handleChange} value="tiny"><img src={tiny} alt='tiny' />Tiny</button> */}
-        </div>
-        <button className='filters-btn'>
-            <div className='filter-div'> <TuneIcon />Filters</div>
-        </button>
+    return (
+        <div className="filter-main">
 
-    </div>
+            <button className='filters-btn'>
+                <div className='filter-div'> <TuneIcon />Filters</div>
+            </button>
+            <div className="carusel-filter-main">
+         
+                <>
+                    <Swiper
+                        slidesPerView={16.8}
+                        spaceBetween={-85}
+                        slidesPerGroup={10}
+                        loop={false}
+                        loopFillGroupWithBlank={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                       
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="cabins"><img src={cabins} alt='cabins' />Cabins</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="pools"><img src={pools} alt='pools' />Pools</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="beaches"><img src={beaches} alt='beaches' /> Beaches</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="views"><img src={views} alt='views' /> Views </button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="camping"><img src={camping} alt='camping' /> Camping</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="caravans"><img src={caravans} alt='caravans' /> Caravans</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="chef"><img src={chef} alt='chef' />Chef</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="country"><img src={country} alt='country' />Country</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="desert"><img src={desert} alt='desert' />Desert</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="design"><img src={design} alt='design' />Design</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="city"><img src={city} alt='city' />City</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="island"><img src={island} alt='island' /> Island</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="mansion"><img src={mansion} alt='mansion' />Mansion</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="park"><img src={park} alt='park' />Park</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="shared"><img src={shared} alt='shared' />Shared</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="ski"><img src={ski} alt='ski' />Ski</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="surfing"><img src={surfing} alt='surfing' />Surfing</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="tiny"><img src={tiny} alt='tiny' />Tiny</button>
+                        </SwiperSlide>           
+                             {/*add more icons hereee*/}
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="surfing"><img src={tropical} alt='surfing' />Surfing</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="shared"><img src={shared} alt='shared' />Shared</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="park"><img src={park} alt='park' />Park</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="surfing"><img src={surfing} alt='surfing' />Surfing</button>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="country"><img src={country} alt='country' />Country</button>
+                        </SwiperSlide> 
+                        <SwiperSlide>
+                            <button onClick={handleChange} value="desert"><img src={desert} alt='desert' />Desert</button>
+                        </SwiperSlide> 
+                
+                   
+                    </Swiper>
+                    
+                </>
+            </div>
+        </div>
+    );
 }
