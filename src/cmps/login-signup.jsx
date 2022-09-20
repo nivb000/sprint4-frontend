@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { loginUser } from '../store/user.action'
 
-export const LoginSignup = ({ setLoginModal, user }) => {
+export const LoginSignup = ({ setLoginModal }) => {
 
     const dispatch = useDispatch()
     const [creds, setCreds] = useState({
