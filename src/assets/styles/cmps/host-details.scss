@@ -30,14 +30,14 @@
   .details-card-one,
   .details-card-two {
     display: flex;
-    align-items: center;
+    // align-items: center;
     gap: 1rem;
     .sub-details-text{
       margin-bottom: 1rem;
     }
 
     h3 {
-      margin: 0.5rem 0;
+      margin-bottom: 0.5rem;
     }
 
     p {
