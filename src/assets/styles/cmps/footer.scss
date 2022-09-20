@@ -1,0 +1,13 @@
+.footer {
+  position: fixed;
+  width: 1800px;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  height: 47px;
+  background-color: #ffffff;
+  z-index: 10;
+  font-size: 14px;
+  border: $clr-light-grey solid 1px;
+  padding: 13px 40px 14px;
+}

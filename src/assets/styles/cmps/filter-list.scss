@@ -1,19 +1,21 @@
 .filter-main {
-
     height: 79px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-block-end: 2rem;
+    flex-direction: row-reverse;
+
     img {
-        width: 25px;
+        width: 29px;
         color: $clr-light-grey;
-        opacity: 59%;
+        opacity: 60%;
     }
 
     img:hover {
         color: $clr-black;
         opacity: 100%;
+        text-decoration: underline;
     }
 
     button {
@@ -32,22 +34,23 @@
         opacity: 100%;
     }
 
-    .filter-list {
-        display: grid;
-        grid-template-columns:
-        repeat(19, 1fr);
-        gap: 0px 30px;
-        align-items: center;
-        justify-items: center;
-    }
+    // לא למחוק!
+    // .filter-list {
+    //     display: grid;
+    //     grid-template-columns:
+    //     repeat(19, 1fr);
+    //     gap: 0px 30px;
+    //     align-items: center;
+    //     justify-items: center;
+    // }
 
     .filters-btn {
         border: 2px solid $clr-light-grey ;
         font-family: 'cereal-medium';
         color: $clr-black;
         font-size: large;
-        width: 160px;
-        height: 60px;
+        min-width: 125px;
+        height: 65px;
         border-radius: 15px;
     }
 
@@ -56,10 +59,9 @@
         align-items: center;
         justify-content: space-evenly;
         color: $clr-black;
-
     }
+
     .filter-div:hover {
         color: $clr-black;
-    }  
+    }
 }
-
