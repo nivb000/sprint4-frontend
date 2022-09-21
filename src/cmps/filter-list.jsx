@@ -19,16 +19,12 @@ import tiny from '../assets/img/filter-icons/tiny-homes.jpeg'
 import tropical from '../assets/img/filter-icons/tropical.jpeg'
 import TuneIcon from '@mui/icons-material/Tune';
 import { useSearchParams } from 'react-router-dom';
-
-
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../assets/styles/cmps/carusel.scss";
 import { Pagination, Navigation } from "swiper";
-
 
 
 export const FilterList = () => {
@@ -40,6 +36,7 @@ export const FilterList = () => {
         const value = target.value
         setSearchParams({ type: value })
     }
+
 
 
     return (

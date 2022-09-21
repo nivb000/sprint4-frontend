@@ -19,15 +19,15 @@ import { Parallax, Pagination, Navigation } from "swiper";
 
 export const StayPreview = ({ stay }) => {
 
-    return <section className="stay-preview">
-         <Link  to={`/stay/${stay._id}` }>
-        <div className="img-container">     
-        </div>
-         </Link> 
-        <>
+  return <section className="stay-preview">
+    <Link to={`/stay/${stay._id}`}>
+      <div className="img-container">
+      </div>
+    </Link>
+    <>
       <Swiper
         style={{
-          
+
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
           "--swiper-pagination-size": "10px",
@@ -46,54 +46,54 @@ export const StayPreview = ({ stay }) => {
         ></div>
         <SwiperSlide>
 
-        <Link  to={`/stay/${stay._id}` }>
-          <div className="title" data-swiper-parallax="-300">
-          <img src={stay.imgUrls[0]} alt="preview stay" />
-          </div>
-          </Link> 
+          <Link to={`/stay/${stay._id}`}>
+            <div className="title" data-swiper-parallax="-300">
+              <img src={stay.imgUrls[0]} alt="preview stay" />
+            </div>
+          </Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link  to={`/stay/${stay._id}` }>
-          <div className="title" data-swiper-parallax="-300">
-          <img src={stay.imgUrls[1]} alt="preview stay" />
-          </div>
-          </Link> 
+          <Link to={`/stay/${stay._id}`}>
+            <div className="title" data-swiper-parallax="-300">
+              <img src={stay.imgUrls[1]} alt="preview stay" />
+            </div>
+          </Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link  to={`/stay/${stay._id}` }>
-          <div className="title" data-swiper-parallax="-300">
-          <img src={stay.imgUrls[2]} alt="preview stay" />
-          </div>
-          </Link> 
+          <Link to={`/stay/${stay._id}`}>
+            <div className="title" data-swiper-parallax="-300">
+              <img src={stay.imgUrls[2]} alt="preview stay" />
+            </div>
+          </Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link  to={`/stay/${stay._id}` }>
-          <div className="title" data-swiper-parallax="-300">
-          <img src={stay.imgUrls[3]} alt="preview stay" />
-          </div>
-          </Link> 
+          <Link to={`/stay/${stay._id}`}>
+            <div className="title" data-swiper-parallax="-300">
+              <img src={stay.imgUrls[3]} alt="preview stay" />
+            </div>
+          </Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link  to={`/stay/${stay._id}` }>
-          <div className="title" data-swiper-parallax="-300">
-          <img src={stay.imgUrls[4]} alt="preview stay" />
-          </div>
+          <Link to={`/stay/${stay._id}`}>
+            <div className="title" data-swiper-parallax="-300">
+              <img src={stay.imgUrls[4]} alt="preview stay" />
+            </div>
           </Link>
         </SwiperSlide>
       </Swiper>
     </>
     <div className="preview-title">
-            <h1>{stay.name}</h1>
-            <div className='preview-rating'>
-                <Rating rating={stay.rating} />
-            </div>
-        </div>
-        <div className="preview-subtitle">
-            <p>{utilService.getRandomIntInclusive(100, 3000).toLocaleString('en-US')} Kilometers</p>
-            <p>Sep 18 - 23</p>
-        </div>
-        <div className="preview-price">
-            <p><span>${stay.price.toLocaleString('en-US')}</span> night</p>
-        </div>
-    </section>
+      <h1>{stay.name}</h1>
+      <div className='preview-rating'>
+        <Rating rating={stay.rating} />
+      </div>
+    </div>
+    <div className="preview-subtitle">
+      <p>{utilService.getRandomIntInclusive(100, 3000).toLocaleString('en-US')} Kilometers</p>
+      <p>Sep 18 - 23</p>
+    </div>
+    <div className="preview-price">
+      <p><span>${stay.price.toLocaleString('en-US')}</span> night</p>
+    </div>
+  </section>
 }

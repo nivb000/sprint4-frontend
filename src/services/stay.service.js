@@ -31,16 +31,13 @@ function query(filterBy) {
                 stays = _createStays()
                 return asyncStorageService.postMany(KEY, stays)
             }
-            // if (filterBy) {
-            //     let { vendor, minSpeed, maxSpeed } = filterBy
-            //     if (!minSpeed) minSpeed = 0;
-            //     if (!maxSpeed) maxSpeed = Infinity
-            //     stays = stays.filter(stay => (
-            //         stay.vendor.includes(vendor) &&
-            //         stay.speed >= minSpeed &&
-            //         stay.speed <= maxSpeed
-            //     ))
-            // }
+            if (Object.keys(filterBy).length !== 0) {
+                let { type } = filterBy
+                stays = stays.filter(stay => (
+                    stay.type === type.toLowerCase() ||
+                    stay.amenities.includes(type.toLowerCase())
+                ))
+            }
             return stays
         })
 }
@@ -48,6 +45,7 @@ function query(filterBy) {
 function _createStay(imgUrls, price = utilService.getRandomIntInclusive(50, 3000)) {
     return {
         name: 'Ribeira Charming Duplex',
+        type: 'pools',
         host: {
             _id: 'u101',
             fullname: 'Moria Katz',

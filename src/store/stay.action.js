@@ -10,18 +10,24 @@ export function loadStays() {
 export function addStay(stay) {
     return (dispatch) => {
         stayService.save(stay)
-            .then(stay => dispatch({ type: 'ADD_STAY', stay }))
+        .then(stay => dispatch({ type: 'ADD_STAY', stay }))
     }
 }
 export function updateStay(stay) {
     return (dispatch) => {
         stayService.save(stay)
-            .then(stay => dispatch({ type: 'UPDATE_STAY', stay }))
+        .then(stay => dispatch({ type: 'UPDATE_STAY', stay }))
     }
 }
 export function removeStay(stayId) {
     return (dispatch) => {
         stayService.remove(stayId)
-            .then(() => dispatch({ type: 'REMOVE_STAY', stayId }))
+        .then(() => dispatch({ type: 'REMOVE_STAY', stayId }))
+    }
+}
+export function setFilterState(filter) {
+    return (dispatch) => {
+        // const { filter } = getState().stayModule
+        dispatch({ type: 'SET_FILTER', filter })
     }
 }
