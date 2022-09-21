@@ -7,10 +7,11 @@
     background-color: white;
     z-index: 3;
     border-radius: 15px;
+ 
     ul{
         list-style: none;
         :first-child{
-            font-family: 'cereal-medium';
+            font-family: 'cereal-light';
         }
         li{
             padding: 15px;
@@ -19,9 +20,14 @@
             &:hover{
                 background-color: rgba(219, 219, 219, 0.279);
             }
+          
         }
         hr{
             color: #00000050;
+        }
+        .host-nav-link{
+            text-decoration: none;
+            color: $clr-black;
         }
     }
 }

@@ -54,14 +54,14 @@ export const AppHeader = () => {
                 <button className='middle'>
                     <div>Any week</div>
                 </button>
-                <button className='right'>
+                <div className='right'>
                     <div>Add guests</div>
                     <ThemeProvider theme={theme}>
                         <Fab size='small' sx={{ transform: 'scale(0.8)' }}>
                             <SearchIcon fontSize='small' sx={{ color: 'white' }} />
                         </Fab>
                     </ThemeProvider>
-                </button>
+                </div>
             </div>
 
 

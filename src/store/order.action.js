@@ -1,25 +1,25 @@
 import { orderService } from '../services/order.service.js'
 
-export function loadStays() {
+export function loadOrders() {
     return (dispatch, getState) => {
         // const { filter } = getState().orderModule
         orderService.query()
             .then(orders => dispatch({ type: 'SET_ORDERS', orders }))
     }
 }
-export function addStay(order) {
+export function addOrder(order) {
     return (dispatch) => {
         orderService.save(order)
             .then(order => dispatch({ type: 'ADD_ORDER', order }))
     }
 }
-export function updateStay(order) {
+export function updateOrder(order) {
     return (dispatch) => {
         orderService.save(order)
             .then(order => dispatch({ type: 'UPDATE_ORDER', order }))
     }
 }
-export function removeStay(orderId) {
+export function removeOrder(orderId) {
     return (dispatch) => {
         orderService.remove(orderId)
             .then(() => dispatch({ type: 'REMOVE_ORDER', orderId }))

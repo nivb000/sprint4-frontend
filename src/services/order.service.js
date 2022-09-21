@@ -13,13 +13,10 @@ function query(filter) {
 
     return httpService.get(KEY)
         .then(orders => {
+            console.log('orders:' , orders)
+            
             if (!orders || !orders.length) {
                 console.log('no orders');
-            }
-            if (filter) {
-                let { name, inStock } = filter
-                orders = orders.filter(order => order.name.includes(name))
-                orders = orders.filter(order => (inStock === true) ? order.inStock : order)
             }
             return orders
         })

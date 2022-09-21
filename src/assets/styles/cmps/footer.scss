@@ -1,6 +1,7 @@
-.footer {
+.footer-main{
   position: fixed;
-  width: 1800px;
+  width: 100%;
+  margin-right: 100px;
   display: flex;
   align-items: center;
   bottom: 0;
@@ -11,3 +12,4 @@
   border: $clr-light-grey solid 1px;
   padding: 13px 40px 14px;
 }
+

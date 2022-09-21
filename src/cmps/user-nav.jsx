@@ -1,6 +1,6 @@
 import { LoginSignup } from './login-signup';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 
 export const UserNav = ({ setLoginModal, setUserNav, handleLogout }) => {
@@ -24,8 +24,9 @@ export const UserNav = ({ setLoginModal, setUserNav, handleLogout }) => {
                 <li onClick={() => handleOnClick(handleLogout)}>Logout</li>
             </>
             }
-        <hr />
-        <li>Host Your Home</li>
-    </ul>
+            <hr />
+            <li>Host Your Home</li>
+
+        </ul>
     </div >
 }
