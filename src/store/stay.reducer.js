@@ -10,7 +10,7 @@ export function stayReducer(state = INITIAL_STATE, action) {
             return { ...state, stays: action.stays }
 
         case 'ADD_STAY':
-            return { ...state, stays: [...state.stays, action.toy] }
+            return { ...state, stays: [...state.stays, action.stay] }
 
         case 'REMOVE_STAY':
             return { ...state, stays: state.stays.filter(stay => stay._id !== action.stayId) }
