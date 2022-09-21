@@ -32,13 +32,14 @@
 }
 
 .carusel-filter-main {
+    flex: 1;
 
     .swiper {
         display: flex;
         height: 80px;
         max-width: 1470px;
         margin: 15px;
-        
+
     }
 
     .swiper-button-next {
@@ -59,7 +60,7 @@
     .swiper-button-next::after {
         font-size: 17px;
         color: black;
-        
+
 
     }
 

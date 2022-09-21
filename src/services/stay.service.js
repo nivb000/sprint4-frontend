@@ -54,7 +54,7 @@ function _createStay(imgUrls, price = utilService.getRandomIntInclusive(50, 3000
             imgUrl: 'https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small',
         },
         street: 'Well of Harod',
-        price,
+        price : 177,
         imgUrls,
         summary: 'Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...',
         capacity: 8,

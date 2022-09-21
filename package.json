@@ -5,16 +5,25 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.5",
+    "@mui/utils": "latest",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "axios": "^0.27.2",
+    "faker": "^latest",
     "formik": "^2.2.9",
     "google-map-react": "^2.2.0",
+    "i": "^0.3.7",
+    "npm": "^8.19.2",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.4.0",
@@ -37,6 +46,7 @@
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4",
     "workbox-streams": "^6.5.4"
+    
   },
   "scripts": {
     "start": "react-scripts start",

@@ -36,7 +36,7 @@ export const StayDetails = () => {
             .then(stay => setStay(stay))
     }
 
-    if (!stay) return <Loader />    
+    if (!stay) return <Loader />
 
 
     return (
@@ -47,8 +47,8 @@ export const StayDetails = () => {
                     <div className='subheader-title'>
                         <div className='rating'><Rating rating={stay.rating} />
                             <span >&nbsp;&nbsp;·&nbsp;</span>
-                            <span className='underline'>&nbsp;&nbsp;8 reviews</span> 
-                            <span>&nbsp;&nbsp;·&nbsp;</span> 
+                            <span className='underline'>&nbsp;&nbsp;8 reviews</span>
+                            <span>&nbsp;&nbsp;·&nbsp;</span>
                             <span className='underline' >&nbsp;&nbsp;Aytotoro, Larnaka, Cyprus.</span>
                         </div>
                     </div>

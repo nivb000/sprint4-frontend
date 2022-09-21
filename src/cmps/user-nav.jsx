@@ -1,5 +1,7 @@
 import { LoginSignup } from './login-signup';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
+
 
 export const UserNav = ({ setLoginModal, setUserNav, handleLogout }) => {
 
@@ -24,6 +26,10 @@ export const UserNav = ({ setLoginModal, setUserNav, handleLogout }) => {
             }
         <hr />
         <li>Host Your Home</li>
+        <Link className='host-nav-link' to={`/host` }>
+        <li>Host Dashboard</li> 
+         </Link> 
+        
     </ul>
     </div >
 }

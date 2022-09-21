@@ -36,17 +36,3 @@ function logout() {
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(KEY_LOGGEDIN))
 }
-
-// function updateBalance(diff) {
-//     const user = userService.getLoggedinUser()
-//     if (!user) return Promise.reject('Login first')
-
-//     if (user.balance + diff < 0) return Promise.reject('Not enough balanace')
-
-//     user.balance += diff
-//     return storageService.put(KEY, user)
-//         .then((user) => {
-//             sessionStorage.setItem(KEY_LOGGEDIN, JSON.stringify(user))
-//             return user.balance
-//         })
-// }
