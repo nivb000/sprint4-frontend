@@ -32,6 +32,6 @@ export const HomePage = () => {
     return <section className="home-page">
         <FilterList />
         <StayList stays={stays} />
-        <Footer />
+        {/* <Footer/> */}
     </section>
 }

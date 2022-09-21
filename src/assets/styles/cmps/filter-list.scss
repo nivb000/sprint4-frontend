@@ -7,9 +7,11 @@
     flex-direction: row-reverse;
 
     img {
-        width: 29px;
+        width: 25px;
         color: $clr-light-grey;
         opacity: 60%;
+        margin-left: 5px;
+
     }
 
     img:hover {
@@ -48,7 +50,7 @@
         border: 2px solid $clr-light-grey ;
         font-family: 'cereal-medium';
         color: $clr-black;
-        font-size: large;
+        font-size: 1rem;
         min-width: 125px;
         height: 65px;
         border-radius: 15px;
