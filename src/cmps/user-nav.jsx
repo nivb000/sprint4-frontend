@@ -20,7 +20,7 @@ export const UserNav = ({ setLoginModal, setUserNav, handleLogout }) => {
                 <li onClick={() => handleOnClick(setLoginModal)}>Log in</li>
             </> 
             : <>
-                <Link to={`/trips/${user._id}`}><li >Trips</li></Link>
+                <Link style={{ textDecoration: 'none', color:'black' }} to={`/trips/${user._id}`}><li >Trips</li></Link>
                 <li onClick={() => handleOnClick(handleLogout)}>Logout</li>
             </>
             }
