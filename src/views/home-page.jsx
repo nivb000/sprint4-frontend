@@ -8,8 +8,6 @@ import { useLocation } from "react-router-dom"
 import { Footer } from "../cmps/footer"
 const queryString = require('query-string');
 
-
-
 export const HomePage = () => {
 
     const stays = useSelector(state => state.stayModule.stays)
@@ -32,6 +30,6 @@ export const HomePage = () => {
     return <section className="home-page">
         <FilterList />
         <StayList stays={stays} />
-        {/* <Footer/> */}
+        <Footer />
     </section>
 }

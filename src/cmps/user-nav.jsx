@@ -15,17 +15,14 @@ export const UserNav = ({ setLoginModal, setUserNav, handleLogout }) => {
     return <div className="user-nav">
         <ul>
             {!user ?
-                <>
-                    <li>Sign up</li>
-                    <li onClick={() => handleOnClick(setLoginModal)}>Log in</li>
-                </>
-                : <>
-                    <Link to={`/trips/${user._id}`}><li >Trips</li></Link>
-                    <li onClick={() => handleOnClick(handleLogout)}>Logout</li>
-                    <Link className='host-nav-link' to={`/host/userId`}>
-                        <li>Host Dashboard</li>
-                    </Link>
-                </>
+            <>
+                <li>Sign up</li>
+                <li onClick={() => handleOnClick(setLoginModal)}>Log in</li>
+            </> 
+            : <>
+                <Link style={{ textDecoration: 'none', color:'black' }} to={`/trips/${user._id}`}><li >Trips</li></Link>
+                <li onClick={() => handleOnClick(handleLogout)}>Logout</li>
+            </>
             }
             <hr />
             <li>Host Your Home</li>
