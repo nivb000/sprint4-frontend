@@ -13,7 +13,7 @@ export const HomePage = () => {
     const stays = useSelector(state => state.stayModule.stays)
     const dispatch = useDispatch()
     const location = useLocation()
-
+    console.log(stays);
     useEffect(() => {
         setFilter()
         dispatch(loadStays())

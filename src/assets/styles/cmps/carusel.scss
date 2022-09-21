@@ -1,7 +1,6 @@
 .swiper-slide {
     display: flex;
-
-
+    width: 50px;
     button {
         cursor: pointer;
     }
@@ -32,25 +31,17 @@
 }
 
 .carusel-filter-main {
-    flex: 1;
-
-    .swiper {
-        display: flex;
-        height: 80px;
-        max-width: 1470px;
-        margin: 15px;
-
-    }
-
+    max-width: 100%;
+    display: flex;
+    align-items: center;
     .swiper-button-next {
         border: 0.5px solid rgb(0 0 0 / 0.3);
         border-radius: 30px;
-        width: 35px;
-        height: 35px;
+        width: 25px;
+        height: 25px;
         font-size: 12px;
         color: black;
         margin-left: 20px;
-
     }
 
     .swiper-button-next:hover {

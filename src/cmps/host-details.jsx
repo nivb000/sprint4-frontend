@@ -4,8 +4,6 @@ import HostImg from '../assets/imgs/square-profile-imgs/1.jpg'
 
 export const HostDetails = ({ stay }) => {
 
-  console.log(stay);
-
   return <section className="host-details">
     <div className="main-details">
       <div className="main-details-text">
@@ -29,7 +27,7 @@ export const HostDetails = ({ stay }) => {
         <MilitaryTechSharpIcon fontSize='large' />
       </div>
       <div className="sub-details-text">
-        <h3>Moriya is a Superhost</h3>
+        {stay.host.isSuperhost ? <h3>{stay.host.fullname} is a Superhost</h3> : <h3>Is Amazing Host</h3>}
         <p>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>
       </div>
     </div>
