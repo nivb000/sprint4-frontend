@@ -1,9 +1,8 @@
 import { userService } from "../services/user.service"
 
 const INITIAL_STATE = {
-    user: userService.getLoggedinUser() || null
+    user: userService.getLoggedinUser()
 }
-
 
 export function userReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
