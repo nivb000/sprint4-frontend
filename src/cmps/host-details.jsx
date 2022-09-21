@@ -1,9 +1,10 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import MilitaryTechSharpIcon from '@mui/icons-material/MilitaryTechSharp';
 import WavesSharpIcon from '@mui/icons-material/WavesSharp'
-import HostImg from '../assets/img/square-profile-imgs/1.jpg'
+import HostImg from '../assets/imgs/square-profile-imgs/1.jpg'
 
 export const HostDetails = ({ stay }) => {
+
+  console.log(stay);
 
   return <section className="host-details">
     <div className="main-details">

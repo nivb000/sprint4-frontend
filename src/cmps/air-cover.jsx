@@ -1,4 +1,4 @@
-import aircover from '../assets/img/filter-icons/aircover.png'
+import aircover from '../assets/imgs/filter-icons/aircover.png'
 
 export const AirCover = () => {
 
