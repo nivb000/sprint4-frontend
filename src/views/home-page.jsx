@@ -17,20 +17,13 @@ export const HomePage = () => {
     const location = useLocation()
 
     useEffect(() => {
-        console.log('rendered');
         setFilter()
         dispatch(loadStays())
     }, [location.search])
 
     const setFilter = () => {
         const filter = queryString.parse(location.search)
-        console.log(filter);
         dispatch(setFilterState(filter))
-        // if(Object.keys(filter).length !== 0){
-        //     dispatch(setFilterState(filter))
-        // } else {
-        //     dispatch(setFilterState(filter))
-        // }
     }
 
 
