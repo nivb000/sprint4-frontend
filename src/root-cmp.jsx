@@ -20,7 +20,7 @@ export const RootCmp = () => {
         <Routes>
           <Route path='/' element={<HomePage />}  />
           <Route path='/stay/:stayId' element={<StayDetails />} />
-          <Route path='/host' element={ <HostDashboard />} />
+          <Route path='/host/:userId' element={ <HostDashboard />} />
           <Route path='/trips/:userId' element={<Trips />} />
           {/* <Route path='/edit/:toyId' element={<ToyEdit />} /> */}
           {/* <Route path='/new/' element={<ToyEdit />} /> */}

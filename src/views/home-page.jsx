@@ -13,27 +13,28 @@ const queryString = require('query-string');
 export const HomePage = () => {
 
     const stays = useSelector(state => state.stayModule.stays)
-    const filterState = useSelector(state => state.stayModule.filter)
     const dispatch = useDispatch()
     const location = useLocation()
-    
+
     useEffect(() => {
         console.log('rendered');
         setFilter()
         dispatch(loadStays())
-    }, [])
-    
+    }, [location.search])
+
     const setFilter = () => {
         const filter = queryString.parse(location.search)
-        if(Object.keys(filter).length !== 0){
-            dispatch(setFilterState(filter))
-        } else {
-            dispatch(setFilterState(filter))
-        }
+        console.log(filter);
+        dispatch(setFilterState(filter))
+        // if(Object.keys(filter).length !== 0){
+        //     dispatch(setFilterState(filter))
+        // } else {
+        //     dispatch(setFilterState(filter))
+        // }
     }
 
 
-    if (!stays || stays.length < 1) return <Loader />
+    if (!stays) return <Loader />
 
     return <section className="home-page">
         <FilterList />

@@ -296,16 +296,16 @@ export default function EnhancedTable({rows , headCells , cellNames}) {
                       <TableCell component="th" id={labelId} scope="row" padding="none">
                         {row.name}
                       </TableCell>
-                      {/* {cellNames.map(cellName => <TableCell align="right">{row.status}</TableCell>)} */}
+                      {cellNames.map(cellName => <TableCell align="right">{row.status}</TableCell>)}
                    
                       
-
+{/* 
                       <TableCell align="right">{row.name}</TableCell>
                       <TableCell align="right">{row.status}</TableCell>
                       <TableCell align="right">{row.Checkout}</TableCell>
-                      <TableCell align="right">{row.checkin}</TableCell>
+                      <TableCell align="right">{row.checkin}</TableCell> */}
                       {/* <TableCell align="right">{row.guests}</TableCell> */}
-                      <TableCell align="right">{row.totalPayout}</TableCell>
+                      {/* <TableCell align="right">{row.totalPayout}</TableCell> */}
                
                     </TableRow>
                   );

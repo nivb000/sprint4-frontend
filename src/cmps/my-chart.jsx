@@ -6,14 +6,10 @@ import { useDispatch, useSelector } from 'react-redux'
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 
-export const MyChart = () => {
+export const MyChart = ({stays}) => {
 
-  // const stays = useSelector(state => state.stayModule.stays)
-  // const dispatch = useDispatch()
+console.log('stays:' , stays)
 
-  // useEffect(() => {
-  //     dispatch(loadStays())
-  // }, [])
 
   const data = {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
