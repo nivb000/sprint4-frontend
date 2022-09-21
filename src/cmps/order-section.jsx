@@ -1,20 +1,22 @@
 import { useState } from 'react';
 import { Rating } from './rating'
 import AssistantPhotoIcon from '@mui/icons-material/AssistantPhoto';
-
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import { LocalizationProvider } from '@mui/x-date-pickers-pro';
+import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
+import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 
 export const OrderSection = ({ stay }) => {
-
-    const [checkDates, setCheckDates] = useState([null, null])
-    console.log('checkDates is', checkDates);
 
     const [order, setOrder] = useState({
         //TODO ID AND CREATED AT ON SERVICE
         hostId: stay.host._id,
         totalPrice: stay.price,
         guests: '1',
-        startDate: '1/1/22',
-        endDate: '2/2/22',
+        dates: [null, null],
+        // startDate: new Date(),
+        // endDate: new Date(),
         stay: {
             _id: stay._id,
             name: stay.name,
@@ -30,7 +32,7 @@ export const OrderSection = ({ stay }) => {
 
     const handleReserve = () => {
         console.log('sending order...');
-        console.log(order);
+        console.log(order)
     }
 
     return <section className="order-section">
@@ -42,14 +44,29 @@ export const OrderSection = ({ stay }) => {
 
             <div className="order-data">
                 <div className="date-picker">
-                    <div className="date-input in">
-                        <label>CHECK-IN</label>
-                        <input type="date" name="startDate"/>
-                    </div>
-                    <div className="date-input out">
-                        <label>CHECKOUT</label>
-                        <input type="date" name="endDate"/>
-                    </div>
+                    <LocalizationProvider
+                        dateAdapter={AdapterDayjs}
+                    >
+                        <DateRangePicker
+                            value={order.dates}
+                            onChange={(newValue) => {
+                                setOrder((
+                                    {
+                                        ...order,
+                                        dates: [`${newValue[0].$D}/${newValue[0].$M + 1}/${newValue[0].$y}`,
+                                        `${newValue[1].$D}/${newValue[1].$M + 1}/${newValue[1].$y}`]
+                                    }
+                                ));
+                            }}
+                            renderInput={(startProps, endProps) => (
+                                <>
+                                    <TextField {...startProps} />
+                                    <Box sx={{ mx: 2 }}></Box>
+                                    <TextField {...endProps} />
+                                </>
+                            )}
+                        />
+                    </LocalizationProvider>
                 </div>
 
                 <div className="guest-input">
@@ -63,89 +80,10 @@ export const OrderSection = ({ stay }) => {
             </div>
 
             <div className="btn-container" onClick={handleReserve}>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
-                <div className="cell"></div>
+                {Array(79).fill(<div className="cell"></div>)}
                 <div className="content">
                     <button className="action-btn">
-                        {!checkDates[1] ? <span>Check availability</span>
+                        {!order.dates[1] ? <span>Check availability</span>
                             : <span>Reserve</span>}
                     </button>
                 </div>
@@ -157,11 +95,12 @@ export const OrderSection = ({ stay }) => {
 
 
 
+
 {/* <div className="date-input in">
-<label>CHECK-IN</label>
-<input defaultValue={order.checkIn}></input>
+    <label>CHECK-IN</label>
+    <input type="date" name="startDate" />
 </div>
 <div className="date-input out">
-<label>CHECKOUT</label>
-<input defaultValue={order.checkOut}></input>
+    <label>CHECKOUT</label>
+    <input type="date" name="endDate" />
 </div> */}
