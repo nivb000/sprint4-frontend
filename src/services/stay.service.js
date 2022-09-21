@@ -45,7 +45,7 @@ function query(filterBy) {
 function _createStay(imgUrls, price = utilService.getRandomIntInclusive(50, 3000)) {
     return {
         name: 'Ribeira Charming Duplex',
-        type: 'pools',
+        type: randTypes(),
         host: {
             _id: 'u101',
             fullname: 'Moria Katz',
@@ -93,6 +93,40 @@ function _createStays() {
         stays.push(_createStay(imgUrls))
     }
     return stays
+}
+
+function randTypes() {
+    const types = [
+        'pools', 
+        'cabins', 
+        'views',
+        'cabins',
+        'pools',
+        'beaches',
+        'views',
+        'camping',
+        'caravans',
+        'chef',
+        'country',
+        'desert',
+        'design',
+        'city',
+        'island',
+        'mansion',
+        'park',
+        'shared',
+        'ski',
+        'surfing',
+        'tiny',
+        'tropical',
+        'shared',
+        'park',
+        'surfing',
+        'country',
+        'desert',
+    ]
+    const randIdx = utilService.getRandomIntInclusive(0, types.length - 1)
+    return types[randIdx]
 }
 
 function createImgs() {
