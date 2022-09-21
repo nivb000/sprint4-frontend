@@ -274,37 +274,37 @@ export default function EnhancedTable({rows , headCells , cellNames}) {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row.status);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) => handleClick(event, console.log(':' ,row.status ))}                       
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.status}
                       selected={isItemSelected}
                     >
-                      <TableCell padding="checkbox">
-                        <Checkbox
+                     <TableCell padding="checkbox">
+                        {/* <Checkbox
                           checked={isItemSelected}
                           inputProps={{ 'aria-labelledby': labelId }}
-                        />
-                      </TableCell>
+                        /> */}
+                      </TableCell> 
                       <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                        {row.status}
                       </TableCell>
-                      {cellNames.map(cellName => <TableCell align="right">{row.status}</TableCell>)}
+                      {/* {cellNames.map(cellName => <TableCell align="right">{row.status}</TableCell>)} */}
                    
                       
-{/* 
-                      <TableCell align="right">{row.name}</TableCell>
+
                       <TableCell align="right">{row.status}</TableCell>
+                      <TableCell align="right">{row.guests}</TableCell>
                       <TableCell align="right">{row.Checkout}</TableCell>
-                      <TableCell align="right">{row.checkin}</TableCell> */}
-                      {/* <TableCell align="right">{row.guests}</TableCell> */}
+                      <TableCell align="right">{row.checkin}</TableCell> 
+                      <TableCell align="right">{row.guests}</TableCell>
                       {/* <TableCell align="right">{row.totalPayout}</TableCell> */}
                
                     </TableRow>

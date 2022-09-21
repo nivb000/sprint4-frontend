@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from 'react-redux'
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 
-export const MyChart = ({stays}) => {
+export const MyChart = ({orders}) => {
 
-console.log('stays:' , stays)
+console.log('orders:' , orders)
 
 
   const data = {

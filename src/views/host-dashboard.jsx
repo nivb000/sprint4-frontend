@@ -25,6 +25,6 @@ export const HostDashboard = () => {
 
     return <div >
         <MyChart orders={orders} />
-        <BasicTable />
+        <BasicTable orders={orders}/>
     </div>
 }

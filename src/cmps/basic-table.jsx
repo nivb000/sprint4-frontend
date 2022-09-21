@@ -1,9 +1,11 @@
 import EnhancedTable from "./dash-table-lib";
 
-export const BasicTable = () => {
+export const BasicTable = ({orders}) => {
 
-    function createData(name, status, guests, checkin, Checkout, streetName, totalPayout) {
-        return { name, status, guests, checkin, Checkout, streetName, totalPayout };
+ 
+    
+    function createData(status, guests, checkin, Checkout, streetName, totalPayout) {
+        return { status, guests, checkin, Checkout, streetName, totalPayout };
     }
     const cellNames = Object.keys( createData('puki', 'Panding', 5, '3.7.22', '10.7.22', 'Puki adress', 985))
 
@@ -17,8 +19,9 @@ export const BasicTable = () => {
     ];
 
     const rows = [
-        createData('Panding', '5', 5, '3.7.22', '10.7.22', 'Puki adress', 985),
-        createData('Aprroved', '8', 6, '3.7.22', '10.7.22', 'Puki adress', 985),
+        createData('Pending', '5', 5, '3.7.22', '10.7.22', 'Puki adress', 985),
+        createData('Approved', '8', 6, '3.7.22', '10.7.22', 'Puki adress', 985),
+
     ];
     return (
         <EnhancedTable rows={rows} headCells={headCells} cellNames={cellNames} />
