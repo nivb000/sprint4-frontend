@@ -75,7 +75,7 @@ export const AppHeader = () => {
             </div>
         </section>
 
-        {loginModalIsOpen && <LoginSignup setLoginModal={() => setLoginModalIsOpen(prev => !prev)}  user={user} />}
+        {loginModalIsOpen && <LoginSignup setLoginModal={() => setLoginModalIsOpen(prev => !prev)} />}
         {userNavIsOpen && 
         <UserNav 
             setLoginModal={() => setLoginModalIsOpen(prev => !prev)} 

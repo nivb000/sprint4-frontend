@@ -3,6 +3,7 @@ import { AppHeader } from './cmps/app-header'
 import { HomePage } from './views/home-page'
 import { StayDetails } from './views/stay-details'
 import { HostDashboard } from './views/host-dashboard' 
+import { Trips } from "./views/trips"
 import { Footer } from './cmps/footer'
 
 // Dashboard section - dont delete!
@@ -20,6 +21,7 @@ export const RootCmp = () => {
           <Route path='/' element={<HomePage />}  />
           <Route path='/stay/:stayId' element={<StayDetails />} />
           <Route path='/host' element={ <HostDashboard />} />
+          <Route path='/trips/:userId' element={<Trips />} />
           {/* <Route path='/edit/:toyId' element={<ToyEdit />} /> */}
           {/* <Route path='/new/' element={<ToyEdit />} /> */}
           {/* <Route path='/signin/' element={<SignIn />} /> */}

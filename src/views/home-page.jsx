@@ -1,4 +1,4 @@
-import { loadStays } from "../store/stay.action"
+import { loadStays, setFilterState } from "../store/stay.action"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { StayList } from '../cmps/stay-list'
@@ -13,18 +13,25 @@ const queryString = require('query-string');
 export const HomePage = () => {
 
     const stays = useSelector(state => state.stayModule.stays)
-    const filter = useSelector(state => state.stayModule.filter)
+    const filterState = useSelector(state => state.stayModule.filter)
     const dispatch = useDispatch()
     const location = useLocation()
-
+    
     useEffect(() => {
+        console.log('rendered');
+        setFilter()
         dispatch(loadStays())
-    }, [location.search])
-
+    }, [])
+    
     const setFilter = () => {
         const filter = queryString.parse(location.search)
+        if(Object.keys(filter).length !== 0){
+            dispatch(setFilterState(filter))
+        } else {
+            dispatch(setFilterState(filter))
+        }
     }
-    setFilter()
+
 
     if (!stays || stays.length < 1) return <Loader />
 

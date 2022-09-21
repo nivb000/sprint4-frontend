@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
     stays: null,
-    filter: {}
+    filter: null
 }
 
 
@@ -10,7 +10,7 @@ export function stayReducer(state = INITIAL_STATE, action) {
             return { ...state, stays: action.stays }
 
         case 'ADD_STAY':
-            return { ...state, stays: [...state.stays, action.toy] }
+            return { ...state, stays: [...state.stays, action.stay] }
 
         case 'REMOVE_STAY':
             return { ...state, stays: state.stays.filter(stay => stay._id !== action.stayId) }
@@ -22,7 +22,7 @@ export function stayReducer(state = INITIAL_STATE, action) {
             }
 
         case 'SET_FILTER':
-            return { ...state, filter: action.filter }
+            return { ...state, filter: { ...action.filter } }
 
         default:
             return state

@@ -53,7 +53,7 @@ export const StayAmenities = ({ amenities }) => {
     { title: "Washer", icon: <LocalLaundryServiceIcon /> },
     { title: "Pool", icon: <PoolIcon /> },
 
-    
+
   ]
 
   const matchIcon = (amenity, icons) => {
@@ -68,7 +68,7 @@ export const StayAmenities = ({ amenities }) => {
       <ul className="amenities-list">
         {amenities.slice(0, 10).map(amenity => {
           return (
-            <li key={amenity}>
+            <li className='amenities-item' key={amenity}>
               {matchIcon(amenity, amenitiesIcons)}
               {amenity}
             </li>
