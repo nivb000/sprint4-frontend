@@ -8,29 +8,20 @@ import { useLocation } from "react-router-dom"
 import { Footer } from "../cmps/footer"
 const queryString = require('query-string');
 
-
-
 export const HomePage = () => {
 
     const stays = useSelector(state => state.stayModule.stays)
     const dispatch = useDispatch()
     const location = useLocation()
-
+    console.log(stays);
     useEffect(() => {
-        console.log('rendered');
         setFilter()
         dispatch(loadStays())
     }, [location.search])
 
     const setFilter = () => {
         const filter = queryString.parse(location.search)
-        console.log(filter);
         dispatch(setFilterState(filter))
-        // if(Object.keys(filter).length !== 0){
-        //     dispatch(setFilterState(filter))
-        // } else {
-        //     dispatch(setFilterState(filter))
-        // }
     }
 
 
@@ -39,6 +30,6 @@ export const HomePage = () => {
     return <section className="home-page">
         <FilterList />
         <StayList stays={stays} />
-        {/* <Footer/> */}
+        <Footer />
     </section>
 }

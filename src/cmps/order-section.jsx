@@ -6,22 +6,33 @@ import Box from '@mui/material/Box';
 import { LocalizationProvider } from '@mui/x-date-pickers-pro';
 import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
+import { addOrder } from '../store/order.action';
+import { useDispatch, useSelector } from "react-redux"
+import { LoginSignup } from './login-signup'
 
 export const OrderSection = ({ stay }) => {
 
+    const dispatch = useDispatch()
+    const user = useSelector(state => state.userModule.user)
+    const [dates, setDates] = useState([null, null])
+
+    // const calcOrderPrice = () => {
+    //     let Difference_In_Time = date2.getTime() - date1.getTime()
+    //     let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);   
+    // }
+
     const [order, setOrder] = useState({
-        //TODO ID AND CREATED AT ON SERVICE
         hostId: stay.host._id,
         totalPrice: stay.price,
         guests: '1',
-        dates: [null, null],
-        // startDate: new Date(),
-        // endDate: new Date(),
+        startDate: null,
+        endDate: null,
         stay: {
             _id: stay._id,
             name: stay.name,
             price: stay.price
-        }
+        },
+        status: 'pending'
     })
 
     const handleChange = ({ target }) => {
@@ -31,15 +42,26 @@ export const OrderSection = ({ stay }) => {
     }
 
     const handleReserve = () => {
-        console.log('sending order...');
-        console.log(order)
+        order.startDate = `${dates[0].$D}/${dates[0].$M + 1}/${dates[0].$y}`
+        order.endDate = `${dates[1].$D}/${dates[1].$M + 1}/${dates[1].$y}`
+        if (user) {
+            order.buyer = {
+                _id: user._id,
+                fullname: user.fullname
+            }
+            console.log('sending order...');
+            console.log(order)
+            dispatch(addOrder(order))
+        } else {
+            <LoginSignup />
+        }
     }
 
     return <section className="order-section">
         <section className="order-container">
             <div className="order-form-header">
                 <p><span className="cost">${stay.price}</span> night</p>
-                <p><Rating rating={stay.rating} /> · <span className="reviews">4 reviews</span></p>
+                <p><Rating rating={stay.rating} /> · <span className="reviews">{stay.reviews.length} reviews</span></p>
             </div>
 
             <div className="order-data">
@@ -48,15 +70,9 @@ export const OrderSection = ({ stay }) => {
                         dateAdapter={AdapterDayjs}
                     >
                         <DateRangePicker
-                            value={order.dates}
+                            value={dates}
                             onChange={(newValue) => {
-                                setOrder((
-                                    {
-                                        ...order,
-                                        dates: [`${newValue[0].$D}/${newValue[0].$M + 1}/${newValue[0].$y}`,
-                                        `${newValue[1].$D}/${newValue[1].$M + 1}/${newValue[1].$y}`]
-                                    }
-                                ));
+                                setDates(newValue)
                             }}
                             renderInput={(startProps, endProps) => (
                                 <>
@@ -83,13 +99,31 @@ export const OrderSection = ({ stay }) => {
                 {Array(79).fill(<div className="cell"></div>)}
                 <div className="content">
                     <button className="action-btn">
-                        {!order.dates[1] ? <span>Check availability</span>
+                        {!dates[1] ? <span>Check availability</span>
                             : <span>Reserve</span>}
                     </button>
                 </div>
             </div>
+            <div className='order-summary'>
+                <p>You won't be charged yet</p>
+                {dates[1] &&
+                    <div>
+                        <span style={{ textDecoration: 'underline' }}>${stay.price} x {dates[1].$D - dates[0].$D} nights</span>
+                        <span>{stay.price * 5}</span>
+                    </div>
+                }
+                <div>
+                    <span style={{ textDecoration: 'underline' }}>Service fee</span>
+                    <span>0$</span>
+                </div>
+                <hr />
+                <div className='total-price'>
+                    <span>Total</span>
+                    <span>${stay.price * 5}</span>
+                </div>
+            </div>
         </section>
-        <p className="footer"><AssistantPhotoIcon /><span>Report this listing</span> </p>
+        <p className="footer"><AssistantPhotoIcon /><small>Report this listing</small> </p>
     </section>
 }
 

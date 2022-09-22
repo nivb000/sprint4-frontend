@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/img/logo.png'
+import logo from '../assets/imgs/logo.png'
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import userProfilePic from '../assets/img/header-icons/userprofle.jpg'
+import userProfilePic from '../assets/imgs/header-icons/userprofle.jpg'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import { useState } from 'react'
