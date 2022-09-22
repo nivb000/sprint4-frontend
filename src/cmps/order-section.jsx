@@ -52,6 +52,7 @@ export const OrderSection = ({ stay }) => {
             console.log('sending order...');
             console.log(order)
             dispatch(addOrder(order))
+            alert('We received your order')
         } else {
             <LoginSignup />
         }

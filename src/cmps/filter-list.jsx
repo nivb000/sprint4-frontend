@@ -15,11 +15,11 @@ export const FilterList = () => {
 
 
     const labels = [
-        'Amazing pools',
-        'Amazing views',
         'beaches',
+        'Amazing views',
         'cabins',
         'camping',
+        'Amazing pools',
         'caravans',
         'kitchens',
         'country side',
