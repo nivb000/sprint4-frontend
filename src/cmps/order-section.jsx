@@ -68,6 +68,7 @@ export const OrderSection = ({ stay }) => {
                 <div className="date-picker">
                     <LocalizationProvider
                         dateAdapter={AdapterDayjs}
+                        localeText={{ start: '', end: '' }}
                     >
                         <DateRangePicker
                             value={dates}
@@ -77,7 +78,7 @@ export const OrderSection = ({ stay }) => {
                             renderInput={(startProps, endProps) => (
                                 <>
                                     <TextField {...startProps} />
-                                    <Box sx={{ mx: 2 }}></Box>
+                                    <Box sx={{ mx: 2 }}> </Box>
                                     <TextField {...endProps} />
                                 </>
                             )}

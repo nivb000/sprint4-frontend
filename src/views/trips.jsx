@@ -35,19 +35,14 @@ export const Trips = () => {
     <h1 className='trips-title'>Trips</h1>
     <h3>Where you've been</h3>
     <ul className="trips-grid-container">
-      {orders.map((order) => {
-        // {console.log('order:', order)}
-        const TripImg = require(`../assets/imgs/preview-imgs/${utilService.getRandomIntInclusive(1, 20)}.webp`)
+      {orders.reverse().map((order) => {
         return <li key={order._id}>
-          <div className="trip-img-container">
-            <img src={TripImg} alt="host-img" />
-          </div>
+          <img src={require(`../assets/imgs/preview-imgs/${utilService.getRandomIntInclusive(1, 20)}.webp`)} alt="host-img" />
           <div className="trip-text-container">
             <h4>{order.stay.name}</h4>
-            <p>{`Hosted by ${order.hostId}`}</p>
-            {/* <p>{`$${order.stay.price}`}</p> */}
+            <p>{`Hosted by ${order.fullname}`}</p>
             <p>{`${order.startDate} - ${order.endDate}`}</p>
-            <p>{order.status}</p>
+            <p style={order.status === 'approved' ? { color: 'green' } : { color: 'rgb(233, 198, 0)' }}>{order.status}</p>
           </div>
         </li>
       })}
