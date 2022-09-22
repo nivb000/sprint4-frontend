@@ -23,6 +23,14 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess'
 import BathtubIcon from '@mui/icons-material/Bathtub'
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService'
 import PoolIcon from '@mui/icons-material/Pool';
+import TvIcon from '@mui/icons-material/Tv';
+import CableIcon from '@mui/icons-material/Cable';
+import LanIcon from '@mui/icons-material/Lan';
+import LocalParkingIcon from '@mui/icons-material/LocalParking';
+import SmokingRoomsIcon from '@mui/icons-material/SmokingRooms';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import ElevatorIcon from '@mui/icons-material/Elevator';
+import DialpadIcon from '@mui/icons-material/Dialpad';
 
 export const StayAmenities = ({ amenities }) => {
 
@@ -52,8 +60,15 @@ export const StayAmenities = ({ amenities }) => {
     { title: "Bathtub", icon: <BathtubIcon /> },
     { title: "Washer", icon: <LocalLaundryServiceIcon /> },
     { title: "Pool", icon: <PoolIcon /> },
-
-
+    { title: "TV", icon: <TvIcon /> },
+    { title: "Cable TV", icon: <CableIcon /> },
+    { title: "Internet", icon: <LanIcon /> },
+    { title: "Free street parking", icon: <LocalParkingIcon /> },
+    { title: "Free parking on premises", icon: <LocalParkingIcon /> },
+    { title: "Smoking allowed", icon: <SmokingRoomsIcon /> },
+    { title: "Gym", icon: <FitnessCenterIcon /> },
+    { title: "Elevator", icon: <ElevatorIcon /> },
+    { title: "Buzzer/wireless intercom", icon: <DialpadIcon /> },
   ]
 
   const matchIcon = (amenity, icons) => {
