@@ -11,11 +11,11 @@ import { Pagination, Navigation } from "swiper";
 export const FilterList = () => {
 
     const labels = [
-        'Amazing pools',
         'Amazing views',
         'beaches',
         'cabins',
         'camping',
+        'Amazing pools',
         'caravans',
         'kitchens',
         'country side',

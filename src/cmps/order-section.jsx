@@ -6,9 +6,14 @@ import Box from '@mui/material/Box';
 import { LocalizationProvider } from '@mui/x-date-pickers-pro';
 import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
+import { addOrder } from '../store/order.action';
+import { useDispatch, useSelector } from "react-redux"
+import { LoginSignup } from './login-signup'
 
 export const OrderSection = ({ stay }) => {
 
+    const dispatch = useDispatch()
+    const user = useSelector(state => state.userModule.user)
     const [dates, setDates] = useState([null, null])
 
     // const calcOrderPrice = () => {
@@ -26,7 +31,8 @@ export const OrderSection = ({ stay }) => {
             _id: stay._id,
             name: stay.name,
             price: stay.price
-        }
+        },
+        status: 'pending'
     })
 
     const handleChange = ({ target }) => {
@@ -38,8 +44,17 @@ export const OrderSection = ({ stay }) => {
     const handleReserve = () => {
         order.startDate = `${dates[0].$D}/${dates[0].$M + 1}/${dates[0].$y}`
         order.endDate = `${dates[1].$D}/${dates[1].$M + 1}/${dates[1].$y}`
-        console.log('sending order...');
-        console.log(order)
+        if (user) {
+            order.buyer = {
+                _id: user._id,
+                fullname: user.fullname
+            }
+            console.log('sending order...');
+            console.log(order)
+            dispatch(addOrder(order))
+        } else {
+            <LoginSignup />
+        }
     }
 
     return <section className="order-section">
@@ -93,18 +108,18 @@ export const OrderSection = ({ stay }) => {
                 <p>You won't be charged yet</p>
                 {dates[1] &&
                     <div>
-                        <span>{stay.price} X {dates[1].$D - dates[0].$D} Nights</span>
-                        <span>5000$</span>
+                        <span style={{ textDecoration: 'underline' }}>${stay.price} x {dates[1].$D - dates[0].$D} nights</span>
+                        <span>{stay.price * 5}</span>
                     </div>
                 }
                 <div>
-                    <span>Service fee</span>
+                    <span style={{ textDecoration: 'underline' }}>Service fee</span>
                     <span>0$</span>
                 </div>
                 <hr />
-                <div>
+                <div className='total-price'>
                     <span>Total</span>
-                    <span>5000$</span>
+                    <span>${stay.price * 5}</span>
                 </div>
             </div>
         </section>
