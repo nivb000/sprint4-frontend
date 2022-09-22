@@ -6,9 +6,7 @@ import { HostDashboard } from './views/host-dashboard'
 import { Trips } from "./views/trips"
 import { Footer } from './cmps/footer'
 
-// Dashboard section - dont delete!
-// import { MyChart } from './cmps/my-chart'
-// import { BasicTable } from './cmps/dashboard-table'
+
 
 
 export const RootCmp = () => {

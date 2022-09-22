@@ -1,23 +1,37 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { loadOrders } from "../store/order.action"
+import { useEffect } from "react";
+import { Loader } from '../cmps/loader'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 
-export const MyChart = ({orders}) => {
-
-console.log('orders:' , orders)
+export const MyChart = ({stay}) => {
 
 
+  const orders = useSelector(state => state.orderModule.orders)
+  const dispatch = useDispatch()
+
+
+  useEffect(() => {
+    getOrders()
+  }, [])
+
+  const getOrders = () => {
+    dispatch(loadOrders())
+  }
+
+  if (!orders) return <div></div>
   const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['Approved','Pending', 'Rejected' ],
 
     datasets: [
       {
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        label: '# Orders segmentation by nights',
+        data: orders.map(order => order.status ),
+        data:['4', '5' ,'9' , '2'],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -39,7 +53,14 @@ console.log('orders:' , orders)
     ],
   }
 
-  return <div  style={{ width: "250px", margin: "auto" ,}}><Doughnut data={data} /></div>
+  if(orders)
+  return <div className='Doughnut-chart' style={{
+    width: "300px", font: "20px" , fontWeight: "bold"}}>
+    <Doughnut data={data} /></div>
 }
+
+
+
+
 
 

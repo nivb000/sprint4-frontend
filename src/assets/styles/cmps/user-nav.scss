@@ -1,7 +1,7 @@
 .user-nav{
     position: fixed;
     top: 77px;
-    right: 0;
+    right: 150px;
     box-shadow: $boxShadow;
     width: 240px;
     background-color: white;
@@ -13,6 +13,10 @@
         :first-child{
             font-family: 'cereal-light';
         }
+        a{
+            text-decoration: none;
+            color: $clr-black;
+        }
         li{
             padding: 15px;
             cursor: pointer;
@@ -20,14 +24,9 @@
             &:hover{
                 background-color: rgba(219, 219, 219, 0.279);
             }
-          
         }
         hr{
             color: #00000050;
-        }
-        .host-nav-link{
-            text-decoration: none;
-            color: $clr-black;
         }
     }
 }

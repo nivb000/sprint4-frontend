@@ -1,6 +1,6 @@
 .filter-main {
     height: 79px;
-    width: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
     margin-block-end: 12px;
@@ -9,6 +9,7 @@
         width: 20px;
         color: $clr-light-grey;
         opacity: 60%;
+        margin-inline-start: 25%;
     }
     img:hover {
         color: $clr-black;

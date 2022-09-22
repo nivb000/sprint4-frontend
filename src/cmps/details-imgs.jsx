@@ -6,7 +6,6 @@ export const DetailsImgs = ({ imgs }) => {
             <div className='detalis-img1'>
                 <img className='img1' src={imgs[0]} alt="preview stay" />
             </div>
-
             <div className='detalis-imgs-sub'>
                 <div className='detalis-img2-3'>
                     <img className='img2' src={imgs[1]} alt="preview stay" />
@@ -20,3 +19,4 @@ export const DetailsImgs = ({ imgs }) => {
         </div>
     )
 }
+

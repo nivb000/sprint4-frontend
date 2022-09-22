@@ -1,3 +1,5 @@
+
+
 import TuneIcon from '@mui/icons-material/Tune';
 import { useSearchParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,12 +12,14 @@ import { Pagination, Navigation } from "swiper";
 
 export const FilterList = () => {
 
+
+
     const labels = [
-        'Amazing pools',
-        'Amazing views',
         'beaches',
+        'Amazing views',
         'cabins',
         'camping',
+        'Amazing pools',
         'caravans',
         'kitchens',
         'country side',
@@ -33,6 +37,8 @@ export const FilterList = () => {
     ]
 
 
+
+
     const [searchParams, setSearchParams] = useSearchParams()
 
     const handleChange = (label) => {
@@ -40,10 +46,9 @@ export const FilterList = () => {
     }
 
 
-
     return (
-        <div className="filter-main">
 
+        <div className="filter-main">
             <button className='filters-btn'>
                 <div className='filter-div'><TuneIcon fontSize='small' />Filters</div>
             </button>
@@ -62,7 +67,6 @@ export const FilterList = () => {
                         modules={[Pagination, Navigation]}
                         className="mySwiper"
                     >
-
                         {labels.map(label =>
                             <SwiperSlide onClick={() => handleChange(label)}>
                                 <button>
@@ -73,11 +77,10 @@ export const FilterList = () => {
                                 </button>
                             </SwiperSlide>
                         )}
-
-
                     </Swiper>
                 </>
             </div>
         </div>
     );
 }
+
