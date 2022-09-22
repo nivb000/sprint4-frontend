@@ -5,6 +5,8 @@ import HostImg from '../assets/img/square-profile-imgs/1.jpg'
 
 export const HostDetails = ({ stay }) => {
 
+  console.log('stay:' , stay)
+  
   return <section className="host-details">
     <div className="main-details">
       <div className="main-details-text">

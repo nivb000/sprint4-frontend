@@ -50,7 +50,7 @@ function stableSort(array, comparator) {
 
 
 function EnhancedTableHead(props) {
-  const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort , headCells } = props;
+  const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort, headCells } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -58,18 +58,12 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
-          <Checkbox
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{ 'aria-label': 'select all desserts' }}
-          />
+        <TableCell padding="checkbox"> 
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
+            align={headCell.numeric ? 'left' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -104,19 +98,19 @@ EnhancedTableHead.propTypes = {
 
 const useToolbarStyles = makeStyles((theme) => ({
   root: {
-    paddingLeft: theme.spacing(2),
+    paddingLeft: theme.spacing(5),
     paddingRight: theme.spacing(1),
   },
   highlight:
     theme.palette.type === 'light'
       ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
+        color: theme.palette.secondary.main,
+        backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+      }
       : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.dark,
+      },
   title: {
     flex: '1 1 100%',
   },
@@ -138,7 +132,7 @@ const EnhancedTableToolbar = (props) => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-          Nutrition
+          Reservations
         </Typography>
       )}
 
@@ -187,7 +181,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EnhancedTable({rows , headCells , cellNames}) {
+
+export default function EnhancedTable({ rows, headCells, cellNames }) {
+
 
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
@@ -274,45 +270,31 @@ export default function EnhancedTable({rows , headCells , cellNames}) {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.status);
+                  const isItemSelected = isSelected(row.id);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, console.log(':' ,row.status ))}                       
-                      role="checkbox"
-                      aria-checked={isItemSelected}
-                      tabIndex={-1}
-                      key={row.status}
-                      selected={isItemSelected}
+                      // onClick={(event) => handleClick(event, console.log(':' ,row.status))}                       
+                      // role="checkbox"
+                      // aria-checked={isItemSelected}
+                      // tabIndex={-1}
+                      // key={row.id}
+                      // selected={isItemSelected}
                     >
-                     <TableCell padding="checkbox">
-                        {/* <Checkbox
-                          checked={isItemSelected}
-                          inputProps={{ 'aria-labelledby': labelId }}
-                        /> */}
-                      </TableCell> 
-                      <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.status}
-                      </TableCell>
-                      {/* {cellNames.map(cellName => <TableCell align="right">{row.status}</TableCell>)} */}
-                   
-                      
-
-                      <TableCell align="right">{row.status}</TableCell>
-                      <TableCell align="right">{row.guests}</TableCell>
-                      <TableCell align="right">{row.Checkout}</TableCell>
-                      <TableCell align="right">{row.checkin}</TableCell> 
-                      <TableCell align="right">{row.guests}</TableCell>
-                      {/* <TableCell align="right">{row.totalPayout}</TableCell> */}
-               
+                      <TableCell padding="checkbox">
+                      </TableCell>    
+                        {headCells.map(headerCell => {                            
+                          return <TableCell key={headerCell.id} align="left">{row[headerCell.id]} </TableCell>
+                        }
+                        )}
                     </TableRow>
                   );
                 })}
               {emptyRows > 0 && (
                 <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
-                  <TableCell colSpan={6} />
+                  <TableCell colSpan={9} />
                 </TableRow>
               )}
             </TableBody>

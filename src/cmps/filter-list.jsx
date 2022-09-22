@@ -38,7 +38,6 @@ export const FilterList = () => {
     }
 
 
-
     return (
         <div className="filter-main">
 
@@ -46,7 +45,7 @@ export const FilterList = () => {
                 <div className='filter-div'> <TuneIcon />Filters</div>
             </button>
             <div className="carusel-filter-main">
-         
+                         
                 <>
                     <Swiper
                         slidesPerView={16.8}
@@ -61,7 +60,6 @@ export const FilterList = () => {
                         modules={[Pagination, Navigation]}
                         className="mySwiper"
                     >
-                       
                         <SwiperSlide>
                             <button onClick={handleChange} value="cabins"><img src={cabins} alt='cabins' />Cabins</button>
                         </SwiperSlide>
