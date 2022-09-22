@@ -15,7 +15,7 @@ export function GoogleMap({pos ,stay }) {
 
     return (
         // Important! Always set the container height explicitly
-        <div style={{ height: '50vh', width: '100%' }}>
+        <div style={{ height: '50vh', width: '100%', paddingBlockStart: '48px'}}>
             <GoogleMapReact
                 onClick={onClick}
                 bootstrapURLKeys={{ key: "" }}

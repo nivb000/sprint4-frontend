@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { DetailsImgs } from './details-imgs'
+import { DetailsImgs } from '../cmps/details-imgs'
 import { HostDetails } from "../cmps/host-details";
-import { AirCover } from "../cmps/air-cover";
+import aircover from '../assets/imgs/filter-icons/aircover.png'
 import { StayAmenities } from "../cmps/stay-amenities";
 import { useParams } from 'react-router-dom';
 import { stayService } from '../services/stay.service';
@@ -20,20 +20,20 @@ export const StayDetails = () => {
 
     useEffect(() => {
         loadStay()
-        changeLayout('1270px')
+        changeLayout('1280px')
         return () => {
             changeLayout('1760px')
         }
-    }, [])
+    },[])
 
     const changeLayout = (value) => {
         document.documentElement.style.setProperty('--layoutWidth', value);
     }
 
-    const loadStay = () => {
+    const loadStay = async() => {
         const { stayId } = params
-        stayService.getById(stayId)
-            .then(stay => setStay(stay))
+        const stay = await stayService.getById(stayId)
+        setStay(stay)
     }
 
     if (!stay) return <Loader />
@@ -42,13 +42,13 @@ export const StayDetails = () => {
     return (
         <section className='stay-details'>
             <div className='deatils-header'>
-                <h1> Beach front - weddings - private - 7 bedrooms </h1>
+                <h1> {stay.name} </h1>
                 <div className='deatils-sub-header'>
                     <div className='subheader-title'>
                         <div className='rating'>
                             <Rating rating={stay.rating} />
-                            <span >&nbsp;&nbsp;·&nbsp;</span>
-                            <span className='underline'>&nbsp;&nbsp;8 reviews</span>
+                            <span>&nbsp;&nbsp;·&nbsp;</span>
+                            <span className='underline'>&nbsp;&nbsp;{stay.reviews.length} reviews</span>
                             <span>&nbsp;&nbsp;·&nbsp;</span>
                             <span className='underline' >&nbsp;&nbsp;Aytotoro, Larnaka, Cyprus.</span>
                         </div>
@@ -60,7 +60,7 @@ export const StayDetails = () => {
                         </div>
                         <div className='save'>
                             <FavoriteBorderIcon fontSize='small' />
-                            <span> Save</span>
+                            <span>Save</span>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,13 @@ export const StayDetails = () => {
             <div className='details-container'>
                 <div className='left'>
                     <HostDetails stay={stay} />
-                    <AirCover />
+                    <section className="air-cover">
+                        <img className='aircover-img' src={aircover} alt="aircover" />
+                        <p>
+                            Every booking includes free protection from Host cancellations,
+                            listing inaccuracies, and other issues like trouble checking in.
+                        </p>
+                    </section>
                     <StayAmenities amenities={stay.amenities} />
                 </div>
                 <div className='right'>
