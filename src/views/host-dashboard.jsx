@@ -27,10 +27,10 @@ export const HostDashboard = () => {
         let sum = 0
         let numOfOrders = 0
         orders.map(order => {
-            sum += +order.totalPrice.toLocaleString('en-US')
+            sum += +order.totalPrice
             numOfOrders++
         })
-        return '$' + sum / numOfOrders
+        return '$' + (sum / numOfOrders).toFixed(2)
     }
 
     const getTotalIncome = () => {
@@ -66,7 +66,7 @@ export const HostDashboard = () => {
             numOfOrders++
         })
         if (today > thisYear)
-            return '$' + sum
+            return '$' + sum.toLocaleString('en-US')
     }
 
     if (orders)

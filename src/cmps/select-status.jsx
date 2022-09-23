@@ -17,22 +17,15 @@ export const SelectStatus = ({ order }) => {
         { value: 'rejected', text: 'Rejected' },
     ];
 
-    // const [setOrder] = useState(order);
-    const [count, setCount] = useState(0);
-    useEffect(() => {
-      }, [updatedOrder]);
-
 
     const handleChange = event => {
+        
         const status = event.target.value
-        updatedOrder = { ...order, status: status };
-
-        dispatch(updateOrder(updatedOrder))
+        order.status = status
+        console.log(':order' ,order )
+        dispatch(updateOrder(order))
     };
 
-    const removeOrder = () => {
-        dispatch(removeOrder(order.id))
-    };
 
     return (
         <div className="host-select-btn">
