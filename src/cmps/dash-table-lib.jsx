@@ -58,7 +58,7 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox"> 
+        <TableCell padding="none"> 
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
@@ -98,7 +98,7 @@ EnhancedTableHead.propTypes = {
 
 const useToolbarStyles = makeStyles((theme) => ({
   root: {
-    paddingLeft: theme.spacing(5),
+    paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(1),
   },
   highlight:
@@ -113,6 +113,7 @@ const useToolbarStyles = makeStyles((theme) => ({
       },
   title: {
     flex: '1 1 100%',
+    
   },
 }));
 
@@ -145,7 +146,7 @@ const EnhancedTableToolbar = (props) => {
       ) : (
         <Tooltip title="Filter list">
           <IconButton aria-label="filter list">
-            <FilterListIcon />
+           
           </IconButton>
         </Tooltip>
       )}
@@ -163,7 +164,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     width: '100%',
-    marginBottom: theme.spacing(2),
+
   },
   table: {
     minWidth: 750,
@@ -283,10 +284,11 @@ export default function EnhancedTable({ rows, headCells, cellNames }) {
                       // key={row.id}
                       // selected={isItemSelected}
                     >
-                      <TableCell padding="checkbox">
+                      <TableCell padding="none" >
+
                       </TableCell>    
                         {headCells.map(headerCell => {                            
-                          return <TableCell key={headerCell.id} align="left">{row[headerCell.id]} </TableCell>
+                          return <TableCell key={headerCell.id}  align="left">{row[headerCell.id]} </TableCell>
                         }
                         )}
                     </TableRow>
@@ -294,7 +296,7 @@ export default function EnhancedTable({ rows, headCells, cellNames }) {
                 })}
               {emptyRows > 0 && (
                 <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
-                  <TableCell colSpan={9} />
+                  <TableCell colSpan={7} />
                 </TableRow>
               )}
             </TableBody>

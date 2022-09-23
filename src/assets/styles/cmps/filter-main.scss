@@ -1,22 +1,27 @@
 .filter-main {
-    height: 79px;
-    max-width: 100%;
+
     display: flex;
     align-items: center;
-    margin-block-end: 12px;
+    margin-block-end: 33px;
     flex-direction: row-reverse;
+    justify-content: space-between;
+    overflow-x: clip;
+
+
     img {
-        width: 20px;
+        width: 25px;
         color: $clr-light-grey;
         opacity: 60%;
         margin-inline-start: 25%;
     }
+
     img:hover {
         color: $clr-black;
         opacity: 100%;
         text-decoration: underline;
         cursor: pointer;
     }
+
     button {
         text-decoration: none;
         text-align: center;
@@ -26,6 +31,7 @@
         font-family: 'cereal-medium';
         color: $clr-grey;
     }
+
     button:hover {
         cursor: pointer;
         color: $clr-black;
@@ -50,17 +56,21 @@
         padding: 0.9rem;
         height: 50px;
         border-radius: 15px;
+       
     }
 
     .filter-div {
         display: flex;
-        align-items: center;
-        justify-content: space-evenly;
+        // align-items: center;
+        justify-content: space-between;
         color: $clr-black;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
+        margin-inline: 12px;
+
     }
 
     .filter-div:hover {
         color: $clr-black;
     }
 }
+

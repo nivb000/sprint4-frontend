@@ -25,8 +25,7 @@ export const MyChart = ({stay}) => {
 
   if (!orders) return <div></div>
   const data = {
-    labels: ['Approved','Pending', 'Rejected' ],
-
+    labels: [],
     datasets: [
       {
         label: '# Orders segmentation by nights',
@@ -52,11 +51,12 @@ export const MyChart = ({stay}) => {
       },
     ],
   }
+ 
 
   if(orders)
   return <div className='Doughnut-chart' style={{
-    width: "300px", font: "20px" , fontWeight: "bold"}}>
-    <Doughnut data={data} /></div>
+    width: "270px", font: "20px" , fontWeight: "bold", textAlign: "center"}}>
+    <Doughnut data={data} /> </div>
 }
 
 
