@@ -32,50 +32,62 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import ElevatorIcon from '@mui/icons-material/Elevator';
 import DialpadIcon from '@mui/icons-material/Dialpad';
 
+import { useState } from 'react'
+
+import { StayAmenitiesModal } from './stay-amenities-modal'
+
 export const StayAmenities = ({ amenities }) => {
 
+  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false)
+
   const amenitiesIcons = [
-    { title: "Wifi", icon: <WifiIcon /> },
-    { title: "Air conditioning", icon: <AcUnitIcon /> },
-    { title: "Kitchen", icon: <SoupKitchenOutlinedIcon /> },
-    { title: "Heating", icon: <ThermostatIcon /> },
-    { title: "Family/kid friendly", icon: <ChildCareIcon /> },
-    { title: "Smoke detector", icon: <RadarIcon /> },
-    { title: "Carbon monoxide detector", icon: <AllOutIcon /> },
-    { title: "Fire extinguisher", icon: <FireExtinguisherIcon /> },
-    { title: "Essentials", icon: <EmojiFoodBeverageIcon /> },
-    { title: "Shampoo", icon: <SoapIcon /> },
-    { title: "24-hour check-in", icon: <LocalConvenienceStoreIcon /> },
-    { title: "Hangers", icon: <CheckroomIcon /> },
-    { title: "Hair dryer", icon: <AirIcon /> },
-    { title: "Iron", icon: <IronIcon /> },
-    { title: "Laptop friendly workspace", icon: <LaptopIcon /> },
-    { title: "translation missing: en.hosting_amenity_49", icon: <CheckIcon /> },
-    { title: "Self check-in", icon: <MobileFriendlyIcon /> },
-    { title: "Lockbox", icon: <LockIcon /> },
-    { title: "Pets allowed", icon: <PetsIcon /> },
-    { title: "Dedicated workspace", icon: <DeskIcon /> },
-    { title: "Crib", icon: <CribIcon /> },
-    { title: "Beach view", icon: <BeachAccessIcon /> },
-    { title: "Bathtub", icon: <BathtubIcon /> },
-    { title: "Washer", icon: <LocalLaundryServiceIcon /> },
-    { title: "Pool", icon: <PoolIcon /> },
-    { title: "TV", icon: <TvIcon /> },
-    { title: "Cable TV", icon: <CableIcon /> },
-    { title: "Internet", icon: <LanIcon /> },
-    { title: "Free street parking", icon: <LocalParkingIcon /> },
-    { title: "Free parking on premises", icon: <LocalParkingIcon /> },
-    { title: "Smoking allowed", icon: <SmokingRoomsIcon /> },
-    { title: "Gym", icon: <FitnessCenterIcon /> },
-    { title: "Elevator", icon: <ElevatorIcon /> },
-    { title: "Buzzer/wireless intercom", icon: <DialpadIcon /> },
+    { title: "Wifi", icon: <WifiIcon sx={{ color: '#222222' }} /> },
+    { title: "Air conditioning", icon: <AcUnitIcon sx={{ color: '#222222' }} /> },
+    { title: "Kitchen", icon: <SoupKitchenOutlinedIcon sx={{ color: '#222222' }} /> },
+    { title: "Heating", icon: <ThermostatIcon sx={{ color: '#222222' }} /> },
+    { title: "Family/kid friendly", icon: <ChildCareIcon sx={{ color: '#222222' }} /> },
+    { title: "Smoke detector", icon: <RadarIcon sx={{ color: '#222222' }} /> },
+    { title: "Carbon monoxide detector", icon: <AllOutIcon sx={{ color: '#222222' }} /> },
+    { title: "Fire extinguisher", icon: <FireExtinguisherIcon sx={{ color: '#222222' }} /> },
+    { title: "Essentials", icon: <EmojiFoodBeverageIcon sx={{ color: '#222222' }} /> },
+    { title: "Shampoo", icon: <SoapIcon sx={{ color: '#222222' }} /> },
+    { title: "24-hour check-in", icon: <LocalConvenienceStoreIcon sx={{ color: '#222222' }} /> },
+    { title: "Hangers", icon: <CheckroomIcon sx={{ color: '#222222' }} /> },
+    { title: "Hair dryer", icon: <AirIcon sx={{ color: '#222222' }} /> },
+    { title: "Iron", icon: <IronIcon sx={{ color: '#222222' }} /> },
+    { title: "Laptop friendly workspace", icon: <LaptopIcon sx={{ color: '#222222' }} /> },
+    { title: "translation missing: en.hosting_amenity_49", icon: <CheckIcon sx={{ color: '#222222' }} /> },
+    { title: "Self check-in", icon: <MobileFriendlyIcon sx={{ color: '#222222' }} /> },
+    { title: "Lockbox", icon: <LockIcon sx={{ color: '#222222' }} /> },
+    { title: "Pets allowed", icon: <PetsIcon sx={{ color: '#222222' }} /> },
+    { title: "Dedicated workspace", icon: <DeskIcon sx={{ color: '#222222' }} /> },
+    { title: "Crib", icon: <CribIcon sx={{ color: '#222222' }} /> },
+    { title: "Beach view", icon: <BeachAccessIcon sx={{ color: '#222222' }} /> },
+    { title: "Bathtub", icon: <BathtubIcon sx={{ color: '#222222' }} /> },
+    { title: "Washer", icon: <LocalLaundryServiceIcon sx={{ color: '#222222' }} /> },
+    { title: "Pool", icon: <PoolIcon sx={{ color: '#222222' }} /> },
+    { title: "TV", icon: <TvIcon sx={{ color: '#222222' }} /> },
+    { title: "Cable TV", icon: <CableIcon sx={{ color: '#222222' }} /> },
+    { title: "Internet", icon: <LanIcon sx={{ color: '#222222' }} /> },
+    { title: "Free street parking", icon: <LocalParkingIcon sx={{ color: '#222222' }} /> },
+    { title: "Free parking on premises", icon: <LocalParkingIcon sx={{ color: '#222222' }} /> },
+    { title: "Smoking allowed", icon: <SmokingRoomsIcon sx={{ color: '#222222' }} /> },
+    { title: "Gym", icon: <FitnessCenterIcon sx={{ color: '#222222' }} /> },
+    { title: "Elevator", icon: <ElevatorIcon sx={{ color: '#222222' }} /> },
+    { title: "Buzzer/wireless intercom", icon: <DialpadIcon sx={{ color: '#222222' }} /> },
   ]
 
   const matchIcon = (amenity, icons) => {
     const obj = icons.find((obj) => obj.title === amenity)
-    if (!obj) return <CheckIcon />
+    if (!obj) return <CheckIcon sx={{ color: '$clr-black' }} />
     return obj.icon
   }
+
+  const handleOnClick = (func) => {
+    func()
+  }
+
+  const setLoginModal = () => setLoginModalIsOpen(prev => !prev)
 
   return (
     <section className="stay-amenities">
@@ -91,7 +103,22 @@ export const StayAmenities = ({ amenities }) => {
         })
         }
       </ul>
-      <button className="show-all">{`Show all ${amenities.length} amenities`}</button>
+      <button className="show-all" onClick={() => handleOnClick(setLoginModal)}>{`Show all ${amenities.length} amenities`}</button>
+      {loginModalIsOpen &&
+        <StayAmenitiesModal>
+          <ul className="amenities-list-modal">
+            {amenities.map(amenity => {
+              return (
+                <li className='amenities-item' key={amenity}>
+                  {matchIcon(amenity, amenitiesIcons)}
+                  {amenity}
+                </li>
+              )
+            })
+            }
+          </ul>
+        </StayAmenitiesModal>
+      }
     </section>
   )
 }

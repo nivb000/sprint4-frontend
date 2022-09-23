@@ -53,7 +53,7 @@ export const StayPreview = ({ stay }) => {
       </Swiper>
     </>
     <div className="preview-title">
-      <h1>{stay.name.substring(0,20)+'...'}</h1>
+      <h1>{stay.name.substring(0,30)+'...'}</h1>
       <div className='preview-rating'>
         <Rating rating={stay.rating} />
       </div>
