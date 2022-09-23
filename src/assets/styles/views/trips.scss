@@ -19,6 +19,15 @@
       }
       .trip-text-container{
         margin-inline-start: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .bottom-section {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
       }
     }
   }

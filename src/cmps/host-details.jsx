@@ -29,7 +29,7 @@ export const HostDetails = ({ stay }) => {
     </div>
     <div className="details-card-one">
       <div className="sub-details-img">
-        <MilitaryTechSharpIcon fontSize='large' />
+        <MilitaryTechSharpIcon sx={{ color: '$clr-black' }} fontSize='large' />
       </div>
       <div className="sub-details-text">
         <h3>{`${stay.host.fullname.split(' ')[0]} is a Superhost`}</h3>
@@ -39,7 +39,7 @@ export const HostDetails = ({ stay }) => {
 
     <div className="details-card-two">
       <div className="sub-details-img">
-        <WavesSharpIcon fontSize='large' />
+        <WavesSharpIcon sx={{ color: '$clr-black' }} fontSize='large' />
       </div>
       <div className="sub-details-text">
         <h3>Dive right in</h3>

@@ -4,6 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loadOrders } from "../store/order.action"
 import { Loader } from '../cmps/loader'
 import { utilService } from '../services/util.service'
+import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
+import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+
 
 export const Trips = () => {
 
@@ -39,10 +43,15 @@ export const Trips = () => {
         return <li key={order._id}>
           <img src={require(`../assets/imgs/preview-imgs/${utilService.getRandomIntInclusive(1, 20)}.webp`)} alt="host-img" />
           <div className="trip-text-container">
-            <h4>{order.stay.name}</h4>
-            <p>{`Hosted by ${order.fullname}`}</p>
-            <p>{`${order.startDate} - ${order.endDate}`}</p>
-            <p style={order.status === 'approved' ? { color: 'green' } : { color: 'rgb(233, 198, 0)' }}>{order.status}</p>
+            <div className="upper-section">
+              <h4>{order.stay.name}</h4>
+              <p>{`Hosted by ${order.fullname}`}</p>
+              <p>{`${order.startDate} - ${order.endDate}`}</p>
+            </div>
+            <div className="bottom-section">
+              <i>{order.status === 'approved' ? < DoneOutlineIcon color="success" fontSize="small"/> : <HourglassEmptyIcon sx={{ color: 'rgb(233, 198, 0)' }} fontSize="small"/>} </i>
+              <p style={order.status === 'approved' ? { color: 'green' } : { color: 'rgb(233, 198, 0)' }}>{order.status}</p>
+            </div>
           </div>
         </li>
       })}
