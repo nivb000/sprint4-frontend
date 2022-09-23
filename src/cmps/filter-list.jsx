@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../assets/styles/cmps/carusel.scss";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation,Coverflow, grid} from "swiper";
 
 
 export const FilterList = () => {
@@ -50,37 +50,39 @@ export const FilterList = () => {
 
         <div className="filter-main">
             <button className='filters-btn'>
-                <div className='filter-div'><TuneIcon fontSize='small' />Filters</div>
+                <div className='filter-div'><TuneIcon fontSize='small' /> &nbsp;&nbsp;&nbsp;Filters</div>
             </button>
             <div className="carusel-filter-main">
                 <>
                     <Swiper
-                        slidesPerView={16.8}
-                        spaceBetween={-85}
-                        slidesPerGroup={10}
-                        loop={false}
-                        loopFillGroupWithBlank={true}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        navigation={true}
-                        modules={[Pagination, Navigation]}
-                        className="mySwiper"
+                    slidesPerView={9.9}
+                    spaceBetween={-85}
+                    slidesPerGroup={3}
+                    loop={false}
+                    loopFillGroupWithBlank={false}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    Coverflow={true}
+                    navigation={true}
+                    modules={[Pagination, Navigation]}
+                    className="mySwiper"
                     >
-                        {labels.map(label =>
-                            <SwiperSlide onClick={() => handleChange(label)}>
-                                <button>
-                                    <span>
-                                        <img src={require(`../assets/imgs/filter-icons/${label.toLowerCase()}.jpeg`)} alt={label} />
-                                    </span>
-                                    <span>{label}</span>
-                                </button>
-                            </SwiperSlide>
-                        )}
-                    </Swiper>
-                </>
-            </div>
+                    {labels.map(label =>
+                        <SwiperSlide onClick={() => handleChange(label)}>
+                            <button>
+                                <span>
+                                    <img src={require(`../assets/imgs/filter-icons/${label.toLowerCase()}.jpeg`)} alt={label} />
+                                </span>
+                                <span>{label}</span>
+                            </button>
+                        </SwiperSlide>
+                    )}
+                </Swiper>
+
+            </>
         </div>
+        </div >
     );
 }
 

@@ -31,17 +31,22 @@
 }
 
 .carusel-filter-main {
-    max-width: 1550px;
-    display: flex;
+    display: inline-block;
+
+    width: 93rem;
+    min-width: 93rem;
+    // display: flex;
     align-items: center;
     .swiper-button-next {
-        border: 0.5px solid rgb(0 0 0 / 0.3);
+        border: 0.5px solid rgba(0, 0, 0, 0.3);
         border-radius: 30px;
-        width: 25px;
-        height: 25px;
-        font-size: 12px;
+        width: 27px;
+        height: 27px;
+        font-size: 13px;
         color: black;
-        margin-left: 20px;
+        margin-right: 16px;
+
+        margin-top: -14px;
     }
 
     .swiper-button-next:hover {
@@ -49,32 +54,38 @@
     }
 
     .swiper-button-next::after {
-        font-size: 17px;
+        font-size: 13px;
         color: black;
 
 
     }
 
     .swiper-button-next::before {
-        font-size: 17px;
+        font-size: 13px;
         color: black;
     }
 
     .swiper-button-prev {
-        border: 0.4px solid rgb(212, 211, 211);
+        border: 0.5px solid rgba(0, 0, 0, 0.3);
         border-radius: 30px;
-        width: 35px;
-        height: 35px;
-
+        width: 27px;
+        height: 27px;
+        font-size: 13px;
+        color: black;
+        margin-left: 20px;
+        margin-top: -14px;
+        display: flex;
+        
     }
 
     .swiper-button-prev::after {
-        font-size: 15px;
+        font-size: 13px;
         color: black;
     }
 
     .swiper-button-prev:hover {
         box-shadow: rgb(0 0 0 / 16%) 0 0 6px;
+
     }
 
     button {
@@ -84,6 +95,10 @@
         border: none;
         background: none;
         font-family: 'cereal-medium';
+    }
+    .swiper-wrapper{
+        // width: 9%;
+
     }
 }
 

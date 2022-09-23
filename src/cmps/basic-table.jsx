@@ -1,6 +1,6 @@
 import EnhancedTable from "./dash-table-lib";
 import { Loader } from '../cmps/loader'
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { updateOrder } from "../store/order.action"
@@ -9,21 +9,14 @@ import { SelectStatus } from "./select-status";
 
 export const BasicTable = ({ orders }) => {
 
+    useEffect(() => {
+        updateOrder()
+      }, [orders])
+
     console.log('orders---:', orders)
 
-    const dispatch = useDispatch()
-
-
-    const onUpdateOrder = ({ order }) => {
-        console.log(':orders', order)
-        dispatch(updateOrder(order))
-    }
-    const onUpdatebtn = ({ status }) => {
-      
-    }
-
-    function converOrderToRow({ _id, status, guests, startDate, endDate, stay, totalPrice }) {
-        return { id: _id, status: <SelectStatus status={status} />,  guests, startDate, endDate, placeName: stay.name, totalPrice: '$' + totalPrice };
+    function converOrderToRow(order) {
+        return { id: order._id, status: <SelectStatus order={order} />,  guests: order.guests, startDate: order.startDate, endDate: order.endDate, placeName: order.stay.name, totalPrice: '$' + order.totalPrice };
     }
 
     const headCells = [
