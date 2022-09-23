@@ -7,6 +7,13 @@
         aspect-ratio: 1/1;
     }
 
+    .preview-like-btn{
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        color: white !important;
+    }
+
     .preview-title {
         display: flex;
         justify-content: space-between;
@@ -16,7 +23,6 @@
             font-size: 0.9rem;
             letter-spacing: 0.8px;
         }
-
         .preview-rating {
             display: flex;
         }

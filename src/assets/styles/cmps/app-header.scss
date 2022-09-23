@@ -1,12 +1,19 @@
 .app-header {
-  
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 5;
     border-bottom: 1px solid $clr-border;
     margin-block-end: 2rem;
+    // background-color: rgb(156, 235, 153);
     .main-header {
         height: 80px;
+        // &.opened{
+        //     height: 160px;
+        // }
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        padding-block-start: 1.3rem;
         .logo {
             width: 100px;
             display: flex;
@@ -29,6 +36,7 @@
             box-shadow: $boxShadow;
             border-radius: 30px;
             display: flex;
+            height: min-content;
             justify-content: space-around;
             width: 350px;
             cursor: pointer;
@@ -55,9 +63,23 @@
                 }
             } 
         }
+
+        .opened-search-bar{
+            width: 850px;
+            height: 65px;
+            background-color: beige;
+            border-radius: 30px;
+            .search-dest{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+
         .header-user{
             display: flex;
             align-items: center;
+            height: min-content;
             span{
                 font-size: 0.9rem;
             }

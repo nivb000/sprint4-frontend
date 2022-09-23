@@ -40,7 +40,7 @@ export const AppHeader = () => {
 
 
     return <header className='app-header'>
-        <section className='main-header main-layout'>
+        <section className='main-layout main-header opened'>
             <Link style={{ textDecoration: 'none' }} to={`/`}>
                 <div className='logo'>
                     <img src={logo} alt='logo' />
@@ -63,6 +63,25 @@ export const AppHeader = () => {
                     </ThemeProvider>
                 </div>
             </div>
+            {/* <div className='opened-search-bar'>
+                <div className='search-dest'>
+                    <span>Where</span>
+                    <input type="text" placeholder='Search destinations' />
+                </div>
+                <div className='check-in'>
+                    <span>Check in</span>
+                    <input type="text" placeholder='Search destinations' />
+                </div>
+                <div className='check-out'>
+                    <span>Check out</span>
+                    <input type="text" placeholder='Search destinations' />
+                </div>
+                <div className='who-guests'>
+                    <span>Who</span>
+                    <input type="text" placeholder='Search destinations' />
+                    <button>Search</button>
+                </div>
+            </div> */}
 
 
 
@@ -76,11 +95,11 @@ export const AppHeader = () => {
         </section>
 
         {loginModalIsOpen && <LoginSignup setLoginModal={() => setLoginModalIsOpen(prev => !prev)} />}
-        {userNavIsOpen && 
-        <UserNav 
-            setLoginModal={() => setLoginModalIsOpen(prev => !prev)} 
-            setUserNav={() => setUserNavIsOpen(prev => !prev)}
-            handleLogout={handleLogout}
-        />}
+        {userNavIsOpen &&
+            <UserNav
+                setLoginModal={() => setLoginModalIsOpen(prev => !prev)}
+                setUserNav={() => setUserNavIsOpen(prev => !prev)}
+                handleLogout={handleLogout}
+            />}
     </header>
 }

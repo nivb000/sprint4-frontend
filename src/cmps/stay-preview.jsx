@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Parallax, Pagination, Navigation } from "swiper";
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 
 
@@ -44,7 +44,10 @@ export const StayPreview = ({ stay }) => {
           <SwiperSlide>
             <Link to={`/stay/${stay._id}`}>
               <div className='title' data-swiper-parallax="-300">
-                <img src={img} alt='preview' />
+                <div className='preview-img-container'>
+                  <img src={img} alt='preview' />
+                  <FavoriteBorderIcon className='preview-like-btn' />
+                </div>
               </div>
             </Link>
           </SwiperSlide>)}
