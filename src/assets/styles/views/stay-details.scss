@@ -43,6 +43,8 @@
 .details-container{
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid $clr-light-grey;
+    padding-block-end: $sectionPadding;
     .left{
         flex-basis: 60%;
     }
