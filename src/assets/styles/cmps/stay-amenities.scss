@@ -8,14 +8,14 @@
   }
 
   .amenities-list {
-    height: 250px;
+    height: 225px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     list-style-type: none;
 
     &>* {
-      padding-bottom: 20px;
+      margin-bottom: 20px;
     }
   }
 
@@ -31,6 +31,7 @@
     background-color: transparent;
     border-radius: 8px;
     text-align: center;
+    font-family: "cereal-medium";
     border: 1px solid $clr-black;
 
     &:hover {

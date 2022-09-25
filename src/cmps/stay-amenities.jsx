@@ -105,8 +105,10 @@ export const StayAmenities = ({ amenities }) => {
       </ul>
       <button className="show-all" onClick={() => handleOnClick(setLoginModal)}>{`Show all ${amenities.length} amenities`}</button>
       {loginModalIsOpen &&
-        <StayAmenitiesModal>
+        <StayAmenitiesModal setLoginModal={setLoginModal}>
           <ul className="amenities-list-modal">
+            <button className="modal-close-btn" onClick={setLoginModal}>X</button>
+            <h1>What this place offers</h1>
             {amenities.map(amenity => {
               return (
                 <li className='amenities-item' key={amenity}>

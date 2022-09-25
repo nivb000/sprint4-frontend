@@ -1,0 +1,93 @@
+.reviews {
+  padding-block-start: $sectionPadding;
+  padding-block-end: $sectionPadding;
+  border-bottom: 1px solid $clr-light-grey;
+
+  .dot-separator {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .reviews-rating-container {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .reviewers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+gap: 10%;
+    display: flex;
+
+    .review {
+      list-style-type: none;
+      width: 40%;
+
+      .review-content {
+        margin-bottom: 30px;
+        color: $clr-black;
+      }
+
+      .reviewer-details {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        .reviewer-details-img {
+          height: 40px;
+          width: 40px;
+
+          img {
+            border-radius: 50%;
+          }
+        }
+
+        .reviewer-name {
+          font-family: 'cereal-medium';
+        }
+
+        .review-date {
+          color: $clr-grey;
+        }
+      }
+    }
+
+    .review-text {
+    margin-bottom: 20px;
+    }
+
+    .review-show-more {
+      display: flex;
+      align-items: center;
+      font-family: 'cereal-medium';
+      text-decoration: underline;
+    }
+
+    .show-more {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    
+  }
+  .show-all {
+    font-size: 16px;
+    padding: 13px 23px;
+    background-color: transparent;
+    border-radius: 8px;
+    text-align: center;
+    font-family: "cereal-medium";
+    border: 1px solid $clr-black;
+  
+    &:hover {
+      cursor: pointer;
+      background-color: #f7f7f7;
+    }
+}
+}

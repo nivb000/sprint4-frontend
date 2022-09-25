@@ -3,6 +3,7 @@ import { DetailsImgs } from '../cmps/details-imgs'
 import { HostDetails } from "../cmps/host-details";
 import aircover from '../assets/imgs/filter-icons/aircover.png'
 import { StayAmenities } from "../cmps/stay-amenities";
+import { Reviews } from "../cmps/reviews";
 import { useParams } from 'react-router-dom';
 import { stayService } from '../services/stay.service';
 import { OrderSection } from '../cmps/order-section'
@@ -35,12 +36,13 @@ export const StayDetails = () => {
         const stay = await stayService.getById(stayId)
         setStay(stay)
     }
-
+    
     if (!stay) return <Loader />
 
 
     return (
         <section className='stay-details'>
+            {console.log('stay:', stay)}
             <div className='deatils-header'>
                 <h1> {stay.name} </h1>
                 <div className='deatils-sub-header'>
@@ -81,6 +83,9 @@ export const StayDetails = () => {
                 <div className='right'>
                     <OrderSection stay={stay} />
                 </div>
+            </div>
+            <div className="reviews-container">
+                <Reviews reviews = {stay.reviews} rating ={Rating}/>
             </div>
             <GoogleMap stay={stay} pos={{ lat: 32.0853, lng: 34.7818 }} />
         </section>
