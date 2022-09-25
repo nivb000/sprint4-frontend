@@ -3,7 +3,6 @@ import { Doughnut } from 'react-chartjs-2'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadOrders } from "../store/order.action"
 import { useEffect } from "react";
-import { Loader } from '../cmps/loader'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 

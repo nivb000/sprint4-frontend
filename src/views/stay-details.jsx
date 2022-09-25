@@ -52,13 +52,13 @@ export const StayDetails = () => {
                             <span>&nbsp;&nbsp;·&nbsp;</span>
                             <span className='underline'>&nbsp;&nbsp;{stay.reviews.length} reviews</span>
                             <span>&nbsp;&nbsp;·&nbsp;</span>
-                            <span className='underline' >&nbsp;&nbsp;Aytotoro, Larnaka, Cyprus.</span>
+                            <span className='underline' >&nbsp;&nbsp;{stay.loc.address}</span>
                         </div>
                     </div>
                     <div className='subheader-btns'>
                         <div className='share'>
                             <IosShareIcon fontSize='small' />
-                            <span> Share</span>
+                            <span>Share</span>
                         </div>
                         <div className='save'>
                             <FavoriteBorderIcon color='red' fontSize='small' />

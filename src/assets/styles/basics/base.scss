@@ -10,9 +10,15 @@ img {
     width: 100%;
     z-index: -1;
 }
+.overlay{
+    position: absolute;
+    z-index: -1;
+    width: 99vw;
+    height: 100vh;
+}
 
 .loader {
-    margin: 0 auto;
+    margin: 15rem auto;
     border: 5px solid #f3f3f3;
     border-top: 5px solid $clr-pink;
     border-radius: 50%;

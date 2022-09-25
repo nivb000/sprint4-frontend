@@ -1,8 +1,25 @@
+import LanguageIcon from '@mui/icons-material/Language';
+
 export const Footer = () => {
 
-    return <section className="footer-main">
-        <section >
-            <div className="footer-content"> <p>© 2022 Airbna, Inc.</p>  </div>
-        </section>
+    return <section className="footer">
+        <div className="main-footer main-layout">
+            <div className="footer-details">
+                <p>© 2022 Airbna, Inc.&nbsp;&nbsp;·&nbsp;&nbsp;Privacy&nbsp;&nbsp;·&nbsp;&nbsp;Terms&nbsp;&nbsp;·&nbsp;&nbsp;Sitemap&nbsp;&nbsp;·&nbsp;&nbsp;Destinations</p>
+            </div>
+            <div className="footer-settings">
+                <div className='footer-lang'>
+                    <LanguageIcon fontSize='small' />
+                    <p>English (US)</p>
+                </div>
+                <div className='footer-currency'>
+                    <span>$</span>
+                    <p>USD</p>
+                </div>
+                <div className='footer-support'>
+                    <p>Support & resources</p>
+                </div>
+            </div>
+        </div>
     </section>
 }

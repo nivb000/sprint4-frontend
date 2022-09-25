@@ -1,8 +1,8 @@
 import { httpService } from './http.service.js'
 
 export const stayService = {
-    getById,
     query,
+    getById,
     remove,
     save
 }
@@ -13,16 +13,21 @@ async function query(filterBy) {
     try {
         let stays = await httpService.get(KEY)
         if (Object.keys(filterBy).length !== 0) {
-            let { type } = filterBy
-            stays = stays.filter(stay => (
-                stay.type.toLowerCase() === type.toLowerCase() ||
-                stay.amenities.includes(type.toLowerCase())
-            ))
+            let { type, location, guests } = filterBy
+            stays = stays.filter(stay => 
+                (stay.type.toLowerCase().includes(type.toLowerCase()) ||
+                stay.amenities.includes(type.toLowerCase())) &&
+                (stay.loc.country.toLowerCase().includes(location.toLowerCase()) ||
+                stay.loc.countryCode.toLowerCase().includes(location.toLowerCase()) ||
+                stay.loc.city.toLowerCase().includes(location.toLowerCase()) ||
+                stay.loc.address.toLowerCase().includes(location.toLowerCase())) &&
+                stay.capacity >= guests
+            )
         }
         return stays
 
     } catch (error) {
-        console.log('catch error', error);
+        throw error
     }
 }
 

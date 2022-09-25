@@ -1,12 +1,14 @@
 .filter-main {
-
     display: flex;
     align-items: center;
-    margin-block-end: 33px;
+    padding-block-start: 20px;
+    margin-block-end: 35px;
     flex-direction: row-reverse;
     justify-content: space-between;
     overflow-x: clip;
-
+    z-index: 2;
+    background-color: white;
+    height: 78px;
 
     img {
         width: 25px;

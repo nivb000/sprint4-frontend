@@ -1,107 +1,96 @@
 .app-header {
-    position: sticky;
-    width: 100%;
-    top: 0;
-    z-index: 5;
-    border-bottom: 1px solid $clr-border;
-    margin-block-end: 2rem;
-    background-color: white;
-    .main-header {
-        height: 80px;
-        // &.opened{
-        //     height: 160px;
-        // }
-        display: flex;
-        justify-content: space-between;
-        padding-block-start: 1.3rem;
-        .logo {
-            width: 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            h3 {
-                font-family: 'Mitr-regular';
-                color: $clr-pink;
-                font-size: 1.5rem;
-                letter-spacing: -1px;
-                margin-inline-start: 0.4rem;
-            }
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  border-bottom: 1px solid $clr-border;
+  background-color: white;
+  height: 80px;
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 1.3rem;
 
-            img {
-                width: 30px;
-            }
-        }
-        .search-container{
-            border: 1px solid $clr-border;
-            box-shadow: $boxShadow;
-            border-radius: 30px;
-            display: flex;
-            height: min-content;
-            justify-content: space-around;
-            width: 350px;
-            cursor: pointer;
-            > *{
-                border: 0;
-                background-color: transparent;
-                height: 45px;
-            }
-            .left, .middle{
-                div{
-                    border-right: 1px solid $clr-light-grey;
-                }
-
-            }
-            .right{
-                display: flex;
-                align-items: center;
-                color: $clr-grey;
-                font-size: 0.9rem;
-            }
-            .left, .middle, .right{
-                div{
-                    padding: 0 15px 0 15px;
-                }
-            } 
-        }
-
-        .opened-search-bar{
-            width: 850px;
-            height: 65px;
-            background-color: beige;
-            border-radius: 30px;
-            .search-dest{
-                display: flex;
-                flex-direction: column;
-            }
-        }
-
-
-        .header-user{
-            display: flex;
-            align-items: center;
-            height: min-content;
-            span{
-                font-size: 0.9rem;
-            }
-            .nav-user{
-                padding: 5px 3px 5px 12px;
-                width: 85px;
-                display: flex;
-                cursor: pointer;
-                justify-content: space-between;
-                align-items: center;
-                border: 1px solid $clr-light-grey;
-                border-radius: 30px;
-                .nav-icon{
-                    opacity: 0.9;
-                }
-                img{
-                    width: 30px;
-                    margin-inline-end: 0.3rem;
-                    opacity: 0.5;
-                    border-radius: 50%;
-                }
-            }
-        }
+    .logo {
+      width: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-block-start: 0.2rem;
+      img {
+        width: 105px;
+      }
     }
+
+    .search-container {
+      border: 1px solid $clr-border;
+      box-shadow: $boxShadow;
+      border-radius: 30px;
+      display: flex;
+      height: min-content;
+      justify-content: space-around;
+      width: 350px;
+      cursor: pointer;
+      >* {
+        border: 0;
+        background-color: transparent;
+        height: 45px;
+      }
+
+      .left,
+      .middle {
+        div {
+          border-right: 1px solid $clr-light-grey;
+        }
+
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        color: $clr-grey;
+        font-size: 0.9rem;
+      }
+
+      .left,
+      .middle,
+      .right {
+        div {
+          padding: 0 15px 0 15px;
+        }
+      }
+    }
+
+    .header-user {
+      display: flex;
+      align-items: center;
+      height: min-content;
+
+      span {
+        font-size: 0.9rem;
+      }
+
+      .nav-user {
+        padding: 5px 1px 5px 12px;
+        width: 80px;
+        display: flex;
+        cursor: pointer;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $clr-light-grey;
+        border-radius: 30px;
+
+        .nav-icon {
+          opacity: 0.9;
+        }
+
+        img {
+          width: 28px;
+          margin-inline-end: 0.3rem;
+          opacity: 0.5;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
 }

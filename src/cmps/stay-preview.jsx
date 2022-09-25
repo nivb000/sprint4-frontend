@@ -71,7 +71,7 @@ export const StayPreview = ({ stay }) => {
     </>
 
     <div className="preview-title">
-      <h1>{stay.name.substring(0, 30) + '...'}</h1>
+      {stay.name.length > 25 ? <h1>{stay.name.substring(0,25)+'...'}</h1> : <h1>{stay.name}</h1>}
       <div className='preview-rating'>
         <Rating rating={stay.rating} />
       </div>

@@ -71,7 +71,6 @@ export const ConfirmationModal = ({ stay, order }) => {
 
 
 
-                                    <p className='section-one-trip'> <span >Dates { (order.startDate) - (order.endDate) /2  }</span> <span>{`${order.startDate} - ${order.endDate}`} </span> </p>
 
                                     
 

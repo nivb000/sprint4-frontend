@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
     stays: null,
-    filter: null
+    filter: {type: '', location: '', guests: 1}
 }
 
 
@@ -21,8 +21,12 @@ export function stayReducer(state = INITIAL_STATE, action) {
                 stays: state.stays.map(stay => stay._id === action.stay._id ? action.stay : stay)
             }
 
+        // case 'SET_FILTER':
+        //     return { ...state, filter: { ...action.filter } }
+
+        // TWO OPTIONS FILTER   
         case 'SET_FILTER':
-            return { ...state, filter: { ...action.filter } }
+            return { ...state, filter: { ...state.filter, ...action.filter } }
 
         default:
             return state

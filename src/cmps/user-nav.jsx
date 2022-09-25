@@ -1,16 +1,21 @@
 import { LoginSignup } from './login-signup';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutUser } from '../store/user.action'
 import { Link } from 'react-router-dom'
 
 
-export const UserNav = ({ setLoginModal, setUserNav, handleLogout }) => {
+export const UserNav = ({ setLoginModal, setUserNav }) => {
+
+    const dispatch = useDispatch()
 
     const user = useSelector(state => state.userModule.user)
-
-    console.log('user',user);
     const handleOnClick = (func) => {
         setUserNav()
         func()
+    }
+
+    const handleLogout = () => {
+        dispatch(logoutUser())
     }
 
     return <div className="user-nav">
