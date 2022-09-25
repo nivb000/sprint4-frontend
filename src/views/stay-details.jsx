@@ -59,7 +59,7 @@ export const StayDetails = () => {
                             <span> Share</span>
                         </div>
                         <div className='save'>
-                            <FavoriteBorderIcon fontSize='small' />
+                            <FavoriteBorderIcon color='red' fontSize='small' />
                             <span>Save</span>
                         </div>
                     </div>

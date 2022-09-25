@@ -9,6 +9,7 @@ import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import { addOrder } from '../store/order.action';
 import { useDispatch, useSelector } from "react-redux"
 import { LoginSignup } from './login-signup'
+import { ConfirmationModal } from './reservation-confirmation';
 
 export const OrderSection = ({ stay }) => {
 
@@ -52,7 +53,7 @@ export const OrderSection = ({ stay }) => {
             console.log('sending order...');
             console.log(order)
             dispatch(addOrder(order))
-            alert('We received your order')
+            // alert('We received your order')
         } else {
             <LoginSignup />
         }
@@ -126,6 +127,7 @@ export const OrderSection = ({ stay }) => {
             </div>
         </section>
         <p className="footer"><AssistantPhotoIcon /><small>Report this listing</small> </p>
+       <ConfirmationModal stay={stay} order={order}/>
     </section>
 }
 

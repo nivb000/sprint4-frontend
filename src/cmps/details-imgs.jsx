@@ -8,7 +8,7 @@ export const DetailsImgs = ({ imgs }) => {
             </div>
             <div className='detalis-imgs-sub'>
                 <div className='detalis-img2-3'>
-                    <img className='img2' src={imgs[1]} alt="preview stay" />
+                    <img className='img2' src={imgs[1]} alt="preview " />
                     <img className='img3' src={imgs[2]} alt="preview stay" />
                 </div>
                 <div className='detalis-img4-5'>

@@ -5,7 +5,7 @@ import { StayDetails } from './views/stay-details'
 import { HostDashboard } from './views/host-dashboard' 
 import { Trips } from "./views/trips"
 import { Footer } from './cmps/footer'
-
+import { ConfirmationModal } from './cmps/reservation-confirmation'
 
 
 
@@ -13,7 +13,8 @@ export const RootCmp = () => {
   return (
     <div className="App">
       <AppHeader />
-
+      <ConfirmationModal />
+      
       <main className='main-layout'>
         <Routes>
           <Route path='/' element={<HomePage />}  />

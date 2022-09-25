@@ -51,7 +51,7 @@ export const HostDashboard = () => {
             sum += +order.guests
             numOfGuests++
         })
-        return sum / numOfGuests
+        return (sum / numOfGuests).toFixed(2)
     }
 
 

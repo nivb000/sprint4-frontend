@@ -1,19 +1,25 @@
 import { utilService } from '../services/util.service'
 import { Link } from 'react-router-dom'
 import { Rating } from './rating'
-import "swiper/css/bundle";
 import "../assets/styles/cmps/stay-preview.scss"
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+//for pagination  dont delete!
+// import "swiper/css/bundle";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 import { Parallax, Pagination, Navigation } from "swiper";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ToggleButton from '@mui/material/ToggleButton';
+import { WishListModal } from './wishlist-modal';
 
 
 
 export const StayPreview = ({ stay }) => {
+
+
 
   return <section className="stay-preview">
     <Link to={`/stay/${stay._id}`}>
@@ -27,6 +33,7 @@ export const StayPreview = ({ stay }) => {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
           "--swiper-pagination-size": "10px",
+
         }}
         speed={600}
         parallax={true}
@@ -45,18 +52,26 @@ export const StayPreview = ({ stay }) => {
             <Link to={`/stay/${stay._id}`}>
               <div className='title' data-swiper-parallax="-300">
                 <div className='preview-img-container'>
+
                   <img src={img} alt='preview' />
-                  <FavoriteBorderIcon className='preview-like-btn' />
+                  
+                    < ToggleButton className='preview-unlike-btn'>
+                      <FavoriteIcon />
+                    </ToggleButton>
+                    < ToggleButton className='preview-like-btn'>
+                      <FavoriteIcon />
+                    </ToggleButton>
+                 
                 </div>
               </div>
             </Link>
           </SwiperSlide>)}
-
-
+        
       </Swiper>
     </>
+
     <div className="preview-title">
-      <h1>{stay.name.substring(0,30)+'...'}</h1>
+      <h1>{stay.name.substring(0, 30) + '...'}</h1>
       <div className='preview-rating'>
         <Rating rating={stay.rating} />
       </div>
