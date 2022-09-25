@@ -3,7 +3,7 @@
 
     img {
         cursor: pointer;
-        border-radius: 15px;
+        border-radius: 10px;
         aspect-ratio: 1/1;
     }
 
@@ -36,9 +36,8 @@
     .preview-price {
         margin-block-start: 0.5rem;
         p{
-            font-size: 0.9rem;
+            font-size: 0.99rem;
         }
-
         span {
             font-family: 'cereal-bold';
         }

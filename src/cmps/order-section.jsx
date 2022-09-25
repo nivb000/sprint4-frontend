@@ -125,7 +125,7 @@ export const OrderSection = ({ stay }) => {
                 </div>
             </div>
         </section>
-        <p className="footer"><AssistantPhotoIcon /><small>Report this listing</small> </p>
+        <p className="order-footer"><AssistantPhotoIcon /><small>Report this listing</small></p>
     </section>
 }
 

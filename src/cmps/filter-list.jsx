@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../assets/styles/cmps/carusel.scss";
-import { Pagination, Navigation,Coverflow, grid} from "swiper";
+import { Pagination, Navigation } from "swiper";
 
 
 export const FilterList = () => {
@@ -63,7 +63,6 @@ export const FilterList = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    Coverflow={true}
                     navigation={true}
                     modules={[Pagination, Navigation]}
                     className="mySwiper"

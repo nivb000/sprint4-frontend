@@ -5,8 +5,6 @@ import {utilService} from '../services/util.service'
 
 export const HostDetails = ({ stay }) => {
 
-  console.log(stay);
-
   const hostImg = require(`../assets/imgs/square-profile-imgs/${utilService.getRandomIntInclusive(1,20)}.jpg`)
 
   return <section className="host-details">
