@@ -1,12 +1,14 @@
-.order-section{
+.order-section {
     position: sticky;
     top: 115px;
+
     .order-container {
         border: 1px solid #00000015;
         border-radius: 13px;
         padding: 20px;
         width: 375px;
         box-shadow: $boxShadow;
+
         input {
             border: none;
             outline: none;
@@ -154,6 +156,7 @@
             .cell:nth-child(n + #{10 * $i + 1}):nth-child(-n + #{10 * ($i + 1)}):hover~.content {
                 --positionY: #{$i};
             }
+            
         }
     }
 
@@ -163,10 +166,11 @@
         z-index: 1;
     }
 
+  
     .content {
         --positionX: 0;
         --positionY: 5;
-
+        z-index: 1;
         position: absolute;
         top: 0;
         right: 0;
@@ -207,9 +211,17 @@
         justify-content: center;
         align-items: center;
         margin-block-start: 1rem;
+
         small {
             text-decoration: underline;
             margin-inline-start: 12px;
         }
     }
 }
+.open-confirmation-cmp {
+    background: none;
+    z-index: 1000;
+    border: none;
+}
+
+

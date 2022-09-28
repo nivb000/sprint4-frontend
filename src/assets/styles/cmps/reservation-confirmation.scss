@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    margin-bottom: 13px;
 
 }
 
@@ -28,7 +28,7 @@
 
 .reviews-confirmation {
     display: flex;
-    margin-top: 43px;
+    margin-top: 70px;
     font-size: 1rem;
     margin-left: -4px;
     
@@ -89,6 +89,7 @@
 .confirmation-img {
     margin-bottom: 20px;
     min-width: 180px;
+    max-width: 280px;
     height: 180px;
     border-radius: 15px;
 }
@@ -171,8 +172,6 @@
     color: rgb(92, 92, 92);
 
 }
-        
-    
 
     .section-four-fee {
         display: flex;
@@ -182,4 +181,24 @@
         padding-bottom: 20px;
         text-decoration: underline;
     }
+}
+.inside-card-4{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column-reverse;
+    align-items: center;
+
+}
+.section-four-total{
+    margin-top: 36px;
+} 
+.back-to-trips{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color:black;
+    font-size:1.3rem;
+    text-decoration-line: none;
+    margin-bottom: 10px;
 }

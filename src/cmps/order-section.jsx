@@ -14,6 +14,7 @@ import { ConfirmationModal } from './reservation-confirmation';
 export const OrderSection = ({ stay }) => {
 
     const dispatch = useDispatch()
+
     const user = useSelector(state => state.userModule.user)
     const [dates, setDates] = useState([Date.now(), Date.now() + 6.048e+8])
 
@@ -133,7 +134,7 @@ export const OrderSection = ({ stay }) => {
 
 
 
-{/* <div className="date-input in">
+    {/* <div className="date-input in">
     <label>CHECK-IN</label>
     <input type="date" name="startDate" />
 </div>

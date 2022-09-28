@@ -7,6 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import StarIcon from '@mui/icons-material/Star'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,7 +17,7 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 555,
-    height: 820,
+    height: 880,
     bgcolor: 'background.paper',
     border: '0.11px solid  #dfdfdf',
     boxShadow: 24,
@@ -27,17 +28,19 @@ const style = {
 
 
 
-export const ConfirmationModal = ({ stay, order }) => {
+export const ConfirmationModal = ({ stay, order ,user}) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+console.log('user:' , user)
 
 
     if (order)
         return (
 
             <div >
-                <Button onClick={handleOpen}>Reserve
+                <Button style={{fontSize: '0.9rem',color:'white' }} onClick={handleOpen}>Reserve
                 </Button>
                 <Modal
                     open={open}
@@ -90,8 +93,12 @@ export const ConfirmationModal = ({ stay, order }) => {
                                     <p className='section-three-total'>  <span>Total</span>   <span className='total'>${order.totalPrice * (8)} </span></p>
                                 </div>
 
-                                <div className='inside-card'>
+                                <div className='inside-card-4'>
                                     <p className='section-four-total'><span className='close-btn-confirmation'><CloseIcon fontSize='medium' onClick={handleClose} /></span></p>
+                               
+                                    {/* <Link className='back-to-trips' to={`/trips/${user._id}`}>Back to my trips</Link> */}
+
+                                    
 
                                 </div>
                             </div>

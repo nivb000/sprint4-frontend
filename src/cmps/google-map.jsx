@@ -4,7 +4,7 @@ import { useState } from "react"
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
-export function GoogleMap({pos ,stay }) {
+export function GoogleMap({ pos, stay }) {
     const [coordinates, setCoordinates] = useState({ lat: stay.loc.lat, lng: stay.loc.lan })
     const zoom = 11
 
@@ -15,8 +15,11 @@ export function GoogleMap({pos ,stay }) {
     }
 
     return (
+
         // Important! Always set the container height explicitly
-        <div style={{ height: '50vh', width: '100%', paddingBlockStart: '48px'}}>
+        <div style={{ height: '50vh', width: '100%', paddingBlockStart: '27px' }}>
+               <div style={{color:'#494949', fontSize: '1.5rem', fontFamily:'cereal-medium' , marginBottom: '27px' }}> Where you’ll be</div>
+           
             <GoogleMapReact
                 onClick={onClick}
                 bootstrapURLKeys={{ key: "" }}
@@ -24,8 +27,6 @@ export function GoogleMap({pos ,stay }) {
                 center={coordinates}
                 defaultZoom={zoom}
             >
-             
-            
             </GoogleMapReact>
         </div>
     )

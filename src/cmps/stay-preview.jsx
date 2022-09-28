@@ -51,6 +51,7 @@ export const StayPreview = ({ stay }) => {
           "--swiper-pagination-size": "10px",
         }}
         speed={600}
+        loop={true}
         parallax={true}
         pagination={{ clickable: true }}
         navigation={true}
@@ -58,7 +59,7 @@ export const StayPreview = ({ stay }) => {
         className="mySwiper">
         <div slot="container-start"></div>
         {stay.imgUrls.map(img =>
-          <SwiperSlide >
+          <SwiperSlide  >
             <Link to={`/stay/${stay._id}`}>
               <div className='title' data-swiper-parallax="-300">
                 <div className='preview-img-container'>

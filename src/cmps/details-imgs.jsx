@@ -1,6 +1,8 @@
 
 export const DetailsImgs = ({ imgs }) => {
 
+
+    
     return (
         <div className='detalis-imgs-main'>
             <div className='detalis-img1'>
