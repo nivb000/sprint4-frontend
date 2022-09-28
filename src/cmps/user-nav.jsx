@@ -1,4 +1,3 @@
-import { LoginSignup } from './login-signup';
 import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from '../store/user.action'
 import { Link } from 'react-router-dom'
@@ -28,8 +27,8 @@ export const UserNav = ({ setLoginModal, setUserNav }) => {
                 <li onClick={() => handleOnClick(setLoginModal)}>Log in</li>
             </> 
             : <>
-                <Link style={{ textDecoration: 'none', color:'black' }} to={`/trips/${user._id}`}><li >Trips</li></Link>
-                <Link to={`/host/${user._id}`}><li>Dashboard</li></Link>
+                <Link to={`/trips/${user._id}`} onClick={setUserNav}><li >Trips</li></Link>
+                <Link to={`/host/${user._id}`} onClick={setUserNav}><li>Dashboard</li></Link>
                 <li onClick={() => handleOnClick(handleLogout)}>Logout</li>
             </>
             }

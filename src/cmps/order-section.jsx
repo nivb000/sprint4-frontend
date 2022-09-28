@@ -10,18 +10,19 @@ import { addOrder } from '../store/order.action';
 import { useDispatch, useSelector } from "react-redux"
 import { LoginSignup } from './login-signup'
 import { ConfirmationModal } from './reservation-confirmation';
-import { StayPreview } from './stay-preview';
 
 export const OrderSection = ({ stay }) => {
 
     const dispatch = useDispatch()
     const user = useSelector(state => state.userModule.user)
-    const [dates, setDates] = useState([null, null])
+    const [dates, setDates] = useState([Date.now(), Date.now() + 6.048e+8])
 
-    // const calcOrderPrice = () => {
-    //     let Difference_In_Time = date2.getTime() - date1.getTime()
-    //     let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);   
-    // }
+    const calcOrderNights = () => {
+        let Difference_In_Time = dates[1] - dates[0]
+        let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+        return Difference_In_Days
+    }
+
 
     const [order, setOrder] = useState({
         hostId: stay.host._id,
@@ -56,13 +57,14 @@ export const OrderSection = ({ stay }) => {
         } else {
             <LoginSignup />
         }
+        calcOrderNights()
     }
 
     return <section className="order-section">
         <section className="order-container">
             <div className="order-form-header">
                 <p><span className="cost">${stay.price}</span> night</p>
-                <p><Rating rating={stay.rating} /> · <span className="reviews">{stay.reviews.length} reviews</span></p>
+                <p><Rating ratingCount={stay.reviews.length} rate={stay.rate} /> · <span className="reviews">{stay.reviews.length + 1} reviews</span></p>
             </div>
 
             <div className="order-data">
@@ -109,23 +111,22 @@ export const OrderSection = ({ stay }) => {
                 <p>You won't be charged yet</p>
                 {dates[1] &&
                     <div>
-                        <span style={{ textDecoration: 'underline' }}>${stay.price} x {dates[1].$D - dates[0].$D} nights</span>
-                        <span>{stay.price * 5}</span>
+                        <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights()} nights</span>
+                        <span>{stay.price * calcOrderNights()}</span>
                     </div>
                 }
                 <div>
                     <span style={{ textDecoration: 'underline' }}>Service fee</span>
                     <span>0$</span>
                 </div>
-                <hr />
                 <div className='total-price'>
                     <span>Total</span>
-                    <span>${stay.price * 5}</span>
+                    <span>${stay.price * calcOrderNights()}</span>
                 </div>
             </div>
         </section>
         <p className="order-footer"><AssistantPhotoIcon /><small>Report this listing</small></p>
-        <ConfirmationModal stay={stay} order={order}/>
+        <ConfirmationModal stay={stay} order={order} />
     </section>
 }
 

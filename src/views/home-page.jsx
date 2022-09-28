@@ -14,6 +14,7 @@ export const HomePage = () => {
     const location = useLocation()
 
     useEffect(() => {
+        console.log();
         setFilter()
         dispatch(loadStays())
     }, [location.search])
@@ -22,7 +23,6 @@ export const HomePage = () => {
         const filter = queryString.parse(location.search)
         dispatch(setFilterState(filter))
     }
-
 
     if (!stays) return <Loader />
 

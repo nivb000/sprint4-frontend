@@ -37,13 +37,8 @@
                 margin-block-end: 2rem;
                 font-size: 0.9rem;
             }
-
-            hr {
-                color: #00000030;
-            }
-
             span {
-                padding: 1rem 0;
+                padding: 0.5rem 0;
             }
 
             div {
@@ -51,6 +46,14 @@
                 margin-block-start: 0.5rem;
                 display: flex;
                 justify-content: space-between;
+            }
+            .total-price {
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid #00000030;
+                span{
+                    font-family: 'cereal-medium';
+                }
             }
         }
     }
@@ -190,9 +193,9 @@
         height: 100%;
         background-color: transparent;
         border: none;
-
         span {
             color: white;
+            font-family: 'cereal-medium';
         }
     }
 

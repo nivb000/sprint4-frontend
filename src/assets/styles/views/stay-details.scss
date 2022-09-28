@@ -47,6 +47,15 @@
     padding-block-end: $sectionPadding;
     .left{
         flex-basis: 60%;
+        .air-cover{
+            border-bottom: 1px solid $clr-light-grey;
+            padding-block-start: $sectionPadding;
+            padding-block-end: $sectionPadding;
+        }
+        .aircover-img{
+            width: 125px;
+            margin-block-end: 1rem;
+        }
     }
     .right{
         margin-inline-start: 3rem;

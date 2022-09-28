@@ -66,7 +66,7 @@ export const AppHeader = () => {
                         : <img src={userProfilePic} style={{opacity: '0.5'}} alt="user profile" />}
                 </div>
             </div>
-        </section> : <ExpendedHeader />}
+        </section> : <ExpendedHeader setExpendedIsOpen={setExpendedIsOpen}/>}
 
         {loginModalIsOpen && <LoginSignup setLoginModal={() => setLoginModalIsOpen(prev => !prev)} />}
         {userNavIsOpen &&
