@@ -32,7 +32,7 @@ export const SelectStatus = ({ order }) => {
     
     return (
         <div className="host-select-btn">
-            {/* <button onClick={() => { onRemoveOrder(order._id) }}>x</button> */}
+            <button onClick={() => { onRemoveOrder(order._id) }}>x</button>
             <select value={order.status} onChange={handleChange}>
                 {options.map(option => (
                     <option key={option.value} value={option.value}>

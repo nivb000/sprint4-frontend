@@ -58,7 +58,6 @@ export const FilterList = () => {
                     slidesPerView={9.9}
                     spaceBetween={-85}
                     slidesPerGroup={3}
-                    loop={false}
                     loopFillGroupWithBlank={false}
                     pagination={{
                         clickable: true,

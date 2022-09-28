@@ -88,12 +88,10 @@ export const HostDashboard = () => {
                         <p> Total Revenue<span style={{ color: 'green' }}>{getTotalIncome()}</span></p>
                     </div>
                 </div>
-
                 <div>
                     <MyChart orders={orders} />
                 </div>
             </div>
-
             <div >
                 <BasicTable orders={orders} />
             </div>

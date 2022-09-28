@@ -35,7 +35,6 @@ export const UserNav = ({ setLoginModal, setUserNav }) => {
             }
             <hr />
             <li>Host Your Home</li>
-
         </ul>
     </div >
 }
