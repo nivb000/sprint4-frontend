@@ -61,7 +61,9 @@ export const Trips = () => {
 
     {/* <h3>Where you've been</h3> */}
     <ul className="trips-grid-container">
-      {orders.reverse().map((order) => {
+      {orders
+      .reverse()
+      .map((order) => {
         if (order.status === 'pending') {
           return <li key={order._id}>
             <img src={require(`../assets/imgs/preview-imgs/${utilService.getRandomIntInclusive(1, 20)}.webp`)} alt="host-img" />
@@ -72,8 +74,8 @@ export const Trips = () => {
                 <p>{`${order.startDate} - ${order.endDate}`}</p>
               </div>
               <div className="bottom-section">
-                <i>{order.status === 'approved' ? < DoneOutlineIcon color="success" fontSize="small" /> : <HourglassEmptyIcon sx={{ color: 'rgb(233, 198, 0)' }} fontSize="small" />} </i>
-                <p style={order.status === 'approved' ? { color: 'green' } : { color: 'rgb(233, 198, 0)' }}>{order.status}</p>
+                <i>{order.status === 'approved' ? < DoneOutlineIcon color="success" fontSize="small" /> : <HourglassEmptyIcon sx={{ color: 'rgb(255, 211, 0)' }} fontSize="small" />} </i>
+                <p style={order.status === 'approved' ? { color: 'green' } : { color: 'rgb(255, 211, 0)' }}>{order.status}</p>
               </div>
             </div>
           </li>

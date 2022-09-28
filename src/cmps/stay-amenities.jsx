@@ -22,15 +22,16 @@ import CribIcon from '@mui/icons-material/Crib'
 import BeachAccessIcon from '@mui/icons-material/BeachAccess'
 import BathtubIcon from '@mui/icons-material/Bathtub'
 import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService'
-import PoolIcon from '@mui/icons-material/Pool';
-import TvIcon from '@mui/icons-material/Tv';
-import CableIcon from '@mui/icons-material/Cable';
-import LanIcon from '@mui/icons-material/Lan';
-import LocalParkingIcon from '@mui/icons-material/LocalParking';
-import SmokingRoomsIcon from '@mui/icons-material/SmokingRooms';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import ElevatorIcon from '@mui/icons-material/Elevator';
-import DialpadIcon from '@mui/icons-material/Dialpad';
+import PoolIcon from '@mui/icons-material/Pool'
+import TvIcon from '@mui/icons-material/Tv'
+import CableIcon from '@mui/icons-material/Cable'
+import LanIcon from '@mui/icons-material/Lan'
+import LocalParkingIcon from '@mui/icons-material/LocalParking'
+import SmokingRoomsIcon from '@mui/icons-material/SmokingRooms'
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter'
+import ElevatorIcon from '@mui/icons-material/Elevator'
+import DialpadIcon from '@mui/icons-material/Dialpad'
+import CloseIcon from '@mui/icons-material/Close'
 
 import { useState } from 'react'
 
@@ -105,9 +106,11 @@ export const StayAmenities = ({ amenities }) => {
       <button className="show-all" onClick={() => handleOnClick(setAmenitiesModal)}>{`Show all ${amenities.length} amenities`}</button>
       {amenitiesModalIsOpen &&
         <div className="stay-amenities-modal">
+          <div className="modal-close-btn-container">
+            <button className="modal-close-btn" onClick={setAmenitiesModal}><CloseIcon /></button>
+          </div>
           <ul className="amenities-list-modal">
-            <button className="modal-close-btn" onClick={setAmenitiesModal}>X</button>
-            <h1>What this place offers</h1>
+          <h1>What this place offers</h1>
             {amenities.map(amenity => {
               return (
                 <li className='amenities-item' key={amenity}>
