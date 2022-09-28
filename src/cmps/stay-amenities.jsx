@@ -34,11 +34,10 @@ import DialpadIcon from '@mui/icons-material/Dialpad';
 
 import { useState } from 'react'
 
-import { StayAmenitiesModal } from './stay-amenities-modal'
 
 export const StayAmenities = ({ amenities }) => {
 
-  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false)
+  const [amenitiesModalIsOpen, setAmenitiesModalIsOpen] = useState(false)
 
   const amenitiesIcons = [
     { title: "Wifi", icon: <WifiIcon sx={{ color: '#222222' }} /> },
@@ -87,7 +86,7 @@ export const StayAmenities = ({ amenities }) => {
     func()
   }
 
-  const setLoginModal = () => setLoginModalIsOpen(prev => !prev)
+  const setAmenitiesModal = () => setAmenitiesModalIsOpen(prev => !prev)
 
   return (
     <section className="stay-amenities">
@@ -103,11 +102,11 @@ export const StayAmenities = ({ amenities }) => {
         })
         }
       </ul>
-      <button className="show-all" onClick={() => handleOnClick(setLoginModal)}>{`Show all ${amenities.length} amenities`}</button>
-      {loginModalIsOpen &&
-        <StayAmenitiesModal setLoginModal={setLoginModal}>
+      <button className="show-all" onClick={() => handleOnClick(setAmenitiesModal)}>{`Show all ${amenities.length} amenities`}</button>
+      {amenitiesModalIsOpen &&
+        <div className="stay-amenities-modal">
           <ul className="amenities-list-modal">
-            <button className="modal-close-btn" onClick={setLoginModal}>X</button>
+            <button className="modal-close-btn" onClick={setAmenitiesModal}>X</button>
             <h1>What this place offers</h1>
             {amenities.map(amenity => {
               return (
@@ -119,7 +118,7 @@ export const StayAmenities = ({ amenities }) => {
             })
             }
           </ul>
-        </StayAmenitiesModal>
+        </div>
       }
     </section>
   )

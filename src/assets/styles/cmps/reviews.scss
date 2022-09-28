@@ -18,8 +18,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
-gap: 10%;
-    display: flex;
+    gap: 10%;
+
 
     .review {
       list-style-type: none;
@@ -55,7 +55,7 @@ gap: 10%;
     }
 
     .review-text {
-    margin-bottom: 20px;
+      margin-bottom: 20px;
     }
 
     .review-show-more {
@@ -74,8 +74,9 @@ gap: 10%;
         cursor: pointer;
       }
     }
-    
+
   }
+
   .show-all {
     font-size: 16px;
     padding: 13px 23px;
@@ -84,10 +85,100 @@ gap: 10%;
     text-align: center;
     font-family: "cereal-medium";
     border: 1px solid $clr-black;
-  
+
     &:hover {
       cursor: pointer;
       background-color: #f7f7f7;
     }
-}
+  }
+
+  .reviews-list-modal {
+    position: fixed;
+    display: flex;
+    justify-items: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+    top: 20%;
+    left: 35%;
+    background-color: #fefefe;
+    z-index: 3;
+    border: 1px solid $clr-grey;
+    border-radius: 15px;
+    padding: 20px;
+    overflow: auto;
+  
+    .modal-close-btn-container {
+      position: fixed;
+      width: 441px;
+      height: 50px;
+      background-color: #fefefe;
+      z-index: 10;
+    }
+  
+      .review {
+        list-style-type: none;
+        position: relative;
+        top: 50px;
+  
+        .review-content {
+          margin-bottom: 30px;
+          color: $clr-black;
+        }
+  
+        .reviewer-details {
+          display: flex;
+          gap: 15px;
+          margin-bottom: 20px;
+  
+          .reviewer-details-img {
+            height: 40px;
+            width: 40px;
+  
+            img {
+              border-radius: 50%;
+            }
+          }
+  
+          .reviewer-name {
+            font-family: 'cereal-medium';
+          }
+  
+          .review-date {
+            color: $clr-grey;
+          }
+        }
+      }
+  
+      .review-text {
+      margin-bottom: 20px;
+      }
+  
+      .review-show-more {
+        font-family: 'cereal-medium';
+        text-decoration: underline;
+      }
+  
+      .modal-close-btn {
+        
+        font-family: 'cereal-medium';
+        border: 0;
+        background: transparent;
+        margin-bottom: 20px;
+        padding: 0 2px;
+        
+      
+        &:hover {
+          cursor: pointer;
+          background-color: $clr-light-grey;
+          border-radius: 50%;
+        }
+      }
+      
+      &>* {
+        padding-bottom: 20px;
+      }
+      
+    }
 }

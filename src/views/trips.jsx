@@ -37,23 +37,47 @@ export const Trips = () => {
 
   return <section className="trips">
     <h1 className='trips-title'>Trips</h1>
-    <h3>Where you've been</h3>
+    {/* <h3>Your next destinations</h3>
     <ul className="trips-grid-container">
       {orders.reverse().map((order) => {
-        return <li key={order._id}>
-          <img src={require(`../assets/imgs/preview-imgs/${utilService.getRandomIntInclusive(1, 20)}.webp`)} alt="host-img" />
-          <div className="trip-text-container">
-            <div className="upper-section">
-              <h4>{order.stay.name}</h4>
-              <p>{`Hosted by ${order.fullname}`}</p>
-              <p>{`${order.startDate} - ${order.endDate}`}</p>
+        if (order.status === 'approved') {
+          return <li key={order._id}>
+            <img src={require(`../assets/imgs/preview-imgs/${utilService.getRandomIntInclusive(1, 20)}.webp`)} alt="host-img" />
+            <div className="trip-text-container">
+              <div className="upper-section">
+                <h4>{order.stay.name}</h4>
+                <p>{`Hosted by ${order.fullname}`}</p>
+                <p>{`${order.startDate} - ${order.endDate}`}</p>
+              </div>
+              <div className="bottom-section">
+                <i>{order.status === 'approved' ? < DoneOutlineIcon color="success" fontSize="small" /> : <HourglassEmptyIcon sx={{ color: 'rgb(233, 198, 0)' }} fontSize="small" />} </i>
+                <p style={order.status === 'approved' ? { color: 'green' } : { color: 'rgb(233, 198, 0)' }}>{order.status}</p>
+              </div>
             </div>
-            <div className="bottom-section">
-              <i>{order.status === 'approved' ? < DoneOutlineIcon color="success" fontSize="small"/> : <HourglassEmptyIcon sx={{ color: 'rgb(233, 198, 0)' }} fontSize="small"/>} </i>
-              <p style={order.status === 'approved' ? { color: 'green' } : { color: 'rgb(233, 198, 0)' }}>{order.status}</p>
+          </li>
+        }
+      })}
+    </ul> */}
+
+    {/* <h3>Where you've been</h3> */}
+    <ul className="trips-grid-container">
+      {orders.reverse().map((order) => {
+        if (order.status === 'pending') {
+          return <li key={order._id}>
+            <img src={require(`../assets/imgs/preview-imgs/${utilService.getRandomIntInclusive(1, 20)}.webp`)} alt="host-img" />
+            <div className="trip-text-container">
+              <div className="upper-section">
+                <h4>{order.stay.name}</h4>
+                <p>{`Hosted by ${order.fullname}`}</p>
+                <p>{`${order.startDate} - ${order.endDate}`}</p>
+              </div>
+              <div className="bottom-section">
+                <i>{order.status === 'approved' ? < DoneOutlineIcon color="success" fontSize="small" /> : <HourglassEmptyIcon sx={{ color: 'rgb(233, 198, 0)' }} fontSize="small" />} </i>
+                <p style={order.status === 'approved' ? { color: 'green' } : { color: 'rgb(233, 198, 0)' }}>{order.status}</p>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+        }
       })}
     </ul>
   </section >

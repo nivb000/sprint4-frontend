@@ -39,4 +39,41 @@
       background-color: #f7f7f7;
     }
   }
+
+  .amenities-list-modal {
+    position: fixed;
+    display: flex;
+    justify-items: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+    top: 20%;
+    left: 35%;
+    background-color: #fefefe;
+    z-index: 3;
+    border: 1px solid $clr-grey;
+    border-radius: 15px;
+    padding: 20px;
+    overflow: auto;
+
+    .modal-close-btn {
+      font-family: 'cereal-medium';
+      border: 0;
+      background: transparent;
+      margin-bottom: 20px;
+      padding: 0 2px;
+
+
+      &:hover {
+        cursor: pointer;
+        background-color: $clr-light-grey;
+        border-radius: 50%;
+      }
+    }
+
+    &>* {
+      padding-bottom: 20px;
+    }
+  }
 }

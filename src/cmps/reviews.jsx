@@ -2,19 +2,16 @@ import { Rating } from '../cmps/rating'
 import { utilService } from '../services/util.service'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useState } from 'react'
-import { ReviewsModal } from './reviews-modal'
 
 export var Reviews = ({ reviews }) => {
-  
-  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false)
-  
-  reviews = reviews.reverse()
+
+  const [reviewsModalIsOpen, setReviewsModalIsOpen] = useState(false)
 
   const handleOnClick = (func) => {
     func()
   }
 
-  const setLoginModal = () => setLoginModalIsOpen(prev => !prev)
+  const setReviewsModal = () => setReviewsModalIsOpen(prev => !prev)
 
   const truncate = (input) => input.length > 100 ? `${input.substring(0, 250)}...` : input;
 
@@ -54,7 +51,7 @@ export var Reviews = ({ reviews }) => {
               <div className="show-more">
                 {review.txt.length > 100 &&
                   <div className="review-show-more">
-                    <span className='review-show-more' onClick={() => handleOnClick(setLoginModal)}>Show more</span>
+                    <span className='review-show-more' onClick={() => handleOnClick(setReviewsModal)}>Show more</span>
                     <KeyboardArrowRightIcon fontSize='small' />
                   </div>
                 }
@@ -64,12 +61,12 @@ export var Reviews = ({ reviews }) => {
         })}
       </ul>
 
-      <button className="show-all" onClick={() => handleOnClick(setLoginModal)}>{`Show all ${reviews.length} reviews`}</button>
-      {loginModalIsOpen &&
-        <ReviewsModal setLoginModal={setLoginModal}>
+      <button className="show-all" onClick={() => handleOnClick(setReviewsModal)}>{`Show all ${reviews.length} reviews`}</button>
+      {reviewsModalIsOpen &&
+        <div className="reviews-modal">
           <ul className="reviews-list-modal">
             <div className="modal-close-btn-container">
-            <button className="modal-close-btn" onClick={setLoginModal}>X</button>
+              <button className="modal-close-btn" onClick={setReviewsModal}>X</button>
             </div>
             {reviews.map((review) => {
               var d = new Date(review.at)
@@ -95,7 +92,7 @@ export var Reviews = ({ reviews }) => {
               </li>
             })}
           </ul>
-        </ReviewsModal>
+        </div>
       }
     </section>
   )
