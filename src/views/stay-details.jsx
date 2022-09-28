@@ -20,7 +20,6 @@ export const StayDetails = () => {
     const [stay, setStay] = useState()
     const params = useParams()
 
-    console.log(stay);
 
     useEffect(() => {
         loadStay()

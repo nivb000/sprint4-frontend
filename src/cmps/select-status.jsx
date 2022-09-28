@@ -22,7 +22,6 @@ export const SelectStatus = ({ order }) => {
         
         const status = event.target.value
         order.status = status
-        console.log(':order' ,order )
         dispatch(updateOrder(order))
     };
 

@@ -27,7 +27,6 @@ export const StayPreview = ({ stay }) => {
   const user = useSelector(state => state.userModule.user)
   const dispatch = useDispatch()
 
-console.log('stay:' , stay)
 
   const onUpdateStay = () => {
     stay.likedByUsers.push(user.fullname)
@@ -56,9 +55,9 @@ console.log('stay:' , stay)
       <Swiper
         style={{
 
-          "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
-            "--swiper-pagination-size": "10px",
+          "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-size": "15px",
         }}
         speed={600}
         loop={true}

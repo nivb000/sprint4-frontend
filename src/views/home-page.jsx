@@ -13,6 +13,7 @@ export const HomePage = () => {
     const dispatch = useDispatch()
     const location = useLocation()
 
+    
     useEffect(() => {
         setFilter()
         dispatch(loadStays())
