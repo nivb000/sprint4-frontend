@@ -104,7 +104,7 @@ export const OrderSection = ({ stay }) => {
                 {Array(79).fill(<div className="cell"></div>)}
                 <div className="content">
                     <button className="action-btn"> 
-                        <span>Reserve</span>
+                    <ConfirmationModal user={user} stay={stay} order={order} />
                     </button>
                 </div>
             </div>
@@ -127,7 +127,6 @@ export const OrderSection = ({ stay }) => {
             </div>
         </section>
         <p className="order-footer"><AssistantPhotoIcon /><small>Report this listing</small></p>
-        <ConfirmationModal stay={stay} order={order} />
     </section>
 }
 

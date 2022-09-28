@@ -33,7 +33,7 @@ export const ConfirmationModal = ({ stay, order ,user}) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-console.log('order:' , order)
+console.log('user:' , user)
 
 
     if (order)
@@ -69,10 +69,6 @@ console.log('order:' , order)
                                 <div className='inside-card'>
                                     <p className='section-one-header' >Your Trip</p>
                                     <p className='section-one-trip'> <span >Dates</span> <span>{`${order.startDate} - ${order.endDate}`} </span> </p>
-
-
-
-
 
 
                                     <p className='section-one-guests'>  <span>Guests</span>{order.guests}</p>
