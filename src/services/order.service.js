@@ -13,8 +13,6 @@ function query(filter) {
 
     return httpService.get(KEY)
         .then(orders => {
-            console.log('orders:' , orders)
-            
             if (!orders || !orders.length) {
                 console.log('no orders');
             }

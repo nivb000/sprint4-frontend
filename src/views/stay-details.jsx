@@ -88,7 +88,7 @@ export const StayDetails = () => {
             <div className="reviews-container">
                 <Reviews reviews={stay.reviews} rating={stay.rate}/>
             </div>
-            <GoogleMap stay={stay} />
+            <GoogleMap pos={{lat: stay.loc.lat, lan: stay.loc.lan}} />
         </section>
     )
 }
