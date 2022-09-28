@@ -17,18 +17,11 @@ import { updateStay } from "../store/stay.action"
 import { useSelector } from 'react-redux';
 
 
-
-
-
 export const StayPreview = ({ stay }) => {
 
   const user = useSelector(state => state.userModule.user)
   const dispatch = useDispatch()
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 3099704f4efba505e2ba211a77e1be21fd84a477
   const onUpdateStay = () => {
     stay.likedByUsers.push(user.fullname)
     dispatch(updateStay(stay))
@@ -37,14 +30,11 @@ export const StayPreview = ({ stay }) => {
   const handleHover = (ev, value) => {
     ev.stopPropagation();
     ev.nativeEvent.stopImmediatePropagation();
-
   }
-
 
   const toggleLikeBtn = () => {
     console.log('toggle');
   }
-
 
   return <section className="stay-preview">
     <>
@@ -70,10 +60,10 @@ export const StayPreview = ({ stay }) => {
 
                   <img src={img} alt='preview' />
                   < ToggleButton className='preview-unlike-btn'>
-                    <FavoriteIcon onClick={toggleBtn} />
+                    <FavoriteIcon />
                   </ToggleButton>
                   < ToggleButton className='preview-like-btn'>
-                    <FavoriteIcon onClick={toggleBtn} />
+                    <FavoriteIcon  />
                   </ToggleButton>
 
                 </div>
