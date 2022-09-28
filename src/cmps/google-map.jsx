@@ -44,7 +44,7 @@ export function GoogleMap({ pos }) {
             <div style={{ color: '#494949', fontSize: '1.5rem', fontFamily: 'cereal-medium', marginBottom: '27px' }}> Where you’ll be</div>
             <GoogleMapReact
                 onClick={onClick}
-                bootstrapURLKeys={{ key: "AIzaSyA36b7We_tjp91ABvxos4yefbmxkgPNUIM" }}
+                bootstrapURLKeys={{ key: "" }}
                 defaultCenter={coordinates}
                 center={coordinates}
                 defaultZoom={zoom}>
