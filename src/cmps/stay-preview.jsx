@@ -17,9 +17,6 @@ import { updateStay } from "../store/stay.action"
 import { useSelector } from 'react-redux';
 
 
-
-
-
 export const StayPreview = ({ stay }) => {
 
   const user = useSelector(state => state.userModule.user)
@@ -33,14 +30,11 @@ export const StayPreview = ({ stay }) => {
   const handleHover = (ev, value) => {
     ev.stopPropagation();
     ev.nativeEvent.stopImmediatePropagation();
-
   }
-
 
   const toggleLikeBtn = () => {
     console.log('toggle');
   }
-
 
   return <section className="stay-preview">
     <>
@@ -48,7 +42,7 @@ export const StayPreview = ({ stay }) => {
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
-          "--swiper-pagination-size": "10px",
+            "--swiper-pagination-size": "10px",
         }}
         speed={600}
         loop={true}
@@ -63,8 +57,15 @@ export const StayPreview = ({ stay }) => {
             <Link to={`/stay/${stay._id}`}>
               <div className='title' data-swiper-parallax="-300">
                 <div className='preview-img-container'>
+
                   <img src={img} alt='preview' />
-                  <FavoriteIcon className='preview-unlike-btn' />
+                  < ToggleButton className='preview-unlike-btn'>
+                    <FavoriteIcon />
+                  </ToggleButton>
+                  < ToggleButton className='preview-like-btn'>
+                    <FavoriteIcon  />
+                  </ToggleButton>
+
                 </div>
               </div>
             </Link>

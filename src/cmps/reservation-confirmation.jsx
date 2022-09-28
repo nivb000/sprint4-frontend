@@ -33,7 +33,7 @@ export const ConfirmationModal = ({ stay, order ,user}) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-console.log('user:' , user)
+console.log('order:' , order)
 
 
     if (order)
@@ -52,7 +52,7 @@ console.log('user:' , user)
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
 
                             <div className='confirmation-header'>
-                                <p className='confirmation-header-txt'>Your reservation is confirmed
+                                <p className='confirmation-header-txt'>We received your order
                                 </p>
                             </div>
                             <div className='sub-txt-main'>
@@ -96,13 +96,10 @@ console.log('user:' , user)
                                 <div className='inside-card-4'>
                                     <p className='section-four-total'><span className='close-btn-confirmation'><CloseIcon fontSize='medium' onClick={handleClose} /></span></p>
                                
-                                    {/* <Link className='back-to-trips' to={`/trips/${user._id}`}>Back to my trips</Link> */}
-
-                                    
+                                    <Link className='back-to-trips' to={`/trips/${user._id}`}>My trips</Link>
 
                                 </div>
                             </div>
-
 
                         </Typography >
                     </Box>

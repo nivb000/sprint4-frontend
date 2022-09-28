@@ -9,7 +9,7 @@ export function GoogleMap({ pos, stay }) {
     const zoom = 11
 
 
-    
+
     const onClick = ({ x, y, lat, lng, event }) => {
         setCoordinates({ lat, lng })
     }
