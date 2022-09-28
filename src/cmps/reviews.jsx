@@ -3,7 +3,7 @@ import { utilService } from '../services/util.service'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useState } from 'react'
 
-export var Reviews = ({ reviews }) => {
+export var Reviews = ({ reviews, rating }) => {
 
   const [reviewsModalIsOpen, setReviewsModalIsOpen] = useState(false)
 
@@ -18,7 +18,7 @@ export var Reviews = ({ reviews }) => {
   return (
     <section className="reviews">
       <div className='reviews-rating-container'>
-        <Rating />
+        <Rating ratingCount={reviews.length} rate={rating} />
         <span className='dot-separator'>·</span>
         <span className='reviews-count'>{reviews.length} reviews</span>
       </div>
