@@ -3,7 +3,7 @@ import { Loader } from '../cmps/loader'
 import { useRef, useState } from 'react';
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { updateOrder } from "../store/order.action"
+import { updateOrder ,removeOrder  } from "../store/order.action"
 import { SelectStatus } from "./select-status";
 
 
@@ -13,8 +13,7 @@ export const BasicTable = ({ orders }) => {
         updateOrder()
       }, [orders])
 
-    console.log('orders---:', orders)
-
+  
     function converOrderToRow(order) {
         return { id: order._id, status: <SelectStatus order={order} />,  guests: order.guests, startDate: order.startDate, endDate: order.endDate, placeName: order.stay.name, totalPrice: '$' + order.totalPrice };
     }

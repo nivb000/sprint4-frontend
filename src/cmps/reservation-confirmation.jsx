@@ -6,6 +6,8 @@ import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import StarIcon from '@mui/icons-material/Star'
+import { useState } from 'react';
+
 
 
 const style = {
@@ -29,10 +31,6 @@ export const ConfirmationModal = ({ stay, order }) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
-
-    console.log('stay:', stay)
-    console.log('order:', order)
 
 
     if (order)
@@ -61,7 +59,7 @@ export const ConfirmationModal = ({ stay, order }) => {
                                         <div className='confirmation-img-container-txt'>
                                             <span className='roomtype' >{stay.roomType}</span>
                                             <div>{stay.name}</div>
-                                            <div className='reviews'> <StarIcon fontSize='small' className='star-icon' /> 5<span className='reviews-num'> ({stay.reviews.length} reviews) </span></div>
+                                            <div className='reviews-confirmation'> <StarIcon fontSize='small' className='star-icon' /> 5<span className='reviews-num'> ({stay.reviews.length} reviews) </span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +70,7 @@ export const ConfirmationModal = ({ stay, order }) => {
 
 
 
-                                    
+
 
                                     <p className='section-one-guests'>  <span>Guests</span>{order.guests}</p>
                                 </div>

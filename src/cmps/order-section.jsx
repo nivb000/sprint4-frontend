@@ -10,6 +10,7 @@ import { addOrder } from '../store/order.action';
 import { useDispatch, useSelector } from "react-redux"
 import { LoginSignup } from './login-signup'
 import { ConfirmationModal } from './reservation-confirmation';
+import { StayPreview } from './stay-preview';
 
 export const OrderSection = ({ stay }) => {
 
@@ -51,9 +52,7 @@ export const OrderSection = ({ stay }) => {
                 fullname: user.fullname
             }
             console.log('sending order...');
-            console.log(order)
             dispatch(addOrder(order))
-            // alert('We received your order')
         } else {
             <LoginSignup />
         }
@@ -127,7 +126,7 @@ export const OrderSection = ({ stay }) => {
             </div>
         </section>
         <p className="order-footer"><AssistantPhotoIcon /><small>Report this listing</small></p>
-       <ConfirmationModal stay={stay} order={order}/>
+        <ConfirmationModal stay={stay} order={order}/>
     </section>
 }
 
