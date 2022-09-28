@@ -1,7 +1,7 @@
 import { BasicTable } from "../cmps/basic-table"
 import { MyChart } from "../cmps/my-chart"
 import { useSelector, useDispatch } from 'react-redux';
-import { loadOrders,updateOrder } from "../store/order.action"
+import { loadOrders,updateOrder ,addOrder , removeOrder} from "../store/order.action"
 import { useEffect } from "react";
 
 
@@ -18,11 +18,11 @@ export const HostDashboard = () => {
     const getOrders = () => {
         dispatch(loadOrders())
     }
-    const onUpdateOrder = () => {
-        dispatch(updateOrder())
-    }
+    // const onUpdateOrder = () => {
+    //     dispatch(updateOrder())
+    // }
 
-
+  
     const getAvragRevenue = () => {
         let sum = 0
         let numOfOrders = 0

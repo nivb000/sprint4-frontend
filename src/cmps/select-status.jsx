@@ -26,9 +26,13 @@ export const SelectStatus = ({ order }) => {
         dispatch(updateOrder(order))
     };
 
-
+    const onRemoveOrder = (orderId) => {
+        dispatch(removeOrder(orderId))
+    }
+    
     return (
         <div className="host-select-btn">
+            {/* <button onClick={() => { onRemoveOrder(order._id) }}>x</button> */}
             <select value={order.status} onChange={handleChange}>
                 {options.map(option => (
                     <option key={option.value} value={option.value}>

@@ -14,6 +14,8 @@ export const UserNav = ({ setLoginModal, setUserNav }) => {
         func()
     }
 
+    
+
     const handleLogout = () => {
         dispatch(logoutUser())
     }
@@ -33,6 +35,7 @@ export const UserNav = ({ setLoginModal, setUserNav }) => {
             }
             <hr />
             <li>Host Your Home</li>
+
         </ul>
     </div >
 }

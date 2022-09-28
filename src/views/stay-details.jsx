@@ -14,6 +14,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { GoogleMap } from '../cmps/google-map';
 
 
+
 export const StayDetails = () => {
 
     const [stay, setStay] = useState()
@@ -42,7 +43,6 @@ export const StayDetails = () => {
 
     return (
         <section className='stay-details'>
-            {console.log('stay:', stay)}
             <div className='deatils-header'>
                 <h1> {stay.name} </h1>
                 <div className='deatils-sub-header'>
@@ -50,7 +50,7 @@ export const StayDetails = () => {
                         <div className='rating'>
                             <Rating rating={stay.rating} />
                             <span>&nbsp;&nbsp;·&nbsp;</span>
-                            <span className='underline'>&nbsp;&nbsp;{stay.reviews.length} reviews</span>
+                            <span   className='underline'>&nbsp;&nbsp;{stay.reviews.length} reviews  </span>
                             <span>&nbsp;&nbsp;·&nbsp;</span>
                             <span className='underline' >&nbsp;&nbsp;{stay.loc.address}</span>
                         </div>
@@ -87,7 +87,7 @@ export const StayDetails = () => {
             <div className="reviews-container">
                 <Reviews reviews = {stay.reviews} rating ={Rating}/>
             </div>
-            <GoogleMap stay={stay} pos={{ lat: 32.0853, lng: 34.7818 }} />
+            <GoogleMap stay={stay} />
         </section>
     )
 }

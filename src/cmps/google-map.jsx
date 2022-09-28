@@ -5,11 +5,13 @@ import { useState } from "react"
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
 export function GoogleMap({pos ,stay }) {
-    const [coordinates, setCoordinates] = useState({ lat: 32.0853, lng: 34.7818 })
+    const [coordinates, setCoordinates] = useState({ lat: stay.loc.lat, lng: stay.loc.lan })
     const zoom = 11
 
+
+    console.log('stay:' , stay)
+    
     const onClick = ({ x, y, lat, lng, event }) => {
-        console.log(x, y, lat, lng, event)
         setCoordinates({ lat, lng })
     }
 
@@ -23,16 +25,8 @@ export function GoogleMap({pos ,stay }) {
                 center={coordinates}
                 defaultZoom={zoom}
             >
-                <AnyReactComponent
-                    lat={32.0748}
-                    lng={34.8946}
-                    text="📍"
-                />
-                <AnyReactComponent
-                    lat={32.0853}
-                    lng={34.7818}
-                    text="📍"
-                />
+             
+            
             </GoogleMapReact>
         </div>
     )
