@@ -40,7 +40,7 @@
     }
   }
 
-  .amenities-list-modal {
+  .stay-amenities-modal {
     position: fixed;
     display: flex;
     justify-items: center;
@@ -52,17 +52,31 @@
     left: 35%;
     background-color: #fefefe;
     z-index: 3;
-    border: 1px solid $clr-grey;
+    border: 1px solid $clr-light-grey;
     border-radius: 15px;
     padding: 20px;
+    padding-top: 0px;
     overflow: auto;
+
+    .modal-close-btn-container {
+      position: fixed;
+      display: flex;
+      align-items: center;
+      width: 458px;
+      height: 50px;
+      background-color: #fefefe;
+      z-index: 10;
+    }
+
+    h1 {
+    }
 
     .modal-close-btn {
       font-family: 'cereal-medium';
       border: 0;
       background: transparent;
-      margin-bottom: 20px;
-      padding: 0 2px;
+      height: 25px;
+      width: 25px;
 
 
       &:hover {
@@ -72,8 +86,27 @@
       }
     }
 
-    &>* {
-      padding-bottom: 20px;
+    .amenities-list-modal {
+      position: fixed;
+      display: flex;
+      justify-items: center;
+      align-items: flex-start;
+      flex-direction: column;
+      height: 500px;
+      width: 500px;
+      top: 20%;
+      left: 35%;
+      background-color: #fefefe;
+      z-index: 3;
+      border: 1px solid $clr-grey;
+      border-radius: 15px;
+      padding: 20px;
+      overflow: auto;
+      
+      
+      &>*:not(.modal-close-btn-container) {
+        padding-bottom: 20px;
+      }
     }
   }
 }

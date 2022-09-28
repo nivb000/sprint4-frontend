@@ -49,7 +49,7 @@ export const StayDetails = () => {
                 <div className='deatils-sub-header'>
                     <div className='subheader-title'>
                         <div className='rating'>
-                            <Rating rating={stay.rating} />
+                            <Rating ratingCount={stay.reviews.length} rate={stay.rate} />
                             <span>&nbsp;&nbsp;·&nbsp;</span>
                             <span   className='underline'>&nbsp;&nbsp;{stay.reviews.length} reviews  </span>
                             <span>&nbsp;&nbsp;·&nbsp;</span>

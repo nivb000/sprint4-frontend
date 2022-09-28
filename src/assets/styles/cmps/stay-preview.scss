@@ -43,29 +43,18 @@
         display: none;
     }
 
-    .preview-like-btn:hover {
-        border: none;
-        background: none;
-    }
-
     .preview-unlike-btn {
         stroke: #fff !important;
-        stroke-width: 1 !important;
+        stroke-width: 1.5px !important;
         border: none;
         position: absolute;
         z-index: 1;
-        right: 1%;
-        top: 1%;
+        right: 5%;
+        top:5%;
         display: block;
-
+        fill: rgba(0, 0, 0, 0.5);
     }
-
-    .preview-unlike-btn:hover {
-        // border: none;
-        // background: none;
-    }
-
-
+ 
 
     .preview-title {
         display: flex;
@@ -124,16 +113,11 @@
 }
 
 .swiper-button-prev::after {
-    font-size: 12px;
-    
-}
-.swiper-button-prev::after:hover {
-    font-size: 12px;
-
+    font-size: 25px;
 }
 
-.swiper-button-next:hover{
-    font-size: 12px;
+.swiper-button-next:hover {
+    font-size: 25px;
     display: flex;
     background-color: rgba(255, 255, 255);
     box-shadow: rgb(0 0 0 / 16%) 0 0 6px;

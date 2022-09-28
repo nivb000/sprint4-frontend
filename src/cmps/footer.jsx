@@ -5,8 +5,7 @@ export const Footer = () => {
     return <section className="footer">
         <div className="main-footer main-layout">
             <div className="footer-details">
-                <p>© 2022 Airbna, Inc.
-                    &nbsp;&nbsp;·&nbsp;&nbsp;Privacy&nbsp;&nbsp;·&nbsp;&nbsp;Terms&nbsp;&nbsp;·&nbsp;&nbsp;Sitemap&nbsp;&nbsp;·&nbsp;&nbsp;Destinations</p>
+                <p>© 2022 Airbna, Inc.</p>
             </div>
             <div className="footer-settings">
                 {/* <div className='footer-lang'>
