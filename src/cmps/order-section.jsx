@@ -100,9 +100,8 @@ export const OrderSection = ({ stay }) => {
             <div className="btn-container" onClick={handleReserve}>
                 {Array(79).fill(<div className="cell"></div>)}
                 <div className="content">
-                    <button className="action-btn">
-                        {!dates[1] ? <span>Check availability</span>
-                            : <span>Reserve</span>}
+                    <button className="action-btn"> 
+                        <span>Reserve</span>
                     </button>
                 </div>
             </div>

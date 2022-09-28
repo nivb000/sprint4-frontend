@@ -15,7 +15,6 @@ export const ExpendedHeader = () => {
     const checkInRef = useRef()
     const checkOutRef = useRef()
     const user = useSelector(state => state.userModule.user)
-    const stays = useSelector(state => state.userModule.stays)
     const [loginModalIsOpen, setLoginModalIsOpen] = useState(false)
     const [userNavIsOpen, setUserNavIsOpen] = useState(false)
     const [locIsActive, setLocIsActive] = useState(false)
@@ -25,8 +24,6 @@ export const ExpendedHeader = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [query, setQuery] = useState({
         location: '',
-        // checkIn: '',
-        // checkOut: '',
         guests: 1
     })
 

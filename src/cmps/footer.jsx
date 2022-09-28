@@ -5,17 +5,18 @@ export const Footer = () => {
     return <section className="footer">
         <div className="main-footer main-layout">
             <div className="footer-details">
-                <p>© 2022 Airbna, Inc.&nbsp;&nbsp;·&nbsp;&nbsp;Privacy&nbsp;&nbsp;·&nbsp;&nbsp;Terms&nbsp;&nbsp;·&nbsp;&nbsp;Sitemap&nbsp;&nbsp;·&nbsp;&nbsp;Destinations</p>
+                <p>© 2022 Airbna, Inc.
+                    &nbsp;&nbsp;·&nbsp;&nbsp;Privacy&nbsp;&nbsp;·&nbsp;&nbsp;Terms&nbsp;&nbsp;·&nbsp;&nbsp;Sitemap&nbsp;&nbsp;·&nbsp;&nbsp;Destinations</p>
             </div>
             <div className="footer-settings">
-                <div className='footer-lang'>
+                {/* <div className='footer-lang'>
                     <LanguageIcon fontSize='small' />
                     <p>English (US)</p>
                 </div>
                 <div className='footer-currency'>
                     <span>$</span>
                     <p>USD</p>
-                </div>
+                </div> */}
                 <div className='footer-support'>
                     <p>Support & resources</p>
                 </div>
