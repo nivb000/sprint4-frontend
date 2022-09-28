@@ -9,6 +9,10 @@
     z-index: 2;
     background-color: white;
     height: 78px;
+    .swiper-pagination-bullet {
+        display: none;
+    }
+
 
     img {
         width: 25px;
@@ -58,7 +62,7 @@
         padding: 0.9rem;
         height: 50px;
         border-radius: 15px;
-       
+
     }
 
     .filter-div {
@@ -75,4 +79,3 @@
         color: $clr-black;
     }
 }
-

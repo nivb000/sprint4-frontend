@@ -63,7 +63,7 @@ export const AppHeader = () => {
                 <div className='nav-user' onClick={() => setUserNavIsOpen(prev => !prev)}>
                     <MenuIcon className='nav-icon' fontSize='small' />
                     {user ? <img src={user.imgUrl} alt="user profile" />
-                        : <img src={userProfilePic} alt="user profile" />}
+                        : <img src={userProfilePic} style={{opacity: '0.5'}} alt="user profile" />}
                 </div>
             </div>
         </section> : <ExpendedHeader />}
