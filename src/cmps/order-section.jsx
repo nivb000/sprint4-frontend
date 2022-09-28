@@ -14,7 +14,7 @@ import { ConfirmationModal } from './reservation-confirmation';
 export const OrderSection = ({ stay }) => {
 
     const dispatch = useDispatch()
-
+    const [confirmIsOpen, setConfirmIsOpen] = useState(false)
     const user = useSelector(state => state.userModule.user)
     const [dates, setDates] = useState([Date.now(), Date.now() + 6.048e+8])
 
@@ -55,8 +55,9 @@ export const OrderSection = ({ stay }) => {
             }
             console.log('sending order...');
             dispatch(addOrder(order))
+            setConfirmIsOpen(true)
         } else {
-            <LoginSignup />
+            alert('You must Login to reserve')
         }
         calcOrderNights()
     }
@@ -65,9 +66,8 @@ export const OrderSection = ({ stay }) => {
         <section className="order-container">
             <div className="order-form-header">
                 <p><span className="cost">${stay.price}</span> night</p>
-                <p><Rating ratingCount={stay.reviews.length} rate={stay.rate} /> · <span className="reviews">{stay.reviews.length + 1} reviews</span></p>
+                <p><Rating ratingCount={stay.reviews.length} rate={stay.rate} /> · <span className="reviews">{stay.reviews.length} reviews</span></p>
             </div>
-
             <div className="order-data">
                 <div className="date-picker">
                     <LocalizationProvider
@@ -104,7 +104,7 @@ export const OrderSection = ({ stay }) => {
                 {Array(79).fill(<div className="cell"></div>)}
                 <div className="content">
                     <button className="action-btn"> 
-                    <ConfirmationModal user={user} stay={stay} order={order} />
+                        <span>Reserve</span>
                     </button>
                 </div>
             </div>
@@ -127,6 +127,13 @@ export const OrderSection = ({ stay }) => {
             </div>
         </section>
         <p className="order-footer"><AssistantPhotoIcon /><small>Report this listing</small></p>
+        {confirmIsOpen && <ConfirmationModal 
+        stay={stay} 
+        order={order} 
+        confirm={confirmIsOpen} 
+        closeConfirm={setConfirmIsOpen} 
+        userId={user._id}
+        calcNights={calcOrderNights}/>}
     </section>
 }
 
