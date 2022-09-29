@@ -5,7 +5,7 @@ import { StayDetails } from './views/stay-details'
 import { HostDashboard } from './views/host-dashboard'
 import { Trips } from "./views/trips"
 import { Footer } from "./cmps/footer"
-import { ConfirmationModal } from './cmps/reservation-confirmation'
+import { BottomNav } from './cmps/bottomNav'
 
 
 
@@ -16,8 +16,7 @@ export const RootCmp = () => {
   return (
     <div className="App">
       <AppHeader />
-      <ConfirmationModal />
-            <div className='overlay'></div>
+      <div className='overlay'></div>
       <main className='main-layout'>
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -30,6 +29,7 @@ export const RootCmp = () => {
           {/* <Route path='/about' element={<AboutUs />} /> */}
         </Routes>
       </main>
+      <BottomNav />
       {loc.pathname === '/' && <Footer />}
     </div>
   )

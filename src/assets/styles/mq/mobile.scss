@@ -1,0 +1,44 @@
+@media (max-width: 450px) {
+    .app-header {
+        margin-block-end: 0;
+        border-bottom: none;
+        .main-header{
+            .logo,
+            .header-user{
+                display: none;
+            }
+            .search-container{
+                margin: auto;
+            }
+        }
+    }
+    .main-layout{
+        .home-page{
+            .filter-main{
+                padding-block-start: 0;
+                // border-bottom: 1px solid $clr-border;
+                margin-block-end: 0.7rem;
+
+                .filters-btn{display: none;}
+                .carusel-filter-main{
+                    min-width: 74rem;
+                    margin-right: -4.563rem;
+               
+                
+                    .swiper-button-next{display: none;}
+                }
+            }
+            .stay-list{
+                .stay-preview{
+                    .swiper-button-next,
+                    .swiper-button-prev{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .footer{
+        display: none;
+    }
+}

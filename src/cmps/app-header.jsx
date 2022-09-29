@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/imgs/airbna-logo.png';
+import airbnalogo from '../assets/imgs/airbna-logo.png';
+import logo from '../assets/imgs/logo.png';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import userProfilePic from '../assets/imgs/header-icons/userprofle.jpg'
@@ -40,6 +41,7 @@ export const AppHeader = () => {
         {!expendedIsOpen ? <section className='main-layout main-header'>
             <Link style={{ textDecoration: 'none' }} to={`/`}>
                 <div className='logo'>
+                    <img src={airbnalogo} alt='logo' />
                     <img src={logo} alt='logo' />
                 </div>
             </Link >
