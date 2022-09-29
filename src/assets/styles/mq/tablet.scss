@@ -1,0 +1,26 @@
+@media (max-width: 850px) {
+    .app-header {
+        .main-header{
+            justify-content: space-between;
+            padding-block-start: 1rem;
+            .logo {
+                margin-block-start: 0.5rem;
+                margin-inline-end: 1.5rem;
+                width: 30px;
+                :first-child {
+                    display: none;
+                }
+                :last-child {
+                    display: inline;
+                    width: 30px;
+                }
+            }
+            .search-container{
+                margin-right: auto;
+            }
+            .header-user{
+                margin-block-start: 0.2rem;
+            }
+        }
+    }
+}

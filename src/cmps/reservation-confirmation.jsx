@@ -28,7 +28,7 @@ const style = {
 
 export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId, calcNights}) => {
 
-    if (order)
+    if(!order) return <Loader />
     return <Modal
             open={confirm}
             aria-labelledby="modal-modal-title"
