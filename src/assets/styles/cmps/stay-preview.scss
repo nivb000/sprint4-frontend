@@ -1,5 +1,4 @@
 .stay-preview {
-
     font-family: 'cereal-light';
 
     .swiper-button-next {
@@ -10,7 +9,7 @@
         color: black;
         background-color: rgba(255, 255, 255, 0.95);
         opacity: 85%;
-        
+        display: none;
     }
 
     .swiper-button-prev {
@@ -21,14 +20,17 @@
         color: black;
         background-color: rgba(255, 255, 255, 0.95);
         opacity: 85%;
+        display: none;
 
     }
 
-    img {
+    .main-img {
         cursor: pointer;
         border-radius: 10px;
         aspect-ratio: 1/1;
     }
+
+  
 
 
     .preview-like-btn {
@@ -49,12 +51,12 @@
         border: none;
         position: absolute;
         z-index: 1;
-        right: 5%;
-        top:5%;
+        right: 1%;
+        top: 1%;
         display: block;
         fill: rgba(0, 0, 0, 0.5);
     }
- 
+
 
     .preview-title {
         display: flex;
@@ -102,7 +104,7 @@
 }
 
 
-.swiper-button-next::after{
+.swiper-button-next::after {
     font-size: 12px;
 
 }
@@ -137,6 +139,7 @@
     width: 36px;
     height: 36px;
     transition-duration: 0.1s;
-
-
 }
+
+
+   

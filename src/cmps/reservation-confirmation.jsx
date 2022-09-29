@@ -28,7 +28,7 @@ const style = {
 
 export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId, calcNights}) => {
 
-    if (order)
+    if(!order) return <Loader />
     return <Modal
             open={confirm}
             aria-labelledby="modal-modal-title"
@@ -56,8 +56,8 @@ export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId,
                         </div>
                         <div className='inside-card'>
                             <p className='section-two-header'>Price Details</p>
-                            <p className='section-two-price'> ${order.stay.price}
-                                <span className='price-section'> ${order.stay.price} x  {calcNights()} nights</span>
+                            <p className='section-two-price'> ${order.stay.price * calcNights().toFixed(0)}
+                                <span className='price-section'> ${order.stay.price} x  {calcNights().toFixed(0)} nights</span>
                             </p>
                             <p className='section-two-fee'> $0
                                 <span className='price-section'>Service fee</span></p>
@@ -65,7 +65,7 @@ export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId,
                         <div className='inside-card'>
                             <p className='section-three-total'>
                                 <span>Total</span>
-                                <span className='total'>${order.stay.price * calcNights()} </span>
+                                <span className='total'>${order.stay.price * calcNights().toFixed(0)} </span>
                             </p>
                         </div>
                         <div className='inside-card-4'>

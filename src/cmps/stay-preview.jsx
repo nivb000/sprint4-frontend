@@ -1,8 +1,6 @@
 import { utilService } from '../services/util.service'
 import { Link } from 'react-router-dom'
 import { Rating } from './rating'
-import "../assets/styles/cmps/stay-preview.scss"
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 //for pagination  dont delete!
 // import "swiper/css/bundle";
@@ -11,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import "swiper/css/navigation";
 import { Parallax, Pagination, Navigation } from "swiper";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import ToggleButton from '@mui/material/ToggleButton';
+
 import { useDispatch } from 'react-redux';
 import { updateStay } from "../store/stay.action"
 import { useSelector } from 'react-redux';
@@ -32,18 +30,17 @@ export const StayPreview = ({ stay }) => {
     ev.nativeEvent.stopImmediatePropagation();
   }
 
-  const toggleLikeBtn = () => {
-    console.log('toggle');
-  }
 
   return <section className="stay-preview">
     <>
+    
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
-            "--swiper-pagination-size": "10px",
+            "--swiper-pagination-size": "10px",      
         }}
+
         speed={600}
         loop={true}
         parallax={true}
@@ -53,19 +50,13 @@ export const StayPreview = ({ stay }) => {
         className="mySwiper">
         <div slot="container-start"></div>
         {stay.imgUrls.map(img =>
-          <SwiperSlide  >
+          <SwiperSlide >
             <Link to={`/stay/${stay._id}`}>
               <div className='title' data-swiper-parallax="-300">
                 <div className='preview-img-container'>
-
-                  <img src={img} alt='preview' />
-                  < ToggleButton className='preview-unlike-btn'>
-                    <FavoriteIcon />
-                  </ToggleButton>
-                  < ToggleButton className='preview-like-btn'>
-                    <FavoriteIcon  />
-                  </ToggleButton>
-
+                  <img className='main-img' src={img} alt='preview' />
+                    <FavoriteIcon className='preview-unlike-btn' />
+                    <FavoriteIcon className='preview-like-btn' />
                 </div>
               </div>
             </Link>
