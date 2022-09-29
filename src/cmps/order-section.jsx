@@ -112,17 +112,17 @@ export const OrderSection = ({ stay }) => {
                 <p>You won't be charged yet</p>
                 {dates[1] &&
                     <div>
-                        <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights()} nights</span>
-                        <span>{stay.price * calcOrderNights()}</span>
+                        <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights().toFixed(0)} nights</span>
+                        <span>${stay.price * calcOrderNights().toFixed(0)}</span>
                     </div>
                 }
                 <div>
                     <span style={{ textDecoration: 'underline' }}>Service fee</span>
-                    <span>0$</span>
+                    <span>$0</span>
                 </div>
                 <div className='total-price'>
                     <span>Total</span>
-                    <span>${stay.price * calcOrderNights()}</span>
+                    <span>${stay.price * calcOrderNights().toFixed(0)}</span>
                 </div>
             </div>
         </section>

@@ -13,6 +13,9 @@ export const Trips = () => {
   const orders = useSelector(state => state.orderModule.orders)
   const dispatch = useDispatch()
 
+
+  console.log('orders:' , orders)
+  
   useEffect(() => {
     changeLayout('1270px')
     return () => {
@@ -43,7 +46,7 @@ export const Trips = () => {
             <div className="trip-text-container">
               <div className="upper-section">
                 <h4>{order.stay.name}</h4>
-                <p>{`Hosted by ${order.fullname}`}</p>
+                <p>{`Hosted by Kevin`}</p>
                 <p>{`${order.startDate} - ${order.endDate}`}</p>
               </div>
               <div className="bottom-section">

@@ -32,18 +32,17 @@ export const StayPreview = ({ stay }) => {
     ev.nativeEvent.stopImmediatePropagation();
   }
 
-  const toggleLikeBtn = () => {
-    console.log('toggle');
-  }
 
   return <section className="stay-preview">
     <>
+    
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
-            "--swiper-pagination-size": "10px",
+            "--swiper-pagination-size": "10px",      
         }}
+
         speed={600}
         loop={true}
         parallax={true}
@@ -53,16 +52,17 @@ export const StayPreview = ({ stay }) => {
         className="mySwiper">
         <div slot="container-start"></div>
         {stay.imgUrls.map(img =>
-          <SwiperSlide  >
+          <SwiperSlide >
             <Link to={`/stay/${stay._id}`}>
               <div className='title' data-swiper-parallax="-300">
                 <div className='preview-img-container'>
 
-                  <img src={img} alt='preview' />
-                  < ToggleButton className='preview-unlike-btn'>
+                  <img className='main-img' src={img} alt='preview' />
+                  < ToggleButton style={{background:'none'}}className='preview-unlike-btn'>
                     <FavoriteIcon />
                   </ToggleButton>
-                  < ToggleButton className='preview-like-btn'>
+
+                  < ToggleButton style={{background:'none'}} className='preview-like-btn'>
                     <FavoriteIcon  />
                   </ToggleButton>
 
