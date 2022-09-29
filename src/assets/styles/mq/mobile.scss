@@ -16,15 +16,11 @@
         .home-page{
             .filter-main{
                 padding-block-start: 0;
-                // border-bottom: 1px solid $clr-border;
                 margin-block-end: 0.7rem;
-
                 .filters-btn{display: none;}
                 .carusel-filter-main{
                     min-width: 74rem;
                     margin-right: -4.563rem;
-               
-                
                     .swiper-button-next{display: none;}
                 }
             }
@@ -37,6 +33,9 @@
                 }
             }
         }
+    }
+    .bottom-nav{
+        display: inline;
     }
     .footer{
         display: none;

@@ -67,7 +67,7 @@ export const FilterList = () => {
                     className="mySwiper"
                     >
                     {labels.map(label =>
-                        <SwiperSlide onClick={() => handleChange(label)}>
+                        <SwiperSlide key={label} onClick={() => handleChange(label)}>
                             <button>
                                 <span>
                                     <img src={require(`../assets/imgs/filter-icons/${label.toLowerCase()}.jpeg`)} alt={label} />

@@ -11,7 +11,7 @@ export const BottomNav = () => {
   const [value, setValue] = useState(0);
 
   return (
-    <Box sx={{ width: 'auto' }}>
+    <Box className='bottom-nav' sx={{ width: 'auto' }}>
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 9 }} elevation={3}>
         <BottomNavigation
           showLabels
