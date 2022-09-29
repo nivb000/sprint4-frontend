@@ -15,7 +15,6 @@ export const HomePage = () => {
 
     
     useEffect(() => {
-        console.log();
         setFilter()
         dispatch(loadStays())
     }, [location.search])

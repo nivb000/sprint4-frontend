@@ -17,9 +17,6 @@ import { updateStay } from "../store/stay.action"
 import { useSelector } from 'react-redux';
 
 
-
-
-
 export const StayPreview = ({ stay }) => {
 
   const user = useSelector(state => state.userModule.user)
@@ -33,14 +30,11 @@ export const StayPreview = ({ stay }) => {
   const handleHover = (ev, value) => {
     ev.stopPropagation();
     ev.nativeEvent.stopImmediatePropagation();
-
   }
-
 
   const toggleLikeBtn = () => {
     console.log('toggle');
   }
-
 
   return <section className="stay-preview">
     <>
@@ -66,10 +60,10 @@ export const StayPreview = ({ stay }) => {
 
                   <img src={img} alt='preview' />
                   < ToggleButton className='preview-unlike-btn'>
-                    <FavoriteIcon/>
+                    <FavoriteIcon />
                   </ToggleButton>
                   < ToggleButton className='preview-like-btn'>
-                    <FavoriteIcon/>
+                    <FavoriteIcon  />
                   </ToggleButton>
 
                 </div>

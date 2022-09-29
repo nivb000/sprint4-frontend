@@ -4,7 +4,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import CloseIcon from '@mui/icons-material/Close'
 import { useState } from 'react'
 
-export var Reviews = ({ reviews }) => {
+export var Reviews = ({ reviews, rating }) => {
 
   const [reviewsModalIsOpen, setReviewsModalIsOpen] = useState(false)
 
@@ -17,9 +17,9 @@ export var Reviews = ({ reviews }) => {
   const truncate = (input) => input.length > 100 ? `${input.substring(0, 250)}...` : input;
 
   return (
-    <section className="reviews">
+    <section className="reviews-section">
       <div className='reviews-rating-container'>
-        <Rating />
+        <Rating ratingCount={reviews.length} rate={rating} />
         <span className='dot-separator'>·</span>
         <span className='reviews-count'>{reviews.length} reviews</span>
       </div>

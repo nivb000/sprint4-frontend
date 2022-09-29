@@ -8,7 +8,6 @@ import { loadOrders } from "../store/order.action"
 
 export const SelectStatus = ({ order }) => {
     const dispatch = useDispatch()
-    let updatedOrder = order;
     
     const options = [
 
@@ -31,7 +30,7 @@ export const SelectStatus = ({ order }) => {
     
     return (
         <div className="host-select-btn">
-            <button onClick={() => { onRemoveOrder(order._id) }}>x</button>
+            <button onClick={() => onRemoveOrder(order._id)}>X</button>
             <select value={order.status} onChange={handleChange}>
                 {options.map(option => (
                     <option key={option.value} value={option.value}>
