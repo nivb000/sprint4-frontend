@@ -25,15 +25,14 @@ export const LoginSignup = ({ setLoginModal }) => {
 
 
     return <section className="login-modal">
+        <style>{".overlay {background-color: rgba(0, 0, 0, 0.25); display: inline; z-index: 3}"}</style>
         <button className="modal-close-btn" onClick={setLoginModal}>X</button>
         <h1>Log In</h1>
         <form onSubmit={handleLogin}>
             <div className="form-item">
-                {/* <label htmlFor="username">Username</label> */}
                 <input type="text" id="username" name="username" placeholder="Username" onChange={handleChange} />
             </div>
             <div className="form-item">
-                {/* <label htmlFor="password">Password</label> */}
                 <input type="password" id="password" name="password" placeholder="Password" onChange={handleChange} />
             </div>
             <div className="btn-container" onClick={handleLogin}>

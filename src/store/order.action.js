@@ -2,8 +2,15 @@ import { orderService } from '../services/order.service.js'
 
 export function loadOrders() {
     return (dispatch, getState) => {
-        // const { filter } = getState().orderModule
+        const { user } = getState().userModule
         orderService.query()
+            .then(orders => dispatch({ type: 'SET_ORDERS', orders }))
+    }
+}
+export function loadOrdersByHost() {
+    return (dispatch, getState) => {
+        const { user } = getState().userModule
+        orderService.query(user)
             .then(orders => dispatch({ type: 'SET_ORDERS', orders }))
     }
 }

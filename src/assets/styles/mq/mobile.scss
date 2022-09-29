@@ -23,8 +23,6 @@
                 .carusel-filter-main{
                     min-width: 74rem;
                     margin-right: -4.563rem;
-               
-                
                     .swiper-button-next{display: none;}
                 }
             }
@@ -37,6 +35,9 @@
                 }
             }
         }
+    }
+    .bottom-nav{
+        display: inline;
     }
     .footer{
         display: none;

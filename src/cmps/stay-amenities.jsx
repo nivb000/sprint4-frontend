@@ -106,6 +106,7 @@ export const StayAmenities = ({ amenities }) => {
       <button className="show-all" onClick={() => handleOnClick(setAmenitiesModal)}>{`Show all ${amenities.length} amenities`}</button>
       {amenitiesModalIsOpen &&
         <div className="stay-amenities-modal">
+          <style>{".overlay {background-color: rgba(0, 0, 0, 0.25); display: inline; z-index: 3}"}</style>
           <div className="modal-close-btn-container">
             <button className="modal-close-btn" onClick={setAmenitiesModal}><CloseIcon /></button>
           </div>

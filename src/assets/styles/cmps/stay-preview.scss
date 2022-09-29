@@ -9,9 +9,7 @@
         color: black;
         background-color: rgba(255, 255, 255, 0.95);
         opacity: 85%;
-        display: none;
     }
-
     .swiper-button-prev {
         border: 0.5px solid rgba(0, 0, 0, 0.3);
         border-radius: 30px;
@@ -20,19 +18,19 @@
         color: black;
         background-color: rgba(255, 255, 255, 0.95);
         opacity: 85%;
-        display: none;
-
     }
-
     .main-img {
         cursor: pointer;
         border-radius: 10px;
         aspect-ratio: 1/1;
     }
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 3b0f3e9913641231eca88318b7a0490ede05a8d1
     .preview-like-btn {
         stroke: #fff !important;
         stroke-width: 1 !important;
@@ -77,6 +75,7 @@
     .preview-subtitle {
         color: #717171;
         font-size: 0.9rem;
+        letter-spacing: 0.3px;
     }
 
     .preview-price {
