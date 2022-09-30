@@ -6,10 +6,21 @@ import { useDispatch, useSelector } from "react-redux"
 import { ConfirmationModal } from './reservation-confirmation'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { Guests } from './guests'
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
+import { DateRangePicker } from 'react-date-range';
+import { addDays } from 'date-fns'
+import Slide from '@mui/material/Slide';
+
 
 const Alert = forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
+
+function SlideTransition(props) {
+    return <Slide {...props} direction="up" />;
+}
 
 
 export const OrderSection = ({ stay }) => {
@@ -17,11 +28,20 @@ export const OrderSection = ({ stay }) => {
     const dispatch = useDispatch()
     const [confirmIsOpen, setConfirmIsOpen] = useState(false)
     const user = useSelector(state => state.userModule.user)
-    const [dates, setDates] = useState([Date.now(), Date.now() + 6.048e+8]);
-    const [openAlert, setOpenAlert] = useState(false);
+    const [openAlert, setOpenAlert] = useState(false)
+    const [guestsIsOpen, setGuestsIsOpen] = useState(false);
+    const [datePickerIsOpen, setDatePickerIsOpen] = useState(false);
+    const [dates, setDates] = useState([
+        {
+            startDate: new Date(),
+            endDate: addDays(new Date(), 7),
+            key: 'selection'
+        }
+    ]);
+
 
     const calcOrderNights = () => {
-        let Difference_In_Time = dates[1] - dates[0]
+        let Difference_In_Time = dates[0].endDate - dates[0].startDate
         let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
         return Difference_In_Days
     }
@@ -30,9 +50,14 @@ export const OrderSection = ({ stay }) => {
     const [order, setOrder] = useState({
         hostId: stay.host._id,
         totalPrice: stay.price,
-        guests: '1',
-        startDate: null,
-        endDate: null,
+        guests: {
+            adults: 1,
+            children: 0,
+            infants: 0,
+            pets: 0
+        },
+        startDate: `${dates[0].startDate.getDate()}/${dates[0].startDate.getMonth() + 1}/${dates[0].startDate.getFullYear()}`,
+        endDate: `${dates[0].endDate.getDate()}/${dates[0].endDate.getMonth() + 1}/${dates[0].endDate.getFullYear()}`,
         stay: {
             _id: stay._id,
             name: stay.name,
@@ -41,30 +66,27 @@ export const OrderSection = ({ stay }) => {
         status: 'pending'
     })
 
-    const handleChange = ({ target }) => {
-        const name = target.name
-        const value = target.value
-        setOrder(prevOrder => ({ ...prevOrder, [name]: value }))
+    const handleGuests = (guestsObj) => {
+        setOrder(prevOrder => ({ ...prevOrder, guests: guestsObj }))
     }
 
     const handleReserve = () => {
-        // order.startDate = `${dates[0].$D}/${dates[0].$M + 1}/${dates[0].$y}`
-        // order.endDate = `${dates[1].$D}/${dates[1].$M + 1}/${dates[1].$y}`
-        // if (user) {
-        //     order.buyer = {
-        //         _id: user._id,
-        //         fullname: user.fullname
-        //     }
-        //     console.log('sending order...');
-        //     dispatch(addOrder(order))
-        //     calcOrderNights()
-        //     setConfirmIsOpen(true)
-        // } else {
-        //     setOpenAlert(true)
-        //     setTimeout(() => {
-        //         setOpenAlert(false)
-        //     }, 3000);
-        // }
+        order.startDate = `${dates[0].startDate.getDate()}/${dates[0].startDate.getMonth() + 1}/${dates[0].startDate.getFullYear()}`
+        order.endDate = `${dates[0].endDate.getDate()}/${dates[0].endDate.getMonth() + 1}/${dates[0].endDate.getFullYear()}`
+        if (user) {
+            order.buyer = {
+                _id: user._id,
+                fullname: user.fullname
+            }
+            dispatch(addOrder(order))
+            calcOrderNights()
+            console.log('sending order...')
+        } else {
+            setOpenAlert(true)
+            setTimeout(() => {
+                setOpenAlert(false)
+            }, 3000);
+        }
     }
 
     return <section className="order-section">
@@ -76,22 +98,34 @@ export const OrderSection = ({ stay }) => {
             <div className="order-data">
                 <div className="date-picker">
                     <div className="date-input in">
-                        <label>CHECK-IN</label>
-                        <input type="text" name="startDate" placeholder='Add date' />
+                        <label onClick={() => setDatePickerIsOpen(prev => !prev)}>CHECK-IN</label>
+                        <p onClick={() => setDatePickerIsOpen(prev => !prev)}>
+                            {`${dates[0].startDate.getDate()}/${dates[0].startDate.getMonth() + 1}/${dates[0].startDate.getFullYear()}`}
+                        </p>
+                        {datePickerIsOpen && <DateRangePicker
+                            onChange={item => setDates([item.selection])}
+                            showSelectionPreview={true}
+                            moveRangeOnFirstSelection={false}
+                            months={2}
+                            ranges={dates}
+                            direction="horizontal"
+                        />}
                     </div>
                     <div className="date-input out">
-                        <label>CHECKOUT</label>
-                        <input type="text" name="endDate" placeholder='Add date' />
+                        <label onClick={() => setDatePickerIsOpen(prev => !prev)}>CHECKOUT</label>
+                        <p onClick={() => setDatePickerIsOpen(prev => !prev)}>
+                            {`${dates[0].endDate.getDate()}/${dates[0].endDate.getMonth() + 1}/${dates[0].endDate.getFullYear()}`}
+                        </p>
                     </div>
                 </div>
-                <div className="guest-input">
+                <div className="guest-input" onClick={() => setGuestsIsOpen(prev => !prev)}>
                     <label>GUESTS</label>
-                    <select defaultValue='1' name="guests" onChange={handleChange}>
-                        <option value="1">1 guests</option>
-                        <option value="2">2 guests</option>
-                        <option value="3">3 guests</option>
-                    </select>
+                    <p>1 guest</p>
+                    <svg viewBox="0 0 320 512" width="100" title="angle-down">
+                        <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    </svg>
                 </div>
+                {guestsIsOpen && <Guests setGuestsIsOpen={setGuestsIsOpen} handleGuests={handleGuests} />}
             </div>
 
             <div className="btn-container" onClick={handleReserve}>
@@ -104,19 +138,17 @@ export const OrderSection = ({ stay }) => {
             </div>
             <div className='order-summary'>
                 <p>You won't be charged yet</p>
-                {dates[1] &&
-                    <div>
-                        {/* <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights().toFixed(0)} nights</span> */}
-                        {/* <span>${stay.price * calcOrderNights().toFixed(0)}</span> */}
-                    </div>
-                }
+                <div>
+                    <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights()} nights</span>
+                    <span>${stay.price * calcOrderNights().toFixed(0)}</span>
+                </div>
                 <div>
                     <span style={{ textDecoration: 'underline' }}>Service fee</span>
                     <span>$0</span>
                 </div>
                 <div className='total-price'>
                     <span>Total</span>
-                    {/* <span>${stay.price * calcOrderNights().toFixed(0)}</span> */}
+                    <span>${stay.price * calcOrderNights().toFixed(0)}</span>
                 </div>
             </div>
         </section>
@@ -128,8 +160,7 @@ export const OrderSection = ({ stay }) => {
             closeConfirm={setConfirmIsOpen}
             userId={user._id}
             calcNights={calcOrderNights} />}
-
-        <Snackbar open={openAlert}>
+        <Snackbar open={openAlert} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
             <Alert severity="error" sx={{ width: '100%' }}>
                 You must login to reserve an order
             </Alert>

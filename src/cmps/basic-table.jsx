@@ -13,7 +13,7 @@ export const BasicTable = ({ orders }) => {
 
   
     function converOrderToRow(order) {
-        return { id: order._id, status: <SelectStatus order={order} />,  guests: order.guests, startDate: order.startDate, endDate: order.endDate, placeName: order.stay.name, totalPrice: '$' + order.totalPrice };
+        return { id: order._id, status: <SelectStatus order={order} />,  guests: order.guests.adults+order.guests.children+order.guests.infants+order.guests.pets, startDate: order.startDate, endDate: order.endDate, placeName: order.stay.name, totalPrice: '$' + order.totalPrice };
     }
 
     const headCells = [

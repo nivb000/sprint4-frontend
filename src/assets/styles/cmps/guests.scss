@@ -1,19 +1,25 @@
 .guests-section {
   width: 350px;
-
+  position: absolute;
+  background-color: white;
+  z-index: 9;
+  border: 1px solid $clr-light-grey;
   &>*{
-    padding-block-start: $sectionPadding;
-    padding-block-end: $sectionPadding;
-  }
-
-  &>*:not(:last-child) {
-    border-bottom: 1px solid $clr-light-grey;
+    padding-block-start: 0.5rem;
+    padding-block-end: 0.5rem;
+    margin: 0.5rem;
   }
 
   .adults,
   .children,
   .infants,
   .pets {
+    h3{
+      font-size: 1rem;
+    }
+    span{
+      font-size: 0.9rem;
+    }
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,7 +41,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-
      span {
       color: $clr-grey;
       box-sizing: border-box;
@@ -54,5 +59,14 @@
       display: flex;
       justify-content: center;
     }
+  }
+
+  .btn-close{
+    background: transparent;
+    outline: 0;
+    border: 0;
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
   }
 }

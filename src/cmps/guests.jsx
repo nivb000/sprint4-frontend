@@ -1,26 +1,24 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-export const Guests = () => {
-
+export const Guests = ({ setGuestsIsOpen,handleGuests }) => {
   const [guests, setGuests] = useState({
-
-    adults: 0,
+    adults: 1,
     children: 0,
     infants: 0,
     pets: 0
-
   })
+
+  useEffect(() => {
+    handleGuests(guests)
+  }, [guests])
+  
 
   const increaseCount = (category, limit) => {
     if (guests[category] >= limit) return
-
     setGuests((prevState) =>
-    ({
-      ...prevState,
-      [category]: prevState[category] + 1
-    }))
+    ({...prevState, [category]: prevState[category] + 1}))
   }
 
   const decreaseCount = (category) => {
@@ -40,7 +38,7 @@ export const Guests = () => {
         <span>Ages 13 or above</span>
       </div>
       <div className="guests-buttons">
-        <RemoveCircleOutlineIcon className='remove-guests-btn' onClick={() => decreaseCount('adults') } fontSize='large'/>
+        <RemoveCircleOutlineIcon className='remove-guests-btn' onClick={() => decreaseCount('adults')} fontSize='large' />
         <span>{guests.adults}</span>
         <AddCircleOutlineIcon className='add-guests-btn' onClick={() => increaseCount('adults', 16)} fontSize='large' />
       </div>
@@ -80,8 +78,6 @@ export const Guests = () => {
         <AddCircleOutlineIcon className='add-guests-btn' onClick={() => increaseCount('pets', 5)} fontSize='large' />
       </div>
     </div>
-
-
-
+    <button className='btn-close' onClick={() => setGuestsIsOpen(false)}>Close</button>
   </section>
 }
