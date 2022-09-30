@@ -11,6 +11,8 @@ import { BottomNav } from './cmps/bottomNav'
 
 export const RootCmp = () => {
 
+
+
   const loc = useLocation()
 
   return (

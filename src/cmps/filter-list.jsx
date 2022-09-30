@@ -17,14 +17,14 @@ export const FilterList = () => {
     const labels = [
         'beaches',
         'Amazing views',
+        'design',
         'cabins',
         'camping',
-        'Amazing pools',
         'caravans',
         'kitchens',
         'country side',
         'desert',
-        'design',
+        'Amazing pools',
         'iconic citys',
         'island',
         'mansions',
@@ -57,7 +57,7 @@ export const FilterList = () => {
                     <Swiper
                     slidesPerView={9.9}
                     spaceBetween={-85}
-                    slidesPerGroup={3}
+                    slidesPerGroup={1}
                     loopFillGroupWithBlank={false}
                     pagination={{
                         clickable: true,
@@ -67,7 +67,7 @@ export const FilterList = () => {
                     className="mySwiper"
                     >
                     {labels.map(label =>
-                        <SwiperSlide onClick={() => handleChange(label)}>
+                        <SwiperSlide key={label} onClick={() => handleChange(label)}>
                             <button>
                                 <span>
                                     <img src={require(`../assets/imgs/filter-icons/${label.toLowerCase()}.jpeg`)} alt={label} />

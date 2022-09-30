@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/imgs/airbna-logo.png';
+import airbnalogo from '../assets/imgs/airbna-logo.png';
+import logo from '../assets/imgs/logo.png';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import userProfilePic from '../assets/imgs/header-icons/userprofle.jpg'
@@ -41,7 +42,7 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
             setLocIsActive(false)
         }, 500);
     }
-    
+
     const handleChange = ({ target }) => {
         const name = target.name
         const value = target.value
@@ -53,7 +54,7 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
     }
     const btnLabels = [
         `I'm flexible`,
-        'Greece',
+        'Portugal',
         'Italy',
         'Middle East',
         'South America',
@@ -62,10 +63,11 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
 
 
     return <header className='app-header'>
-        <style>{".overlay {background-color: rgba(0, 0, 0, 0.25); z-index: 3}"}</style>
+        <style>{".overlay {background-color: rgba(0, 0, 0, 0.25); display: inline; z-index: 3}"}</style>
         <section className='main-layout main-header'>
             <Link style={{ textDecoration: 'none' }} to={`/`}>
                 <div className='logo' onClick={() => setExpendedIsOpen(false)}>
+                    <img src={airbnalogo} alt='logo' />
                     <img src={logo} alt='logo' />
                 </div>
             </Link >
@@ -84,29 +86,29 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
                 />}
         </section>
         {locationsModalIsOpen &&
-        <div className='locations-modal'>
-            <div className='locations-modal-container'>
-                <h3>Search by region</h3>
-                <div className='locations-modal-map'>
-                    {btnLabels.map(label =>      
-                        <div className={`loc ${label}`}>
-                            <img src={require(`../assets/imgs/header-icons/${label}.png`)} alt={label}
-                                onClick={()=>setQuery(prev => ({ ...prev, location: label }))}
-                            />
-                            <p>{label}</p>
-                        </div>
+            <div className='locations-modal'>
+                <div className='locations-modal-container'>
+                    <h3>Search by region</h3>
+                    <div className='locations-modal-map'>
+                        {btnLabels.map(label =>
+                            <div className={`loc ${label}`}>
+                                <img src={require(`../assets/imgs/header-icons/${label}.png`)} alt={label}
+                                    onClick={() => setQuery(prev => ({ ...prev, location: label }))}
+                                />
+                                <p>{label}</p>
+                            </div>
                         )}
+                    </div>
                 </div>
             </div>
-        </div>
         }
         <section className='expended-search'>
             <div className="bar">
                 <div className={locIsActive ? 'location active' : 'location'} onClick={() => setLocIsActive(true)}>
                     <p>Where</p>
                     <input type="text" name='location' value={query.location} placeholder="Search destinations"
-                    onFocus={()=> setLocationsModalIsOpen(true)}
-                    onBlur={handleLocBlur} onChange={handleChange} />
+                        onFocus={() => setLocationsModalIsOpen(true)}
+                        onBlur={handleLocBlur} onChange={handleChange} />
                 </div>
 
                 <div className={checkInIsActive ? 'check-in active' : 'check-in'} onClick={() => setCheckInIsActive(true)}>
