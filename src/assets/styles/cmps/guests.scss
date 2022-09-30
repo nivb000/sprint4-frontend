@@ -1,0 +1,58 @@
+.guests-section {
+  width: 350px;
+
+  &>*{
+    padding-block-start: $sectionPadding;
+    padding-block-end: $sectionPadding;
+  }
+
+  &>*:not(:last-child) {
+    border-bottom: 1px solid $clr-light-grey;
+  }
+
+  .adults,
+  .children,
+  .infants,
+  .pets {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .add-guests-btn,
+  .remove-guests-btn {
+    color: $clr-light-grey;
+    
+  }
+
+  .add-guests-btn:hover,
+  .remove-guests-btn:hover {
+    color: $clr-black;
+    cursor: pointer;
+  }
+
+  .guests-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+     span {
+      color: $clr-grey;
+      box-sizing: border-box;
+    }
+    
+  }
+  
+  .guests-buttons {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+
+    span {
+      width: 20px;
+      margin: 0 10px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

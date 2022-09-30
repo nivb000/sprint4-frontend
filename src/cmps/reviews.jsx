@@ -3,6 +3,7 @@ import { utilService } from '../services/util.service'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import CloseIcon from '@mui/icons-material/Close'
 import { useState } from 'react'
+import {Guests} from "./guests"
 
 export var Reviews = ({ reviews, rating }) => {
 
@@ -17,7 +18,7 @@ export var Reviews = ({ reviews, rating }) => {
   const truncate = (input) => input.length > 100 ? `${input.substring(0, 250)}...` : input;
 
   return (
-    <section className="reviews">
+    <section className="reviews-section">
       <div className='reviews-rating-container'>
         <Rating ratingCount={reviews.length} rate={rating} />
         <span className='dot-separator'>·</span>

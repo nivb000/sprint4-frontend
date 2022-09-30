@@ -54,7 +54,7 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
     }
     const btnLabels = [
         `I'm flexible`,
-        'Greece',
+        'Portugal',
         'Italy',
         'Middle East',
         'South America',
