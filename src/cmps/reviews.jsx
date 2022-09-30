@@ -35,7 +35,7 @@ export var Reviews = ({ reviews, rating }) => {
           .map((review) => {
             var reviewerImg = require(`../assets/imgs/square-profile-imgs/${utilService.getRandomIntInclusive(1, 20)}.jpg`)
             var d = new Date(review.at)
-            return <li className="review">
+            return <li className="review" key={review.at}>
               <div className="review-content">
                 <div className="reviewer-details">
                   <div className="reviewer-details-img">

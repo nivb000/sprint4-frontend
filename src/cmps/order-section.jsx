@@ -1,22 +1,24 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react'
 import { Rating } from './rating'
-import AssistantPhotoIcon from '@mui/icons-material/AssistantPhoto';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import { LocalizationProvider } from '@mui/x-date-pickers-pro';
-import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
-import { addOrder } from '../store/order.action';
+import AssistantPhotoIcon from '@mui/icons-material/AssistantPhoto'
+import { addOrder } from '../store/order.action'
 import { useDispatch, useSelector } from "react-redux"
-import { LoginSignup } from './login-signup'
-import { ConfirmationModal } from './reservation-confirmation';
+import { ConfirmationModal } from './reservation-confirmation'
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 
 export const OrderSection = ({ stay }) => {
 
     const dispatch = useDispatch()
     const [confirmIsOpen, setConfirmIsOpen] = useState(false)
     const user = useSelector(state => state.userModule.user)
-    const [dates, setDates] = useState([Date.now(), Date.now() + 6.048e+8])
+    const [dates, setDates] = useState([Date.now(), Date.now() + 6.048e+8]);
+    const [openAlert, setOpenAlert] = useState(false);
 
     const calcOrderNights = () => {
         let Difference_In_Time = dates[1] - dates[0]
@@ -46,20 +48,23 @@ export const OrderSection = ({ stay }) => {
     }
 
     const handleReserve = () => {
-        order.startDate = `${dates[0].$D}/${dates[0].$M + 1}/${dates[0].$y}`
-        order.endDate = `${dates[1].$D}/${dates[1].$M + 1}/${dates[1].$y}`
-        if (user) {
-            order.buyer = {
-                _id: user._id,
-                fullname: user.fullname
-            }
-            console.log('sending order...');
-            dispatch(addOrder(order))
-            setConfirmIsOpen(true)
-        } else {
-            alert('You must Login to reserve')
-        }
-        calcOrderNights()
+        // order.startDate = `${dates[0].$D}/${dates[0].$M + 1}/${dates[0].$y}`
+        // order.endDate = `${dates[1].$D}/${dates[1].$M + 1}/${dates[1].$y}`
+        // if (user) {
+        //     order.buyer = {
+        //         _id: user._id,
+        //         fullname: user.fullname
+        //     }
+        //     console.log('sending order...');
+        //     dispatch(addOrder(order))
+        //     calcOrderNights()
+        //     setConfirmIsOpen(true)
+        // } else {
+        //     setOpenAlert(true)
+        //     setTimeout(() => {
+        //         setOpenAlert(false)
+        //     }, 3000);
+        // }
     }
 
     return <section className="order-section">
@@ -70,26 +75,15 @@ export const OrderSection = ({ stay }) => {
             </div>
             <div className="order-data">
                 <div className="date-picker">
-                    <LocalizationProvider
-                        dateAdapter={AdapterDayjs}
-                        localeText={{ start: '', end: '' }}
-                    >
-                        <DateRangePicker
-                            value={dates}
-                            onChange={(newValue) => {
-                                setDates(newValue)
-                            }}
-                            renderInput={(startProps, endProps) => (
-                                <>
-                                    <TextField {...startProps} />
-                                    <Box sx={{ mx: 2 }}> </Box>
-                                    <TextField {...endProps} />
-                                </>
-                            )}
-                        />
-                    </LocalizationProvider>
+                    <div className="date-input in">
+                        <label>CHECK-IN</label>
+                        <input type="text" name="startDate" placeholder='Add date' />
+                    </div>
+                    <div className="date-input out">
+                        <label>CHECKOUT</label>
+                        <input type="text" name="endDate" placeholder='Add date' />
+                    </div>
                 </div>
-
                 <div className="guest-input">
                     <label>GUESTS</label>
                     <select defaultValue='1' name="guests" onChange={handleChange}>
@@ -103,7 +97,7 @@ export const OrderSection = ({ stay }) => {
             <div className="btn-container" onClick={handleReserve}>
                 {Array(79).fill(<div className="cell"></div>)}
                 <div className="content">
-                    <button className="action-btn"> 
+                    <button className="action-btn">
                         <span>Reserve</span>
                     </button>
                 </div>
@@ -112,8 +106,8 @@ export const OrderSection = ({ stay }) => {
                 <p>You won't be charged yet</p>
                 {dates[1] &&
                     <div>
-                        <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights().toFixed(0)} nights</span>
-                        <span>${stay.price * calcOrderNights().toFixed(0)}</span>
+                        {/* <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights().toFixed(0)} nights</span> */}
+                        {/* <span>${stay.price * calcOrderNights().toFixed(0)}</span> */}
                     </div>
                 }
                 <div>
@@ -122,29 +116,23 @@ export const OrderSection = ({ stay }) => {
                 </div>
                 <div className='total-price'>
                     <span>Total</span>
-                    <span>${stay.price * calcOrderNights().toFixed(0)}</span>
+                    {/* <span>${stay.price * calcOrderNights().toFixed(0)}</span> */}
                 </div>
             </div>
         </section>
         <p className="order-footer"><AssistantPhotoIcon /><small>Report this listing</small></p>
-        {confirmIsOpen && <ConfirmationModal 
-        stay={stay} 
-        order={order} 
-        confirm={confirmIsOpen} 
-        closeConfirm={setConfirmIsOpen} 
-        userId={user._id}
-        calcNights={calcOrderNights}/>}
+        {confirmIsOpen && <ConfirmationModal
+            stay={stay}
+            order={order}
+            confirm={confirmIsOpen}
+            closeConfirm={setConfirmIsOpen}
+            userId={user._id}
+            calcNights={calcOrderNights} />}
+
+        <Snackbar open={openAlert}>
+            <Alert severity="error" sx={{ width: '100%' }}>
+                You must login to reserve an order
+            </Alert>
+        </Snackbar>
     </section>
 }
-
-
-
-
-    {/* <div className="date-input in">
-    <label>CHECK-IN</label>
-    <input type="date" name="startDate" />
-</div>
-<div className="date-input out">
-    <label>CHECKOUT</label>
-    <input type="date" name="endDate" />
-</div> */}

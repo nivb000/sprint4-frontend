@@ -17,7 +17,7 @@ export const Footer = () => {
                     <p>USD</p>
                 </div> */}
                 <div className='footer-support'>
-                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=bniv000@gmail.com;aaa@aaa.com&su=Lets talk`} target='_blank'>
+                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=bniv000@gmail.com;aaa@aaa.com&su=Lets talk`} target='_blank' rel="noreferrer">
                         <p>Support & resources</p>
                     </a>
                 </div>
