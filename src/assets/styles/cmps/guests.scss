@@ -1,0 +1,72 @@
+.guests-section {
+  width: 350px;
+  position: absolute;
+  background-color: white;
+  z-index: 9;
+  border: 1px solid $clr-light-grey;
+  &>*{
+    padding-block-start: 0.5rem;
+    padding-block-end: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .adults,
+  .children,
+  .infants,
+  .pets {
+    h3{
+      font-size: 1rem;
+    }
+    span{
+      font-size: 0.9rem;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .add-guests-btn,
+  .remove-guests-btn {
+    color: $clr-light-grey;
+    
+  }
+
+  .add-guests-btn:hover,
+  .remove-guests-btn:hover {
+    color: $clr-black;
+    cursor: pointer;
+  }
+
+  .guests-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+     span {
+      color: $clr-grey;
+      box-sizing: border-box;
+    }
+    
+  }
+  
+  .guests-buttons {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+
+    span {
+      width: 20px;
+      margin: 0 10px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .btn-close{
+    background: transparent;
+    outline: 0;
+    border: 0;
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+  }
+}
