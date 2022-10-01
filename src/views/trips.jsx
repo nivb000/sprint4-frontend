@@ -49,6 +49,7 @@ export const Trips = () => {
                 <p>{`Hosted by Kevin`}</p>
                 <p>{`${order.startDate} - ${order.endDate}`}</p>
               </div>
+
               <div className="bottom-section">
                 {order.status === 'approved' &&
                 <>
@@ -70,6 +71,7 @@ export const Trips = () => {
                 }
               </div>
             </div>
+
           </li>
       })}
     </ul>

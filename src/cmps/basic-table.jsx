@@ -13,16 +13,16 @@ export const BasicTable = ({ orders }) => {
 
   
     function converOrderToRow(order) {
-        return { id: order._id, status: <SelectStatus order={order} />,  guests: order.guests, startDate: order.startDate, endDate: order.endDate, placeName: order.stay.name, totalPrice: '$' + order.totalPrice };
+        return { id: order._id, status: <SelectStatus order={order} />, buyer: order.buyer.fullname, startDate: order.startDate, endDate: order.endDate, placeName: order.stay.name, totalPrice: '$' + order.totalPrice };
     }
-
+    // guests: +order.guests.adults + order.guests.children + order.guests.infants + order.guests.pets
     const headCells = [
-        { id: 'status', numeric: true, disablePadding: false, label: 'Status' },
-        { id: 'guests', numeric: true, disablePadding: false, label: 'Guests' },
-        { id: 'startDate', numeric: true, disablePadding: false, label: 'Check-in' },
-        { id: 'endDate', numeric: true, disablePadding: false, label: 'Check-out' },
-        { id: 'placeName', numeric: true, disablePadding: false, label: 'Street Name' },
-        { id: 'totalPrice', numeric: true, disablePadding: false, label: 'Total Payout' },
+        { id: 'status', numeric: false, disablePadding: false, label: 'Status' },
+        { id: 'startDate', numeric: false, disablePadding: false, label: 'Check-in' },
+        { id: 'endDate', numeric: false, disablePadding: false, label: 'Check-out' },
+        { id: 'buyer', numeric: false, disablePadding: false, label: 'Purchased by' , },
+        { id: 'placeName', numeric: false, disablePadding: false, label: 'Stay Name' },
+        { id: 'totalPrice', numeric: false, disablePadding: false, label: 'Orders Revenue' },
     ]
 
     if (!orders) return <Loader />

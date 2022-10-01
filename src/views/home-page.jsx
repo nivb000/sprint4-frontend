@@ -5,6 +5,7 @@ import { StayList } from '../cmps/stay-list'
 import { Loader } from '../cmps/loader'
 import { FilterList } from "../cmps/filter-list"
 import { useLocation } from "react-router-dom"
+import { HostDashboard } from "./host-dashboard"
 const queryString = require('query-string');
 
 export const HomePage = () => {
@@ -28,6 +29,6 @@ export const HomePage = () => {
 
     return <section className="home-page">
         <FilterList />
-        <StayList stays={stays} />
+        <StayList stays={stays} />       
     </section>
 }

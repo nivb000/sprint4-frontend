@@ -58,13 +58,13 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="none"> 
+        <TableCell padding="normal"> 
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'left' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'normal'}
+            align={headCell.numeric ? 'right' : 'center'}
+            padding={headCell.disablePadding ? 'left' : 'left'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
             <TableSortLabel
@@ -99,7 +99,7 @@ EnhancedTableHead.propTypes = {
 const useToolbarStyles = makeStyles((theme) => ({
   root: {
     paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(1),
+    paddingRight: theme.spacing(0),
   },
   highlight:
     theme.palette.type === 'light'
@@ -161,13 +161,14 @@ EnhancedTableToolbar.propTypes = {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    padding:'10px'
   },
   paper: {
     width: '100%',
-
   },
   table: {
     minWidth: 750,
+
   },
   visuallyHidden: {
     border: 0,
@@ -180,6 +181,7 @@ const useStyles = makeStyles((theme) => ({
     top: 20,
     width: 1,
   },
+
 }));
 
 
@@ -288,9 +290,8 @@ export default function EnhancedTable({ rows, headCells, cellNames }) {
 
                       </TableCell>    
                         {headCells.map(headerCell => {                            
-                          return <TableCell key={headerCell.id}  align="left">{row[headerCell.id]} </TableCell>
-                        }
-                        )}
+                          return <TableCell key={headerCell.id}  align="center" >{row[headerCell.id]} </TableCell>})}                       
+                        
                     </TableRow>
                   );
                 })}

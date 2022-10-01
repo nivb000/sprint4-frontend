@@ -5,7 +5,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import StarIcon from '@mui/icons-material/Star'
 import { Link } from 'react-router-dom';
 import { Loader } from './loader'
-import { useState } from 'react';
 
 
 const style = {
@@ -13,8 +12,8 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 555,
-    height: 880,
+    width: 700,
+    height: 800,
     outline: 0,
     bgcolor: 'background.paper',
     border: '0.11px solid  #dfdfdf',
@@ -36,24 +35,28 @@ export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId,
             <Box sx={style}>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                     <div className='confirmation-header'>
+                    <p className='section-four-total'><span className='close-btn-confirmation' onClick={() => closeConfirm(false)}><CloseIcon fontSize='medium'/></span></p>
+
                         <p className='confirmation-header-txt'>We received your order</p>
                     </div>
                     <div className='sub-txt-main'>
                         <div>
                             <div className='confirmation-img-container' >
-                                <img className='confirmation-img' src={stay.imgUrls[1]} alt="preview " />
-                                <div className='confirmation-img-container-txt'>
-                                    <span className='roomtype' >{stay.roomType}</span>
-                                    <div>{stay.name}</div>
-                                    <div className='reviews-confirmation'> <StarIcon fontSize='small' className='star-icon' /> 5<span className='reviews-num'> ({stay.reviews.length} reviews) </span></div>
-                                </div>
+                                <img className='confirmation-img' src={stay.imgUrls[0]} alt="preview " />
+
+                           
                             </div>
                         </div>
+
+
                         <div className='inside-card'>
                             <p className='section-one-header' >Your Trip</p>
                             <p className='section-one-trip'> <span >Dates</span> <span>{`${order.startDate} - ${order.endDate}`} </span> </p>
+                            <p className='section-one-trip'> <span >Location</span> <span>{stay.name} </span> </p>
                             <p className='section-one-guests'>  <span>Guests</span>{order.guests}</p>
                         </div>
+                    
+
                         <div className='inside-card'>
                             <p className='section-two-header'>Price Details</p>
                             <p className='section-two-price'> ${order.stay.price * calcNights().toFixed(0)}
@@ -69,8 +72,7 @@ export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId,
                             </p>
                         </div>
                         <div className='inside-card-4'>
-                            <p className='section-four-total'><span className='close-btn-confirmation' onClick={() => closeConfirm(false)}><CloseIcon fontSize='medium'/></span></p>
-                            <Link className='back-to-trips' to={`/trips/${userId}`}>My trips</Link>
+                            <Link className='back-to-trips' to={`/trips/${userId}`}>Back to my trips</Link>
                         </div>
                     </div>
                 </Typography >

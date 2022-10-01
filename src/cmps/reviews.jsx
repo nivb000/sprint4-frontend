@@ -19,7 +19,7 @@ export var Reviews = ({ reviews, rating }) => {
   return (
     <section className="reviews">
       <div className='reviews-rating-container'>
-        <Rating ratingCount={reviews.length} rate={rating} />
+        <Rating fontSize="large" ratingCount={reviews.length} rate={rating} />
         <span className='dot-separator'>·</span>
         <span className='reviews-count'>{reviews.length} reviews</span>
       </div>
