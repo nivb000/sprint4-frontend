@@ -8,16 +8,14 @@ import { Footer } from "./cmps/footer"
 import { BottomNav } from './cmps/bottomNav'
 
 
-
 export const RootCmp = () => {
-
-
 
   const loc = useLocation()
 
   return (
     <div className="App">
       <AppHeader />
+      
       <div className='overlay'></div>
       <main className='main-layout'>
         <Routes>
@@ -25,10 +23,6 @@ export const RootCmp = () => {
           <Route path='/stay/:stayId' element={<StayDetails />} />
           <Route path='/host/:userId' element={<HostDashboard />} />
           <Route path='/trips/:userId' element={<Trips />} />
-          {/* <Route path='/edit/:toyId' element={<ToyEdit />} /> */}
-          {/* <Route path='/new/' element={<ToyEdit />} /> */}
-          {/* <Route path='/signin/' element={<SignIn />} /> */}
-          {/* <Route path='/about' element={<AboutUs />} /> */}
         </Routes>
       </main>
       <BottomNav />

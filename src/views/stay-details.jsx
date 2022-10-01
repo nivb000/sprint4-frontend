@@ -89,6 +89,7 @@ export const StayDetails = () => {
                 <Reviews reviews={stay.reviews} rating={stay.rate}/>
             </div>
             <GoogleMap pos={{lat: stay.loc.lat, lan: stay.loc.lan}} />
+                      
         </section>
     )
 }

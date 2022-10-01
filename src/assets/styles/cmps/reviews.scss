@@ -10,7 +10,13 @@
 
   .reviews-rating-container {
     font-size: 22px;
-    margin-bottom: 20px;
+    display: flex;
+    margin-bottom: 25px;
+    align-items: center;
+    
+    .star-icon{
+    font-size: 22px !important;
+  }
   }
 
   .reviewers {

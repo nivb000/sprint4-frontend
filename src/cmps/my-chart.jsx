@@ -22,14 +22,34 @@ export const MyChart = ({stay}) => {
     dispatch(loadOrders())
   }
 
+  const getPendingStatus = () => {
+    let isPending = 0
+    orders.map(order => {
+        isPending += order.status === 'pending'
+    })
+    return isPending 
+}
+  const getApprovedStatus = () => {
+    let isApproved = 0
+    orders.map(order => {
+      isApproved += order.status === 'approved'
+    })
+    return isApproved 
+}
+  const getRejectedStatus = () => {
+    let isRejected = 0
+    orders.map(order => {
+        isRejected += order.status === 'rejected'
+    })
+    return isRejected 
+}
+
   if (!orders) return <div></div>
-  const data = {
-    labels: [],
+  const data = { 
+    labels: ['Pending' , 'Rejected' , 'Aprroved'],
     datasets: [
       {
-        label: '# Orders segmentation by nights',
-        data: orders.map(order => order.status ),
-        data:['4', '5' ,'9' , '2'],
+        data: [getPendingStatus() ,getApprovedStatus() , getRejectedStatus() ],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -52,10 +72,10 @@ export const MyChart = ({stay}) => {
   }
  
 
-  if(orders)
+  if(orders )
   return <div className='Doughnut-chart' style={{
-    width: "270px", font: "20px" , fontWeight: "bold", textAlign: "center"}}>
-    <Doughnut data={data} /> </div>
+    width: "250px", font: "20px" ,textAlign: "center" , marginBottom: '30px'}}> <h2>Reservations status</h2>
+    <Doughnut data={data} /></div>
 }
 
 

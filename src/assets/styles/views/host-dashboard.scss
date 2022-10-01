@@ -1,36 +1,35 @@
 .dashboard-cards-main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    gap: 4rem;
-
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 4rem;
+  justify-content: space-between;
 }
 .my-dashboard{
 text-align: left;
 }
 
 .management-card{
-    height: 230px;
-    width: 400px;
-    min-width: 300px;
+    height: 180px;
+    width: 380px;
+    min-width: 355px;
     border: 1px solid $clr-light-grey;
     border-radius: 15px;
-    box-shadow: 4px 3px 22px -5px rgba(0, 0, 0, 0.52);
+    box-shadow: 0px -1px 10px -5px rgb(0 0 0 / 52%);
     font-family: 'cereal-medium';
 
     .card-txt{
       display: flex;
       flex-direction: column;
-      margin-top: 30px;
       margin-inline-start: 20px;
       gap: 15px;
+      margin-top: 20px;
+
       
     }
     h2{
-        text-align: center;
-        margin-top: 15px;
+      text-align: center;
+      margin-top: -12px;
     }
 
 
@@ -41,33 +40,37 @@ text-align: left;
       justify-content: space-between;
       padding: 5px;
       margin-inline-end: 21px;
+      margin-top: 12px;
       margin-left: 10px;
 
     }
 }
 
-
+.card-header-txt{
+  
+}
 
 .income-card {
-    height: 230px;
-    width: 400px;
-    min-width: 300px;
+    height: 180px;
+    width: 380px;
+    min-width: 355px;
     border: 1px solid $clr-light-grey;
     border-radius: 15px;
-    box-shadow: 4px 3px 22px -5px rgba(0, 0, 0, 0.52);
+    box-shadow: 0px -1px 10px -5px rgb(0 0 0 / 52%);
     font-family: 'cereal-medium';
 
     h2{
-        text-align: center;
-        margin-top: 15px;
+      text-align: center;
+      margin-top: -12px;
     }
 
   .card-txt{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
     margin-inline-start: 20px;
     gap: 15px;
+    margin-top: 20px;
+
 
   }
 
@@ -85,9 +88,40 @@ text-align: left;
 
 .host-select-btn{
 margin-top: 10px;
+margin-left: -30px;
+
 }
 
 .calculation{
 display: flex;
 text-align: right;
 }
+
+.two-cards{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+.charts-main{
+  display: flex;
+  align-items: center;
+  gap: 136px;
+ 
+}
+
+
+.dashboard-user-img {
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $clr-light-grey;
+  border-radius: 30px;
+}
+.user-img-dashboard{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  }
