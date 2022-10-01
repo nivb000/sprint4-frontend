@@ -2,13 +2,14 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { loginUser } from '../store/user.action'
 
-export const LoginSignup = ({ setLoginModal }) => {
+export const LoginSignup = ({ handleClose }) => {
 
     const dispatch = useDispatch()
     const [creds, setCreds] = useState({
         username: '',
         password: ''
     })
+
 
     const handleChange = ({ target }) => {
         const name = target.name
@@ -20,13 +21,12 @@ export const LoginSignup = ({ setLoginModal }) => {
     const handleLogin = (ev) => {
         ev.preventDefault()
         dispatch(loginUser(creds))
-        setLoginModal()
+        handleClose()
     }
 
 
     return <section className="login-modal">
-        <style>{".overlay {background-color: rgba(0, 0, 0, 0.25); display: inline; z-index: 3}"}</style>
-        <button className="modal-close-btn" onClick={setLoginModal}>X</button>
+        <button className="modal-close-btn" onClick={handleClose}>X</button>
         <h1>Log In</h1>
         <form onSubmit={handleLogin}>
             <div className="form-item">

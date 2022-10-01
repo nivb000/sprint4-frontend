@@ -12,10 +12,10 @@ img {
 }
 .overlay{
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: -1;
     width: 100%;
-    height: 300vh;
+    height: 100%;
 }
 .bottom-nav{
     display: none;

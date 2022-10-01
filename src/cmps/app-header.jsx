@@ -11,14 +11,14 @@ import { LoginSignup } from './login-signup';
 import { useSelector } from 'react-redux';
 import { UserNav } from './user-nav';
 import { ExpendedHeader } from './expended-header'
+import Backdrop from '@mui/material/Backdrop';
 
 export const AppHeader = () => {
 
     const user = useSelector(state => state.userModule.user)
-    const [loginModalIsOpen, setLoginModalIsOpen] = useState(false)
     const [userNavIsOpen, setUserNavIsOpen] = useState(false)
     const [expendedIsOpen, setExpendedIsOpen] = useState(false)
-
+    const [backDrop, setBackDrop] = useState(false)
 
     const theme = createTheme({
         components: {
@@ -65,16 +65,22 @@ export const AppHeader = () => {
                 <div className='nav-user' onClick={() => setUserNavIsOpen(prev => !prev)}>
                     <MenuIcon className='nav-icon' fontSize='small' />
                     {user ? <img src={user.imgUrl} alt="user profile" />
-                        : <img src={userProfilePic} style={{opacity: '0.5'}} alt="user profile" />}
+                        : <img src={userProfilePic} style={{ opacity: '0.5' }} alt="user profile" />}
                 </div>
             </div>
-        </section> : <ExpendedHeader setExpendedIsOpen={setExpendedIsOpen}/>}
+        </section> : <ExpendedHeader setExpendedIsOpen={setExpendedIsOpen} />
+        }
 
-        {loginModalIsOpen && <LoginSignup setLoginModal={() => setLoginModalIsOpen(prev => !prev)} />}
+
+        <Backdrop
+            sx={{ color: '#222', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={backDrop}>
+            <LoginSignup handleClose={() => setBackDrop(false)} />
+        </Backdrop>
         {userNavIsOpen &&
             <UserNav
-                setLoginModal={() => setLoginModalIsOpen(prev => !prev)}
                 setUserNav={() => setUserNavIsOpen(prev => !prev)}
+                setBackDrop={() => setBackDrop(prev => !prev)}
             />}
     </header>
 }

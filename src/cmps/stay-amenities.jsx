@@ -32,6 +32,7 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter'
 import ElevatorIcon from '@mui/icons-material/Elevator'
 import DialpadIcon from '@mui/icons-material/Dialpad'
 import CloseIcon from '@mui/icons-material/Close'
+import { Backdrop } from '@mui/material'
 
 import { useState } from 'react'
 
@@ -104,9 +105,10 @@ export const StayAmenities = ({ amenities }) => {
         }
       </ul>
       <button className="show-all" onClick={() => handleOnClick(setAmenitiesModal)}>{`Show all ${amenities.length} amenities`}</button>
-      {amenitiesModalIsOpen &&
+        <Backdrop
+          sx={{ color: '#222', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={amenitiesModalIsOpen}>
         <div className="stay-amenities-modal">
-          <style>{".overlay {background-color: rgba(0, 0, 0, 0.25); display: inline; z-index: 3}"}</style>
           <div className="modal-close-btn-container">
             <button className="modal-close-btn" onClick={setAmenitiesModal}><CloseIcon /></button>
           </div>
@@ -120,10 +122,10 @@ export const StayAmenities = ({ amenities }) => {
                 </li>
               )
             })
-            }
+          }
           </ul>
         </div>
-      }
+        </Backdrop>
     </section>
   )
 }

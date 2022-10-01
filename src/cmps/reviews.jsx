@@ -3,7 +3,7 @@ import { utilService } from '../services/util.service'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import CloseIcon from '@mui/icons-material/Close'
 import { useState } from 'react'
-import {Guests} from "./guests"
+import { Backdrop } from '@mui/material'
 
 export var Reviews = ({ reviews, rating }) => {
 
@@ -67,7 +67,9 @@ export var Reviews = ({ reviews, rating }) => {
       </ul>
 
       <button className="show-all" onClick={() => handleOnClick(setReviewsModal)}>{`Show all ${reviews.length} reviews`}</button>
-      {reviewsModalIsOpen &&
+      <Backdrop
+        sx={{ color: '#222', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={reviewsModalIsOpen}>
         <div className="reviews-modal">
           <div className="modal-close-btn-container">
             <button className="modal-close-btn" onClick={setReviewsModal}><CloseIcon /></button>
@@ -100,7 +102,7 @@ export var Reviews = ({ reviews, rating }) => {
               })}
           </ul>
         </div>
-      }
+      </Backdrop>
     </section>
   )
 }
