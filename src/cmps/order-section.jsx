@@ -80,6 +80,7 @@ export const OrderSection = ({ stay }) => {
             }
             dispatch(addOrder(order))
             calcOrderNights()
+            setConfirmIsOpen(true)
             console.log('sending order...')
         } else {
             setOpenAlert(true)

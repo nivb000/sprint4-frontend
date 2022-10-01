@@ -41,8 +41,8 @@ export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId,
                     </div>
                     <div className='sub-txt-main'>
                         <div>
+                                <img  style={{width:'100%'}} className='confirmation-img' src={stay.imgUrls[0]} alt="preview " />
                             <div className='confirmation-img-container' >
-                                <img className='confirmation-img' src={stay.imgUrls[0]} alt="preview " />
 
                            
                             </div>
@@ -53,7 +53,7 @@ export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId,
                             <p className='section-one-header' >Your Trip</p>
                             <p className='section-one-trip'> <span >Dates</span> <span>{`${order.startDate} - ${order.endDate}`} </span> </p>
                             <p className='section-one-trip'> <span >Location</span> <span>{stay.name} </span> </p>
-                            <p className='section-one-guests'>  <span>Guests</span>{order.guests}</p>
+                            {/* <p className='section-one-guests'>  <span>Guests</span>{order.guests}</p> */}
                         </div>
                     
 
@@ -72,7 +72,7 @@ export const ConfirmationModal = ({ stay, order, confirm , closeConfirm, userId,
                             </p>
                         </div>
                         <div className='inside-card-4'>
-                            <Link className='back-to-trips' to={`/trips/${userId}`}>Back to my trips</Link>
+                            <Link className='back-to-trips' to={`/trips/${userId}`}>Go to my trips</Link>
                         </div>
                     </div>
                 </Typography >
