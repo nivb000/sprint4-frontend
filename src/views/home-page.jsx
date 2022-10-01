@@ -6,8 +6,6 @@ import { FilterList } from "../cmps/filter-list"
 import { useLocation } from "react-router-dom"
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
-
-import { HostDashboard } from "./host-dashboard"
 const queryString = require('query-string');
 
 export const HomePage = () => {
