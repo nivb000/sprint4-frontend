@@ -45,6 +45,7 @@ export const OrderSection = ({ stay }) => {
         let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
         return Difference_In_Days
     }
+    
 
 
     const [order, setOrder] = useState({
@@ -61,7 +62,8 @@ export const OrderSection = ({ stay }) => {
         stay: {
             _id: stay._id,
             name: stay.name,
-            price: stay.price
+            price: stay.price,
+            img: stay.imgUrls[0]
         },
         status: 'pending'
     })

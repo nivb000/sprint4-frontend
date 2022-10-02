@@ -112,7 +112,7 @@
     z-index: 3;
     border: 1px solid $clr-light-grey;
     border-radius: 15px;
-    padding: 20px;
+    padding: 0 50px;
     padding-top: 0px;
     overflow: auto;
   
@@ -120,7 +120,7 @@
       position: fixed;
       display: flex;
       align-items: center;
-      width: 458px;
+      width: 400px;
       height: 50px;
       background-color: #fefefe;
       z-index: 10;
@@ -177,8 +177,6 @@
         height: 25px;
         width: 25px;
 
-        
-      
         &:hover {
           cursor: pointer;
           background-color: $clr-light-grey;

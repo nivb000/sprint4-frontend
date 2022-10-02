@@ -49,9 +49,9 @@ export const FilterList = () => {
     return (
 
         <div className="filter-main">
-            <button className='filters-btn'>
+            {/* <button className='filters-btn'>
                 <div className='filter-div'><TuneIcon fontSize='small' /> &nbsp;&nbsp;&nbsp;Filters</div>
-            </button>
+            </button> */}
             <div className="carusel-filter-main">
                 <>
                     <Swiper

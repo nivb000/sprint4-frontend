@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom'
-import airbnalogo from '../assets/imgs/airbna-logo.png';
-import logo from '../assets/imgs/logo.png';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import airbnalogo from '../assets/imgs/airbna-logo.png'
+import logo from '../assets/imgs/logo.png'
+import MenuIcon from '@mui/icons-material/Menu'
+import SearchIcon from '@mui/icons-material/Search'
 import userProfilePic from '../assets/imgs/header-icons/userprofle.jpg'
 import { useState, useRef } from 'react'
-import { LoginSignup } from './login-signup';
-import { useSelector } from 'react-redux';
-import { UserNav } from './user-nav';
-import { useSearchParams } from 'react-router-dom';
+import { LoginSignup } from './login-signup'
+import { useSelector } from 'react-redux'
+import { UserNav } from './user-nav'
+import { useSearchParams } from 'react-router-dom'
+import { Guests } from './guests'
 
 export const ExpendedHeader = ({ setExpendedIsOpen }) => {
 
@@ -22,10 +23,16 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
     const [checkInIsActive, setCheckInIsActive] = useState(false)
     const [checkOutIsActive, setCheckOutIsActive] = useState(false)
     const [guestsIsActive, setGuestsIsActive] = useState(false)
+    // const [guestsIsOpen, setGuestsIsOpen] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams()
     const [query, setQuery] = useState({
         location: '',
-        guests: 1
+        guests: {
+            adults: 1,
+            children: 0,
+            infants: 0,
+            pets: 0
+        }
     })
 
     const handleCheckInBlur = () => {
@@ -41,6 +48,10 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
             setLocationsModalIsOpen(false)
             setLocIsActive(false)
         }, 500);
+    }
+
+    const handleGuests = (guestsObj) => {
+        setQuery(prevState => ({ ...prevState, guests: guestsObj }))
     }
 
     const handleChange = ({ target }) => {
@@ -127,7 +138,15 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
                 </div>
                 <div className={guestsIsActive ? 'guests active' : 'guests'} onClick={() => setGuestsIsActive(true)}>
                     <p>Who</p>
-                    <input type="number" name='guests' placeholder="Add guests" onBlur={() => setGuestsIsActive(false)} onChange={handleChange} />
+                    {/* <input type="number" name='guests' placeholder="Add guests" onBlur={() => setGuestsIsActive(false)} onChange={handleChange} /> */}
+                    <div className="guest-input" onClick={() => setGuestsIsActive(prev => !prev)}>
+                        <label>GUESTS</label>
+                        <p>{query.guests.adults + query.guests.children + query.guests.infants + query.guests.pets} guests</p>
+                        <svg viewBox="0 0 320 512" width="100" title="angle-down">
+                            <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                        </svg>
+                    </div>
+                    {guestsIsActive && <Guests setGuestsIsActive={setGuestsIsActive} handleChange={handleChange} />}
                     <span onClick={handleSubmit}>
                         <SearchIcon fontSize='small' sx={{ color: 'white' }} />
                     </span>

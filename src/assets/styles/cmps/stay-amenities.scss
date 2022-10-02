@@ -68,9 +68,6 @@
       z-index: 10;
     }
 
-    h1 {
-    }
-
     .modal-close-btn {
       font-family: 'cereal-medium';
       border: 0;
@@ -100,7 +97,7 @@
       z-index: 3;
       border: 1px solid $clr-grey;
       border-radius: 15px;
-      padding: 20px;
+      padding: 0 50px;
       overflow: auto;
       
       
