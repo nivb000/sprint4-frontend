@@ -6,7 +6,6 @@ import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 
-
 export const Trips = () => {
 
   const orders = useSelector(state => state.orderModule.orders)
