@@ -55,8 +55,8 @@ export const FilterList = () => {
             <div className="carusel-filter-main">
                 <>
                     <Swiper
-                    slidesPerView={9.9}
-                    spaceBetween={-85}
+                    slidesPerView={15}
+                    spaceBetween={0}
                     slidesPerGroup={1}
                     loopFillGroupWithBlank={false}
                     pagination={{

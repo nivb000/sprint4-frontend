@@ -65,9 +65,8 @@ export const StayPreview = ({ stay }) => {
       </div>
     </div>
     <div className="preview-subtitle">
-      {/* <p>{utilService.getRandomIntInclusive(500,3000).toLocaleString('en-US')} Kilometers</p> */}
       <p>Hosted by {stay.host.fullname}</p>
-      <p>Sep 29 - 31</p>
+      <p>Oct 9 - 11</p>
     </div>
     <div className="preview-price">
       <p><span >${stay.price.toLocaleString('en-US')}</span> night</p>

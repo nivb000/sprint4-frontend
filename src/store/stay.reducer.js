@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
     stays: null,
-    filter: {type: '', location: '', guests: 1}
+    filter: {type: '', location: '', adults: 1, children: 0}
 }
 
 

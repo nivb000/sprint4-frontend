@@ -48,13 +48,9 @@ export const StayDetails = () => {
                 <h1> {stay.name} </h1>
                 <div className='deatils-sub-header'>
                     <div className='subheader-title'>
-                        <div className='rating'>
-                            <Rating ratingCount={stay.reviews.length} rate={stay.rate} />
-                            <span>&nbsp;&nbsp;·&nbsp;</span>
-                            <span   className='underline'>&nbsp;&nbsp;{stay.reviews.length} reviews  </span>
-                            <span>&nbsp;&nbsp;·&nbsp;</span>
-                            <span className='underline' >&nbsp;&nbsp;{stay.loc.address}</span>
-                        </div>
+                        <pre>
+                            <Rating ratingCount={stay.reviews.length} rate={stay.rate} /> · <span className='underline'>{stay.reviews.length} reviews</span>  ·  <span className='underline'>{stay.loc.address}</span>
+                        </pre>
                     </div>
                     <div className='subheader-btns'>
                         <div className='share'>

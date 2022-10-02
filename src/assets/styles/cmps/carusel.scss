@@ -28,7 +28,7 @@
 
 .carusel-filter-main {
     display: inline-block;
-    min-width: 100%;
+    width: 100%;
     align-items: center;
     .swiper-button-next {
         border: 0.5px solid rgba(0, 0, 0, 0.3);
@@ -37,8 +37,8 @@
         height: 27px;
         font-size: 13px;
         color: black;
-        margin-right: 16px;
-        margin-top: -14px;
+        background-color: white;
+        margin-top: -15px;
     }
 
     .swiper-button-next:hover {
@@ -66,8 +66,7 @@
         color: black;
         margin-left: 20px;
         margin-top: -14px;
-        display: flex;
-        
+        display: none;
     }
 
     .swiper-button-prev::after {

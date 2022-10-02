@@ -71,8 +71,6 @@ export const HostDashboard = () => {
         return <div>
             <div className="my-dashboard"><h1>My Dashboard</h1>
             <div className="user-img-dashboard"> 
-
-            {/* <img style={{ borderRadius: '50%'}} src={user.imgUrl} alt="user profile" /> */}
             </div>
             </div>
 
@@ -89,7 +87,6 @@ export const HostDashboard = () => {
                         <span className="card-header-txt"><h2>Orders Management </h2></span>
                         <div className="card-txt">
                             <p>Average Order Revenue <span className="calculation">{getAvragRevenue()}</span></p>
-                            {/* <p>Average guests Per Order <span>{getAvgGuests()}</span></p> */}
                         </div>
                     </div>
 

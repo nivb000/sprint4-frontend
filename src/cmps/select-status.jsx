@@ -52,7 +52,7 @@ export const SelectStatus = ({ order }) => {
 
                 ))}
             </select>
-            <button onClick={() => onRemoveOrder(order._id)}>X</button>
+            {/* <button onClick={() => onRemoveOrder(order._id)}>X</button> */}
         </div>
     );
 };
