@@ -49,7 +49,7 @@ const data = {
     labels: ['Pending' , 'Rejected' , 'Aprroved'],
     datasets: [
       {
-        data: [getPendingStatus() ,getApprovedStatus() , getRejectedStatus() ],
+        data: [getPendingStatus(), getRejectedStatus(), getApprovedStatus()],
         backgroundColor: [
           'rgba(54, 162, 235, 0.4)',
           'rgba(229, 120, 115, 0.4)',

@@ -10,17 +10,16 @@ export const Trips = () => {
 
   const orders = useSelector(state => state.orderModule.orders)
   const dispatch = useDispatch()
-
   
-  // useEffect(() => {
-  //   changeLayout('1270px')
-  //   return () => {
-  //     changeLayout('1760px')
-  //   }
-  // }, [])
-  // const changeLayout = (value) => {
-  //   document.documentElement.style.setProperty('--layoutWidth', value);
-  // }
+  useEffect(() => {
+    changeLayout('1270px')
+    return () => {
+      changeLayout('1760px')
+    }
+  }, [])
+  const changeLayout = (value) => {
+    document.documentElement.style.setProperty('--layoutWidth', value);
+  }
 
   useEffect(() => {
     dispatch(loadOrders())
@@ -31,14 +30,15 @@ export const Trips = () => {
   return <section className="trips">
     <h1 className='trips-title'>My trips</h1>
     <ul className="trips-grid-container">
-      {orders.reverse().map((order) => {
-          return <li key={order._id}>
+      {orders.reverse().map((order,idx) => {
+          return <li key={idx}>
             {order.stay && <img src={order.stay.img} alt="host-img" />}
             <div className="trip-text-container">
               <div className="upper-section">
                 {order.stay && <h4>{order.stay.name}</h4>}
                 <p>Hosted by Kevin</p>
                 <p>{`${order.startDate} - ${order.endDate}`}</p>
+                {order.guests && <p>Guests {`${order.guests.adults + order.guests.children}`}</p>}
               </div>
 
               <div className="bottom-section">

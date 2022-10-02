@@ -63,7 +63,6 @@ function EnhancedTableHead(props) {
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? 'center' : 'center'}
-            padding={headCell.disablePadding ? 'right' : 'right'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
             <TableSortLabel
@@ -278,21 +277,11 @@ export default function EnhancedTable({ rows, headCells, cellNames }) {
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
-                    <TableRow
-                      hover
-                      // onClick={(event) => handleClick(event, console.log(':' ,row.status))}                       
-                      // role="checkbox"
-                      // aria-checked={isItemSelected}
-                      // tabIndex={-1}
-                      // key={row.id}
-                      // selected={isItemSelected}
-                    >
+                    <TableRow hover key={index}>
                       <TableCell padding="none" >
-
                       </TableCell>    
                         {headCells.map(headerCell => {                            
-                          return <TableCell key={headerCell.id}  align="center" >{row[headerCell.id]} </TableCell>})}                       
-                        
+                          return <TableCell key={headerCell.id}  align="center" >{row[headerCell.id]} </TableCell>})}        
                     </TableRow>
                   );
                 })}

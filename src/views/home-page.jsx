@@ -31,8 +31,8 @@ export const HomePage = () => {
         {!stays ?  
         <Stack spacing={1}>
             <div className="stay-list">
-                {Array(12).fill(
-                <div className="stay-preview">
+                {Array.from(Array(12), (_, i) => 
+                <div className="stay-preview" key={i}>
                     <Skeleton variant="rounded" width={'auto'} height={278} />
                     <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
                     <Skeleton variant="text" sx={{ fontSize: '1rem' }} />

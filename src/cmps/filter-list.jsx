@@ -12,8 +12,6 @@ import { Pagination, Navigation } from "swiper";
 
 export const FilterList = () => {
 
-
-
     const labels = [
         'beaches',
         'Amazing views',
@@ -26,10 +24,10 @@ export const FilterList = () => {
         'desert',
         'Amazing pools',
         'iconic citys',
-        'island',
+        'shared homes',
         'mansions',
         'national park',
-        'shared homes',
+        'island',
         'ski',
         'surfing',
         'tiny homes',

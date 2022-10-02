@@ -5,8 +5,8 @@ import MuiAlert from '@mui/material/Alert';
 import { useState, forwardRef } from 'react'
 
 const Alert = forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
+})
 
 export const SelectStatus = ({ order }) => {
 
@@ -14,11 +14,10 @@ export const SelectStatus = ({ order }) => {
     const dispatch = useDispatch()
 
     const options = [
-
         { value: 'pending', text: 'Pending' },
         { value: 'approved', text: 'Approved' },
         { value: 'rejected', text: 'Rejected' },
-    ];
+    ]
 
     const handleChange = event => {
 
@@ -29,10 +28,6 @@ export const SelectStatus = ({ order }) => {
         setTimeout(() => {
             setOpenAlert(false)
         }, 3000);
-    };
-
-    const onRemoveOrder = (orderId) => {
-        dispatch(removeOrder(orderId))
     }
 
     return (
@@ -43,16 +38,13 @@ export const SelectStatus = ({ order }) => {
                     Order status updated
                 </Alert>
             </Snackbar>
-
             <select  className="selected-status" value={order.status} onChange={handleChange} >
                 {options.map(option => (
                     <option  key={option.value} value={option.value} >
                         {option.text}
                     </option>
-
                 ))}
             </select>
-            {/* <button onClick={() => onRemoveOrder(order._id)}>X</button> */}
         </div>
     );
 };

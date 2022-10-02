@@ -3,11 +3,8 @@ import { MyChart } from "../cmps/my-chart"
 import { useSelector, useDispatch } from 'react-redux';
 import { loadOrdersByHost } from "../store/order.action"
 import { useEffect } from "react";
-import * as React from 'react';
 import { green } from '@mui/material/colors';
 import Avatar from '@mui/material/Avatar';
-import { useState } from "react";
-
 import AttachMoneySharpIcon from '@material-ui/icons/AttachMoneySharp';
 import EqualizerSharpIcon from '@material-ui/icons/EqualizerSharp';
 import { red } from "@material-ui/core/colors";
@@ -19,9 +16,6 @@ export const HostDashboard = () => {
     const user = useSelector(state => state.userModule.user)
     const orders = useSelector(state => state.orderModule.orders)
     const dispatch = useDispatch()
-    console.log('userwerwerr:', user)
-
-    console.log('orders:', orders)
 
     useEffect(() => {
         getOrders()
@@ -39,7 +33,7 @@ export const HostDashboard = () => {
             sum += +order.totalPrice
             numOfOrders++
         })
-        return '$' + (sum / numOfOrders).toFixed(2)
+        return '$' + (sum / numOfOrders).toFixed(2).toLocaleString('en-US')
     }
 
     const getTotalIncome = () => {

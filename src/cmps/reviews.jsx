@@ -77,10 +77,10 @@ export var Reviews = ({ reviews, rating }) => {
           <ul className="reviews-list-modal">
             {reviews
               .sort((x, y) => new Date(y.at) - new Date(x.at))
-              .map((review) => {
+              .map((review,idx) => {
                 var d = new Date(review.at)
                 var reviewerImg = require(`../assets/imgs/square-profile-imgs/${utilService.getRandomIntInclusive(1, 20)}.jpg`)
-                return <li className="review">
+                return <li className="review" key={idx}>
                   <div className="review-content">
                     <div className="reviewer-details">
                       <div className="reviewer-details-img">

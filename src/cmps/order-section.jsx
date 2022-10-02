@@ -29,8 +29,8 @@ export const OrderSection = ({ stay }) => {
     const [confirmIsOpen, setConfirmIsOpen] = useState(false)
     const user = useSelector(state => state.userModule.user)
     const [openAlert, setOpenAlert] = useState(false)
-    const [guestsIsOpen, setGuestsIsOpen] = useState(false);
-    const [datePickerIsOpen, setDatePickerIsOpen] = useState(false);
+    const [guestsIsOpen, setGuestsIsOpen] = useState(false)
+    const [datePickerIsOpen, setDatePickerIsOpen] = useState(false)
     const [dates, setDates] = useState([
         {
             startDate: new Date(),
@@ -83,12 +83,11 @@ export const OrderSection = ({ stay }) => {
             dispatch(addOrder(order))
             calcOrderNights()
             setConfirmIsOpen(true)
-            console.log('sending order...')
         } else {
             setOpenAlert(true)
             setTimeout(() => {
                 setOpenAlert(false)
-            }, 3000);
+            }, 3000)
         }
     }
 
@@ -132,7 +131,7 @@ export const OrderSection = ({ stay }) => {
             </div>
 
             <div className="btn-container" onClick={handleReserve}>
-                {Array(79).fill(<div className="cell"></div>)}
+                {Array.from(Array(79), (_, i) => <div className='cell' key={i}></div>)}
                 <div className="content">
                     <button className="action-btn">
                         <span>Reserve</span>
