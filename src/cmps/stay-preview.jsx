@@ -1,29 +1,25 @@
-import { utilService } from '../services/util.service'
 import { Link } from 'react-router-dom'
 import { Rating } from './rating'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Parallax, Pagination, Navigation } from "swiper";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useDispatch } from 'react-redux';
-import { updateStay } from "../store/stay.action"
-import { useSelector } from 'react-redux';
 import { useState } from 'react'
+import '../assets/styles/cmps/stay-preview.scss'
 
 export const StayPreview = ({ stay }) => {
 
-  const user = useSelector(state => state.userModule.user)
-  const dispatch = useDispatch()
+
   const [btnsHover, setBtnsHover] = useState(false)
 
-  const onUpdateStay = () => {
-    stay.likedByUsers.push(user.fullname)
-    dispatch(updateStay(stay))
-  }
+  // const onUpdateStay = () => {
+  //   stay.likedByUsers.push(user.fullname)
+  //   dispatch(updateStay(stay))
+  // }
 
-  const handleHover = (ev, value) => {
-    ev.stopPropagation();
-    ev.nativeEvent.stopImmediatePropagation();
-  }
+  // const handleHover = (ev, value) => {
+  //   ev.stopPropagation();
+  //   ev.nativeEvent.stopImmediatePropagation();
+  // }
 
 
   return <section className="stay-preview" onMouseOver={() => setBtnsHover(true)} onMouseOut={() => setBtnsHover(false)}>

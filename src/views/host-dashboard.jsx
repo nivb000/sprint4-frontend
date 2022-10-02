@@ -13,7 +13,6 @@ import { VerticalChart } from "../cmps/vertticaChart";
 
 export const HostDashboard = () => {
 
-    const user = useSelector(state => state.userModule.user)
     const orders = useSelector(state => state.orderModule.orders)
     const dispatch = useDispatch()
 
@@ -92,8 +91,6 @@ export const HostDashboard = () => {
                         <div className="card-txt">
                             <p>This Month<span>{getTotalRevenueThisYear()}</span></p>
                             <p> This Year<span style={{ color: 'green' }}>{getTotalIncome()}</span></p>
-
-
                         </div>
                     </div>
                 </div>
