@@ -44,9 +44,9 @@ export const SelectStatus = ({ order }) => {
                 </Alert>
             </Snackbar>
 
-            <select value={order.status} onChange={handleChange} >
+            <select  className="selected-status" value={order.status} onChange={handleChange} >
                 {options.map(option => (
-                    <option key={option.value} value={option.value} >
+                    <option  key={option.value} value={option.value} >
                         {option.text}
                     </option>
 

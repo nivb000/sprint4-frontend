@@ -72,7 +72,6 @@ export const HostDashboard = () => {
             <div className="my-dashboard"><h1>My Dashboard</h1>
             <div className="user-img-dashboard"> 
 
-            {/* <img style={{ borderRadius: '50%'}} src={user.imgUrl} alt="user profile" /> */}
             </div>
             </div>
 

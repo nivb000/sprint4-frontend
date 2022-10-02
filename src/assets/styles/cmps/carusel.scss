@@ -28,9 +28,10 @@
 
 .carusel-filter-main {
     display: inline-block;
+    // if we will use iphone 12 :
+    // width: 81rem;
     width: 93rem;
     min-width: 93rem;
-    // display: flex;
     align-items: center;
     .swiper-button-next {
         border: 0.5px solid rgba(0, 0, 0, 0.3);

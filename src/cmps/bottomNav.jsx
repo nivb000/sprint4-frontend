@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
@@ -6,9 +6,21 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Paper from '@mui/material/Paper';
+import { LoginSignup } from './login-signup';
+import { Trips } from '../views/trips';
+import { Link } from 'react-router-dom'
+
 
 export const BottomNav = () => {
   const [value, setValue] = useState(0);
+  const [isShown, setIsShown] = useState(false);
+
+
+
+
+  const handleClick = event => {
+    setIsShown(current => !current);
+  }
 
   return (
     <Box className='bottom-nav' sx={{ width: 'auto' }}>
@@ -19,9 +31,15 @@ export const BottomNav = () => {
           onChange={(event, newValue) => {
             setValue(newValue);
           }}>
-          <BottomNavigationAction label="Explore" icon={<SearchIcon />} />
-          <BottomNavigationAction label="Wishlist" icon={<FavoriteBorderIcon />} />
-          <BottomNavigationAction label="Log in" icon={<AccountCircleIcon />} />
+
+
+          <Link to={`/`}><BottomNavigationAction label="Explore" icon={<SearchIcon />} />
+
+            
+              <BottomNavigationAction label="My trips" icon={<FavoriteBorderIcon />} /></Link>
+
+            <BottomNavigationAction onClick={handleClick} label="Log in" icon={<AccountCircleIcon />} />
+            {isShown && <LoginSignup />}
         </BottomNavigation>
       </Paper>
     </Box>

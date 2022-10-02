@@ -35,7 +35,7 @@ export const Trips = () => {
     dispatch(loadOrders())
   }
 
-  if (!orders) return <Loader />
+  if (orders) 
 
   return <section className="trips">
     <h1 className='trips-title'>Trips</h1>
@@ -45,7 +45,7 @@ export const Trips = () => {
             <img src={require(`../assets/imgs/preview-imgs/${utilService.getRandomIntInclusive(1, 20)}.webp`)} alt="host-img" />
             <div className="trip-text-container">
               <div className="upper-section">
-                <h4>{order.stay.name}</h4>
+               <h4>{order.stay.name}</h4> 
                 <p>{`Hosted by Kevin`}</p>
                 <p>{`${order.startDate} - ${order.endDate}`}</p>
               </div>

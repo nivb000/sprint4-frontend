@@ -41,6 +41,22 @@
             }
         }
     }
+    .login-modal {
+        position: fixed;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        top: 20%;
+        left: 35%;
+        width: 338px;
+        height: 400px;
+        background-color: white;
+        z-index: 3;
+        border: 5px solid black;
+        border-radius: 15px;
+        margin-left: -109px;
+    }
     .bottom-nav{
         display: inline;
     }

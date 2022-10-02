@@ -53,13 +53,14 @@ const labels = ['August', 'September', 'October']
     {
       label: 'Last year earnings',
       data: [ 855 , 300 ,900] ,
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      backgroundColor: 'rgba(129, 199, 132, 0.5)',
 
     },
     {
       label: 'Current year earnings ',
       data: [ 600 , 400 ,11],
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      backgroundColor: 'rgba(229, 100, 115, 0.5)',
+      // backgroundColor: 'rgba(255, 90, 95, 1)',
     },
 
   ],
