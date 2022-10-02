@@ -6,11 +6,27 @@ import { HostDashboard } from './views/host-dashboard'
 import { Trips } from "./views/trips"
 import { Footer } from "./cmps/footer"
 import { BottomNav } from './cmps/bottomNav'
-
+import { loadStays, setFilterState } from "./store/stay.action"
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+const queryString = require('query-string');
 
 export const RootCmp = () => {
 
-  const loc = useLocation()
+  const dispatch = useDispatch()
+  const location = useLocation()
+
+  useEffect(() => {
+    setFilter()
+    dispatch(loadStays())
+}, [location.search])
+
+  const setFilter = () => {
+    const filter = queryString.parse(location.search)
+    dispatch(setFilterState(filter))
+}
+
+
 
   return (
     <div className="App">
@@ -26,7 +42,7 @@ export const RootCmp = () => {
         </Routes>
       </main>
       <BottomNav />
-      {loc.pathname === '/' && <Footer />}
+      {location.pathname === '/' && <Footer />}
     </div>
   )
 }

@@ -50,7 +50,7 @@ export const OrderSection = ({ stay }) => {
 
     const [order, setOrder] = useState({
         hostId: stay.host._id,
-        totalPrice: stay.price,
+        totalPrice: stay.price * calcOrderNights(),
         guests: {
             adults: 1,
             children: 0,

@@ -1,30 +1,14 @@
-import { loadStays, setFilterState } from "../store/stay.action"
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { StayList } from '../cmps/stay-list'
 import { FilterList } from "../cmps/filter-list"
 import { useLocation } from "react-router-dom"
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
-const queryString = require('query-string');
 
 export const HomePage = () => {
 
     const stays = useSelector(state => state.stayModule.stays)
-    const dispatch = useDispatch()
     const location = useLocation()
-
-    
-    useEffect(() => {
-        setFilter()
-        dispatch(loadStays())
-    }, [location.search])
-    
-
-    const setFilter = () => {
-        const filter = queryString.parse(location.search)
-        dispatch(setFilterState(filter))
-    }
 
     return <section className="home-page">
         <FilterList />

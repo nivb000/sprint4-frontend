@@ -58,7 +58,7 @@ export const ConfirmationModal = ({ stay, order, confirm, closeConfirm, userId, 
                 <div className='inside-card'>
                     <Typography className='section-three-total'>
                         <span>Total</span>
-                        <span className='total'>${order.stay.price * calcNights().toFixed(0)} </span>
+                        <span className='total'>${order.totalPrice.toFixed(0)} </span>
                     </Typography>
                 </div>
                 <div className='inside-card-4'>

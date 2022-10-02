@@ -38,7 +38,7 @@ export const Trips = () => {
                 {order.stay && <h4>{order.stay.name}</h4>}
                 <p>Hosted by Kevin</p>
                 <p>{`${order.startDate} - ${order.endDate}`}</p>
-                {order.guests && <p>Guests {`${order.guests.adults + order.guests.children}`}</p>}
+                {order.guests && <p>{`${order.guests.adults + order.guests.children}`} Guests</p>}
               </div>
 
               <div className="bottom-section">

@@ -1,5 +1,5 @@
 import { httpService } from "./http.service"
-
+import { socketService } from "./socket.service"
 const KEY = 'auth'
 const KEY_LOGGEDIN = 'loggedinUser'
 
@@ -14,7 +14,10 @@ window.us = userService
 
 async function login(credentials) {
     const user = await httpService.post(`${KEY}/login`, credentials)
-    sessionStorage.setItem(KEY_LOGGEDIN, JSON.stringify(user))
+    if(user){
+        sessionStorage.setItem(KEY_LOGGEDIN, JSON.stringify(user))
+        socketService.login(user._id)
+    }
     return user
 }
 
@@ -30,6 +33,7 @@ function signup(userInfo) {
 function logout() {
     httpService.post(`${KEY}/logout`)
     sessionStorage.setItem(KEY_LOGGEDIN, null)
+    socketService.logout()
     return Promise.resolve()
 }
 
