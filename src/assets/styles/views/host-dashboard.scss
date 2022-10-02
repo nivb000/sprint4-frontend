@@ -1,6 +1,5 @@
 .dashboard-cards-main {
   display: flex;
-  margin-top: 2rem;
   margin-bottom: 2rem;
   gap: 4rem;
   justify-content: space-between;
@@ -102,11 +101,15 @@ text-align: right;
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
+  margin-right: 10px;
+
 }
 .charts-main{
   display: flex;
   align-items: center;
-  gap: 136px;
+  gap: 181px;
+  margin-left: -13px;
+
  
 }
 
@@ -124,4 +127,19 @@ text-align: right;
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  }
+  
+  .selected-status{
+    margin-right: -25px;
+    color: #e57373;
+    border-radius: 10px;
+    width: 85px;
+    height: 40px;
+    box-shadow: 0px -1px 10px -5px rgb(0 0 0 / 32%);
+
+  }
+
+  .mmm{
+    display: flex;
+    flex-direction: column-reverse;
   }

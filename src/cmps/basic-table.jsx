@@ -22,7 +22,7 @@ export const BasicTable = ({ orders }) => {
         { id: 'endDate', numeric: false, disablePadding: false, label: 'Check-out' },
         { id: 'buyer', numeric: false, disablePadding: false, label: 'Purchased by' , },
         { id: 'placeName', numeric: false, disablePadding: false, label: 'Stay Name' },
-        { id: 'totalPrice', numeric: false, disablePadding: false, label: 'Orders Revenue' },
+        { id: 'totalPrice', numeric: true, disablePadding: true, label: 'Orders Revenue' },
     ]
 
     if (!orders) return <Loader />

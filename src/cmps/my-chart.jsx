@@ -44,29 +44,30 @@ export const MyChart = ({stay}) => {
     return isRejected 
 }
 
-  if (!orders) return <div></div>
-  const data = { 
+if (!orders) return <div></div>
+const data = { 
     labels: ['Pending' , 'Rejected' , 'Aprroved'],
     datasets: [
       {
         data: [getPendingStatus() ,getApprovedStatus() , getRejectedStatus() ],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(5, 206, 86, 0.2)',
-          'rgba(255, 206, 6, 0.2)',
-          'rgba(255, 26, 86, 0.2)',
-          'rgba(25,56, 86, 0.2)',
+          'rgba(54, 162, 235, 0.4)',
+          'rgba(229, 120, 115, 0.4)',
+          'rgba(129, 199, 132, 0.4)',
+          // 'rgba(255, 206, 6, 0.2)',
+          // 'rgba(255, 26, 86, 0.2)',
+          // 'rgba(25,56, 86, 0.2)',
         ],
         borderColor: [
           'rgba(255, 206, 132, 1)',
           'rgba(54, 206, 235, 1)',
           'rgba(255, 206, 86, 1)',
-          'rgba(132, 206, 4, 1)',
-          'rgba(155, 206, 86, 1)',
-          'rgba(255, 206, 53, 1)',
+          // 'rgba(132, 206, 4, 1)',
+          // 'rgba(155, 206, 86, 1)',
+          // 'rgba(255, 206, 53, 1)',
         ],
         borderWidth: 0.4,
+
       },
     ],
   }
@@ -75,7 +76,8 @@ export const MyChart = ({stay}) => {
   if(orders )
   return <div className='Doughnut-chart' style={{
     width: "250px", font: "20px" ,textAlign: "center" , marginBottom: '30px'}}> <h2>Reservations status</h2>
-    <Doughnut data={data} /></div>
+    <Doughnut className='mmm' data={data} /> </div>
+    
 }
 
 

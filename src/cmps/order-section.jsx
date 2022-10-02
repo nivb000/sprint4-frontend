@@ -142,7 +142,7 @@ export const OrderSection = ({ stay }) => {
             <div className='order-summary'>
                 <p>You won't be charged yet</p>
                 <div>
-                    <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights()} nights</span>
+                    <span style={{ textDecoration: 'underline' }}>${stay.price} x {calcOrderNights().toFixed(0)} nights</span>
                     <span>${stay.price * calcOrderNights().toFixed(0)}</span>
                 </div>
                 <div>
