@@ -9,9 +9,8 @@ export const orderService = {
 
 const KEY = 'order'
 
-function query(filter) {
-
-    return httpService.get(KEY)
+function query(userId) {
+    return httpService.get(KEY, userId)
         .then(orders => {
             if (!orders || !orders.length) {
                 console.log('no orders');

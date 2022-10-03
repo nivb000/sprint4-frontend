@@ -1,15 +1,16 @@
 import { orderService } from '../services/order.service.js'
 
 export function loadOrders() {
-    return (dispatch) => {
-        orderService.query()
+    return (dispatch, getState) => {
+        const { user } = getState().userModule
+        orderService.query({buyerId: user._id})
             .then(orders => dispatch({ type: 'SET_ORDERS', orders }))
             }
         }
 export function loadOrdersByHost() {
     return (dispatch, getState) => {
         const { user } = getState().userModule
-        orderService.query(user)
+        orderService.query({hostId: user._id})
             .then(orders => dispatch({ type: 'SET_ORDERS', orders }))
     }
 }

@@ -3,13 +3,8 @@ import { Rating } from './rating'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Parallax, Pagination, Navigation } from "swiper";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useState } from 'react'
-import '../assets/styles/cmps/stay-preview.scss'
 
 export const StayPreview = ({ stay }) => {
-
-
-  const [btnsHover, setBtnsHover] = useState(false)
 
   // const onUpdateStay = () => {
   //   stay.likedByUsers.push(user.fullname)
@@ -21,8 +16,7 @@ export const StayPreview = ({ stay }) => {
   //   ev.nativeEvent.stopImmediatePropagation();
   // }
 
-
-  return <section className="stay-preview" onMouseOver={() => setBtnsHover(true)} onMouseOut={() => setBtnsHover(false)}>
+  return <section className="stay-preview">
     <>
       <Swiper
         style={{
@@ -34,7 +28,7 @@ export const StayPreview = ({ stay }) => {
         loop={true}
         parallax={true}
         pagination={{ clickable: true }}
-        navigation={btnsHover}
+        navigation={true}
         modules={[Parallax, Pagination, Navigation]}
         className="mySwiper">
         <div slot="container-start"></div>
