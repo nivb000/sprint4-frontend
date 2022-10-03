@@ -23,6 +23,7 @@ export const StayPreview = ({ stay }) => {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
           "--swiper-pagination-size": "10px",
+          "--swiper-navigation-size": "12px"
         }}
         speed={600}
         loop={true}
