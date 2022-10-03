@@ -12,6 +12,7 @@ import 'react-date-range/dist/theme/default.css';
 import { DateRangePicker } from 'react-date-range';
 import { addDays } from 'date-fns'
 import Slide from '@mui/material/Slide';
+import { socketService, SOCKET_EVENT_ORDER_UPDATED } from '../services/socket.service'
 
 
 const Alert = forwardRef(function Alert(props, ref) {
@@ -81,7 +82,6 @@ export const OrderSection = ({ stay }) => {
                 fullname: user.fullname
             }
             dispatch(addOrder(order))
-            calcOrderNights()
             setConfirmIsOpen(true)
         } else {
             setOpenAlert(true)

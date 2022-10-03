@@ -25,7 +25,7 @@ export const SelectStatus = ({ order }) => {
         const status = event.target.value
         order.status = status
         dispatch(updateOrder(order))
-        socketService.emit(SOCKET_EVENT_ORDER_UPDATED, 'order updated')
+        socketService.emit(SOCKET_EVENT_ORDER_UPDATED, order)
         setOpenAlert(true)
         setTimeout(() => {
             setOpenAlert(false)
