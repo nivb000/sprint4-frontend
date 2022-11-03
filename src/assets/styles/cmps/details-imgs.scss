@@ -1,3 +1,16 @@
+.details-img-container{
+    display: none;
+    .back-btn{
+        position: absolute;
+        top: 15px;
+        left: 35px;
+        font-size: 2.1rem;
+        padding: 0.5rem;
+        background-color: rgba(250, 250, 250, 0.799);
+        border-radius: 50%;
+    }
+}
+
 .detalis-imgs-main {
     display: flex;
     gap: 10px;

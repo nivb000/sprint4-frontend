@@ -19,11 +19,6 @@ const Alert = forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-function SlideTransition(props) {
-    return <Slide {...props} direction="up" />;
-}
-
-
 export const OrderSection = ({ stay }) => {
 
     const dispatch = useDispatch()

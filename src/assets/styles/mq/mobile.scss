@@ -1,4 +1,4 @@
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .app-header {
         margin-block-end: -13px;
         border-bottom: none;
@@ -13,7 +13,7 @@
         }
     }
     .main-layout{
-        padding: 0 10px 0 10px;
+        padding: 0 20px;
         .home-page{
             .filter-main{
                 height: 90px;
@@ -39,11 +39,13 @@
         }
         .stay-details{
             margin-block-start: 2rem;
-            .deatils-header .deatils-sub-header{
+            .deatils-header{
+                display: none;
                 flex-wrap: wrap;
             }
             .details-container{
                 flex-direction: column;
+                margin-block-start: 3rem;
                 .left{
                     .host-details{
                         .main-details{
@@ -64,6 +66,16 @@
                     }
                 }
             }
+            .detalis-imgs-main{
+                display: none;
+            }
+            .details-img-container{
+                display: block;
+                img{
+                    height: 300px;
+                    width: 100vw;
+                }
+            }
         }
     }
     .login-modal {
@@ -81,6 +93,12 @@
         border: 5px solid black;
         border-radius: 15px;
         margin-left: -109px;
+    }
+    .trips{
+        h1{
+            margin-bottom: 0;
+            margin: 30px 0;
+        }
     }
     .bottom-nav{
         display: inline;
