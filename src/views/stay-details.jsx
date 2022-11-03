@@ -7,11 +7,13 @@ import { Reviews } from "../cmps/reviews";
 import { useParams } from 'react-router-dom';
 import { stayService } from '../services/stay.service';
 import { OrderSection } from '../cmps/order-section'
-import { Loader } from '../cmps/loader'
 import { Rating } from '../cmps/rating'
 import IosShareIcon from '@mui/icons-material/IosShare';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { GoogleMap } from '../cmps/google-map';
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
+
 
 
 
@@ -39,7 +41,15 @@ export const StayDetails = () => {
         setStay(stay)
     }
     
-    if (!stay) return <Loader />
+    if (!stay) return (
+        <Stack spacing={1}>
+            <Skeleton variant="rounded" width={'auto'} height={300} />
+            <Skeleton variant="text" sx={{ fontSize: '3rem' }} />
+            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+            <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+        </Stack>
+    )
 
 
     return (

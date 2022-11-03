@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { loadOrders } from "../store/order.action"
-import { Loader } from '../cmps/loader'
 import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 export const Trips = () => {
 
@@ -25,7 +26,23 @@ export const Trips = () => {
     dispatch(loadOrders())
   }, [])
 
-  if (!orders) return <Loader />
+  if (!orders) return (
+    <Stack spacing={1}>
+      <ul className='trips-grid-cointainer'>
+        <li>
+          <Skeleton variant="rounded" width={'auto'} height={150} />
+          <div className='trips-text-cointainer'>
+            <div className='upper-section'>
+              <Skeleton variant="text" sx={{ fontSize: '2rem' }} />
+              <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+              <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </Stack>
+  ) 
 
   return <section className="trips">
     <h1 className='trips-title'>My trips</h1>

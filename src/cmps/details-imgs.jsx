@@ -30,10 +30,14 @@ export const DetailsImgs = ({ imgs }) => {
             </div>
         </div>
         <Swiper
+            style={{
+                "--swiper-pagination-color": "#fff",
+                "--swiper-pagination-size": "10px",
+            }}
             speed={600}
             loop={true}
             parallax={true}
-            pagination={false}
+            pagination={true}
             modules={[Parallax, Pagination, Navigation]}
             className="details-image-gallery">
             <div slot="container-start"></div>
