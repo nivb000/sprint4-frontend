@@ -10,7 +10,7 @@
   <li>Backoffice for the stay host to confirm / reject orders and view stats about all of his stays</li>
   <li>Login system</li>
   <li>Complex search/filter system</li>
-<ul>
+</ul>
   
 
 <h3>Tech stack</h3>
