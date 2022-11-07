@@ -51,12 +51,12 @@
   
   <h3 id="fullstacklist">All tech stacks</h3>
   
-  <h4>Framework: React.js</h4>
+  <h4>🔵Framework: React.js</h4>
   <ul>
   <li>React router</li>
   <li>Style with SCSS</li>
   </ul>
-  <h3>Libraries</h3>
+  <h4>🔵Libraries</h4>
   <ul>
   <li>Material UI (ICONS, UTILS, CORE)</li>
   <li>date-fns</li>
