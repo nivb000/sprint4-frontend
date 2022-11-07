@@ -42,6 +42,8 @@
    <img align="left" src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810580/Airbna/airbna.onrender.com__iPhone_6_7_8_fwtezw.png" width="200px" height="400px" />
    <img align="left" src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810580/Airbna/airbna.onrender.com__iPhone_6_7_8_1_q585bp.png" width="200px" height="400px" />
    <img align="center" src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810577/Airbna/airbna.onrender.com__iPhone_6_7_8_2_besabi.png" width="200px" height="400px" />
+   
+   <hr>
   
   
   
