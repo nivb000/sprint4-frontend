@@ -8,7 +8,7 @@
 <ul>
   <li>Full ordering system with order confirmation</li>
   <li>Backoffice for the stay host to confirm / reject orders and view stats about all of his stays</li>
-  <li>Login system</li>
+  <li>Login system with cookie saving</li>
   <li>Complex search/filter system</li>
 </ul>
   
@@ -54,9 +54,17 @@
   </ul>
   <h3>Libraries</h3>
   <ul>
-  <li>Material UI</li>
-  <li>Chart.js</li>
+  <li>Material UI (ICONS, UTILS, CORE)</li>
+  <li>date-fns</li>
   <li>Socket.io</li>
+  <li>Swiper</li>
+  <li>react-chartjs</li>
+  <li>react-date-range</li>
+  <li>google-map-react</li>
+  <li>bcrypt</li>
+  <li>cookie-parser</li>
+  <li>cryptr</li>
+  </ul>
   
   <h3>State management wtih Redux</h3>
   <h3>API with REST using Axios</h3>
