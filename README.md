@@ -21,8 +21,10 @@
   <li>MongoDB</li>
   <li><a href="#fullstacklist">Full list here</a></li>
  </ul>
+ 
+ <hr>
 
-<h3 align="center">Screenshots</h3>
+<h1 align="center">Screenshots</h1>
   
   <h4>Home page</h4>
 
