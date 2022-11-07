@@ -68,13 +68,13 @@
   <li>cryptr</li>
   </ul>
   
-  <h4>State management wtih Redux</h4>
-  <h4>API with REST using Axios</h4>
-  <h4>Node.js server with express.js</h4>
-  <h4>Full CRUD with MongoDB</h4>
-  <h4>PWA app</h4>
+  <h4>🔵State management wtih Redux</h4>
+  <h4>🔵API with REST using Axios</h4>
+  <h4>🔵Node.js server with express.js</h4>
+  <h4>🔵Full CRUD with MongoDB</h4>
+  <h4>🔵PWA app</h4>
   
-  
+  <hr>
   
   
   <h3>Project created by</h3>
