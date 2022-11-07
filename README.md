@@ -47,17 +47,22 @@
   
   <h3 id="fullstacklist">full tech stack</h3>
   
-  <h4>Framework: React.js</h4
+  <h3>Framework: React.js</h3>
   <ul>
   <li>React router</li>
   <li>Style with SCSS</li>
   </ul>
+  <h3>Libraries</h3>
+  <ul>
+  <li>Material UI</li>
+  <li>Chart.js</li>
+  <li>Socket.io</li>
   
-  <h4>State management: Redux</h4
-  <h4>Node.js server with express.js</h4>
-  <h4>Socket.io</h4>
-  <h4>Full CRUD with MongoDB</h4>
-  <h4>PWA app/h4>
+  <h3>State management wtih Redux</h3>
+  <h3>API with REST using Axios</h3>
+  <h3>Node.js server with express.js</h3>
+  <h3>Full CRUD with MongoDB</h3>
+  <h3>PWA app</h3>
   
   
   
