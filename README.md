@@ -4,7 +4,7 @@
 <p align="left">Airbna is an airbnb clone app where you can rent a stay for a vacation</p>
 <p>App is live <a href="https://airbna.onrender.com/#/">here</a></p>
 
-<p>App features</p>
+<h3>App features</h3>
 <ul>
   <li>Full ordering system with order confirmation</li>
   <li>Backoffice for the stay host to confirm / reject orders and view stats about all of his stays</li>
@@ -16,13 +16,13 @@
 <h3>Tech stack</h3>
 <ul>
   <li>React.js</li>
-  <li>SCSS</li>
   <li>Express.js</li>
   <li>Node.js</li>
   <li>MongoDB</li>
+  <li><a href="#fullstacklist">Full list here</a></li>
  </ul>
 
-<h3>Screenshots</h3>
+<h3 align="center">Screenshots</h3>
   
   <h4>Home page</h4>
 
@@ -45,3 +45,26 @@
   
   
   
+  <h3 id="fullstacklist">full tech stack</h3>
+  
+  <h4>Framework: React.js</h4
+  <ul>
+  <li>React router</li>
+  <li>Style with SCSS</li>
+  </ul>
+  
+  <h4>State management: Redux</h4
+  <h4>Node.js server with express.js</h4>
+  <h4>Socket.io</h4>
+  <h4>Full CRUD with MongoDB</h4>
+  <h4>PWA app/h4>
+  
+  
+  
+  
+  <h3>Prject created by</h3>
+  <ul>
+    <li><a href="https://github.com/nivb000">Me</a></li>
+    <li><a href="https://github.com/Alon-Avisar">Alon Avisar</a></li>
+    <li><a href="https://github.com/BnayaKahalani">Bnaya Kahalani</a></li>
+  </ul>
