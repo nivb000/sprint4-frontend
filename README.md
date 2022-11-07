@@ -47,7 +47,7 @@
   
   <h3 id="fullstacklist">All tech stacks</h3>
   
-  <h3>Framework: React.js</h3>
+  <h4>Framework: React.js</h4>
   <ul>
   <li>React router</li>
   <li>Style with SCSS</li>
@@ -66,11 +66,11 @@
   <li>cryptr</li>
   </ul>
   
-  <h3>State management wtih Redux</h3>
-  <h3>API with REST using Axios</h3>
-  <h3>Node.js server with express.js</h3>
-  <h3>Full CRUD with MongoDB</h3>
-  <h3>PWA app</h3>
+  <h4>State management wtih Redux</h4>
+  <h4>API with REST using Axios</h4>
+  <h4>Node.js server with express.js</h4>
+  <h4>Full CRUD with MongoDB</h4>
+  <h4>PWA app</h4>
   
   
   
