@@ -11,6 +11,7 @@
   <li>Login system</li>
   <li>Complex search/filter system</li>
 <ul>
+  
 
 <h3>Tech stack</h3>
 <ul>
@@ -38,9 +39,9 @@
   
   <h4>Responsive design</h4>
   
-   <img src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810580/Airbna/airbna.onrender.com__iPhone_6_7_8_fwtezw.png" width="500px" height="800px" />
-   <img src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810580/Airbna/airbna.onrender.com__iPhone_6_7_8_1_q585bp.png" width="500px" height="800px" />
-   <img src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810577/Airbna/airbna.onrender.com__iPhone_6_7_8_2_besabi.png" width="500px" height="800px" />
+   <img align="left" src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810580/Airbna/airbna.onrender.com__iPhone_6_7_8_fwtezw.png" width="250px" height="450px" />
+   <img align="left" src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810580/Airbna/airbna.onrender.com__iPhone_6_7_8_1_q585bp.png" width="250px" height="450px" />
+   <img align="center" src="https://res.cloudinary.com/dhe2rvexr/image/upload/v1667810577/Airbna/airbna.onrender.com__iPhone_6_7_8_2_besabi.png" width="250px" height="450px" />
   
   
   
