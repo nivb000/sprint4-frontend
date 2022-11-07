@@ -45,7 +45,7 @@
   
   
   
-  <h3 id="fullstacklist">full tech stack</h3>
+  <h3 id="fullstacklist">All tech stacks</h3>
   
   <h3>Framework: React.js</h3>
   <ul>
