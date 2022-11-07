@@ -75,7 +75,7 @@
   
   
   
-  <h3>Prject created by</h3>
+  <h3>Project created by</h3>
   <ul>
     <li><a href="https://github.com/nivb000">Me</a></li>
     <li><a href="https://github.com/Alon-Avisar">Alon Avisar</a></li>
