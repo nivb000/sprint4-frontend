@@ -23,7 +23,7 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
     const [checkInIsActive, setCheckInIsActive] = useState(false)
     const [checkOutIsActive, setCheckOutIsActive] = useState(false)
     const [guestsIsActive, setGuestsIsActive] = useState(false)
-    // const [guestsIsOpen, setGuestsIsOpen] = useState(false);
+    const [guestsIsOpen, setGuestsIsOpen] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
     const [query, setQuery] = useState({
         location: '',
@@ -60,7 +60,7 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
         setQuery(prev => ({ ...prev, [name]: value }))
     }
     const handleSubmit = () => {
-        setSearchParams(query)
+        setSearchParams({location: query.location, adults: query.guests.adults, children: query.guests.children})
         setExpendedIsOpen(false)
     }
     const btnLabels = [
@@ -115,42 +115,41 @@ export const ExpendedHeader = ({ setExpendedIsOpen }) => {
         }
         <section className='expended-search'>
             <div className="bar">
-                <div className={locIsActive ? 'location active' : 'location'} onClick={() => setLocIsActive(true)}>
+                <section className={locIsActive ? 'location active' : 'location'} onClick={() => setLocIsActive(true)}>
                     <p>Where</p>
                     <input type="text" name='location' value={query.location} placeholder="Search destinations"
                         onFocus={() => setLocationsModalIsOpen(true)}
                         onBlur={handleLocBlur} onChange={handleChange} />
-                </div>
+                </section>
 
-                <div className={checkInIsActive ? 'check-in active' : 'check-in'} onClick={() => setCheckInIsActive(true)}>
+                <section className={checkInIsActive ? 'check-in active' : 'check-in'} onClick={() => setCheckInIsActive(true)}>
                     <p>Check in</p>
                     <input type="text" name='checkIn' placeholder="Add dates" ref={checkInRef}
                         onFocus={() => (checkInRef.current.type = "date")}
                         onBlur={handleCheckInBlur}
                         onChange={handleChange} />
-                </div>
-                <div className={checkOutIsActive ? 'check-out active' : 'check-out'} onClick={() => setCheckOutIsActive(true)}>
+                </section>
+                <section className={checkOutIsActive ? 'check-out active' : 'check-out'} onClick={() => setCheckOutIsActive(true)}>
                     <p>Check out</p>
                     <input type="text" name='checkOut' placeholder="Add dates" ref={checkOutRef}
                         onFocus={() => (checkOutRef.current.type = "date")}
                         onBlur={handleCheckOutBlur}
                         onChange={handleChange} />
-                </div>
-                <div className={guestsIsActive ? 'guests active' : 'guests'} onClick={() => setGuestsIsActive(true)}>
+                </section>
+                <section className={guestsIsActive ? 'guests active' : 'guests'} onClick={() => setGuestsIsActive(true)}>
                     <p>Who</p>
-                    {/* <input type="number" name='guests' placeholder="Add guests" onBlur={() => setGuestsIsActive(false)} onChange={handleChange} /> */}
-                    <div className="guest-input" onClick={() => setGuestsIsActive(prev => !prev)}>
-                        <label>GUESTS</label>
+                    <div className="guest-input">
+                        {query.guests.adults + query.guests.children < 2 ?
+                         <input type='text' placeholder='Add guests' onClick={() => setGuestsIsOpen(prev => !prev)} />
+                        :
                         <p>{query.guests.adults + query.guests.children + query.guests.infants + query.guests.pets} guests</p>
-                        <svg viewBox="0 0 320 512" width="100" title="angle-down">
-                            <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
-                        </svg>
+                        }
+                        {guestsIsOpen && <Guests setGuestsIsOpen={setGuestsIsOpen} handleGuests={handleGuests} />}
                     </div>
-                    {guestsIsActive && <Guests setGuestsIsActive={setGuestsIsActive} handleChange={handleChange} />}
-                    <span onClick={handleSubmit}>
+                    <span className='search-icon' onClick={handleSubmit}>
                         <SearchIcon fontSize='small' sx={{ color: 'white' }} />
                     </span>
-                </div>
+                </section>
             </div>
         </section>
     </header>

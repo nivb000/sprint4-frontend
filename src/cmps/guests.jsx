@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-export const Guests = ({ setGuestsIsOpen,handleGuests }) => {
+export const Guests = ({ setGuestsIsOpen, handleGuests }) => {
   const [guests, setGuests] = useState({
     adults: 1,
     children: 0,
@@ -31,7 +31,7 @@ export const Guests = ({ setGuestsIsOpen,handleGuests }) => {
     }))
   }
 
-  return <section className="guests-section">
+  return <div className="guests-modal">
     <div className="adults">
       <div className="guests-title">
         <h3>Adults</h3>
@@ -79,5 +79,5 @@ export const Guests = ({ setGuestsIsOpen,handleGuests }) => {
       </div>
     </div>
     <button className='btn-close' onClick={() => setGuestsIsOpen(false)}>Close</button>
-  </section>
+  </div>
 }

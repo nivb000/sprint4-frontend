@@ -26,7 +26,7 @@
     }
   }
 
-  .bar div {
+  .bar section {
     border-radius: inherit;
     p{
       font-family: 'cereal-medium';
@@ -35,7 +35,7 @@
     transition: background 250ms ease;
   }
 
-  .bar div:hover {
+  .bar section:hover {
     background: $clr-border;
     &.active{
       background-color: white;
@@ -60,10 +60,23 @@
   }
   
   .guests {
+    position: relative;
     width: 30%;
     padding: 0.9rem 2rem;
     &.active{
       background-color: white;
+    }
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: #FF385C;
+      color: white;
+      font-size: 0.8rem;
+      padding: 0.7rem;
+      border-radius: 50%;
+      cursor: pointer;
     }
   }
 
@@ -83,23 +96,6 @@
 
   ::placeholder {
     font-size: 0.9rem;
-  }
-
-  .guests {
-    position: relative;
-  }
-
-  .guests span {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    background: #FF385C;
-    color: white;
-    font-size: 0.8rem;
-    padding: 0.7rem;
-    border-radius: 50%;
-    cursor: pointer;
   }
 
   .bar>div {
@@ -132,7 +128,6 @@
   top: 200%;
   left: 22%;
   width: 494px;
-  // height: 480px;
   border-radius: 32px;
   background-color: white;
   border: 1px solid $clr-border;

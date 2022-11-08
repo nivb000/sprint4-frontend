@@ -114,9 +114,9 @@ export const StayAmenities = ({ amenities }) => {
           </div>
           <ul className="amenities-list-modal">
           <h1>What this place offers</h1>
-            {amenities.map(amenity => {
+            {amenities.map((amenity,idx) => {
               return (
-                <li className='amenities-item' key={amenity}>
+                <li className='amenities-item' key={idx}>
                   {matchIcon(amenity, amenitiesIcons)}
                   {amenity}
                 </li>

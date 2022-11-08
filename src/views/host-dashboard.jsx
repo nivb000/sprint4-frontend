@@ -3,11 +3,8 @@ import { MyChart } from "../cmps/my-chart"
 import { useSelector, useDispatch } from 'react-redux';
 import { loadOrdersByHost } from "../store/order.action"
 import { useEffect } from "react";
-import * as React from 'react';
 import { green } from '@mui/material/colors';
 import Avatar from '@mui/material/Avatar';
-import { useState } from "react";
-
 import AttachMoneySharpIcon from '@material-ui/icons/AttachMoneySharp';
 import EqualizerSharpIcon from '@material-ui/icons/EqualizerSharp';
 import { red } from "@material-ui/core/colors";
@@ -16,12 +13,8 @@ import { VerticalChart } from "../cmps/vertticaChart";
 
 export const HostDashboard = () => {
 
-    const user = useSelector(state => state.userModule.user)
     const orders = useSelector(state => state.orderModule.orders)
     const dispatch = useDispatch()
-    console.log('userwerwerr:', user)
-
-    console.log('orders:', orders)
 
     useEffect(() => {
         getOrders()
@@ -39,7 +32,7 @@ export const HostDashboard = () => {
             sum += +order.totalPrice
             numOfOrders++
         })
-        return '$' + (sum / numOfOrders).toFixed(2)
+        return '$' + (sum / numOfOrders).toFixed(2).toLocaleString('en-US')
     }
 
     const getTotalIncome = () => {
@@ -71,7 +64,6 @@ export const HostDashboard = () => {
         return <div>
             <div className="my-dashboard"><h1>My Dashboard</h1>
             <div className="user-img-dashboard"> 
-
             </div>
             </div>
 
@@ -88,7 +80,6 @@ export const HostDashboard = () => {
                         <span className="card-header-txt"><h2>Orders Management </h2></span>
                         <div className="card-txt">
                             <p>Average Order Revenue <span className="calculation">{getAvragRevenue()}</span></p>
-                            {/* <p>Average guests Per Order <span>{getAvgGuests()}</span></p> */}
                         </div>
                     </div>
 
@@ -100,8 +91,6 @@ export const HostDashboard = () => {
                         <div className="card-txt">
                             <p>This Month<span>{getTotalRevenueThisYear()}</span></p>
                             <p> This Year<span style={{ color: 'green' }}>{getTotalIncome()}</span></p>
-
-
                         </div>
                     </div>
                 </div>

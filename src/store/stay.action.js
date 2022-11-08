@@ -27,7 +27,6 @@ export function removeStay(stayId) {
 }
 export function setFilterState(filter) {
     return (dispatch) => {
-        // const { filter } = getState().stayModule
         dispatch({ type: 'SET_FILTER', filter })
     }
 }

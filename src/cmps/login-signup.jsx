@@ -36,7 +36,7 @@ export const LoginSignup = ({ handleClose }) => {
                 <input type="password" id="password" name="password" placeholder="Password" onChange={handleChange} />
             </div>
             <div className="btn-container" onClick={handleLogin}>
-                {Array(79).fill(<div className="cell"></div>)}
+                {Array.from(Array(79), (_, i) => <div className='cell' key={i}></div>)}
                 <div className="content">
                     <button className="action-btn">
                         Login

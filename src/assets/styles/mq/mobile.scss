@@ -1,4 +1,4 @@
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .app-header {
         margin-block-end: -13px;
         border-bottom: none;
@@ -13,29 +13,84 @@
         }
     }
     .main-layout{
+        padding: 0 20px;
         .home-page{
             .filter-main{
+                display: none;
+                height: 90px;
                 padding-block-start: 0;
                 margin-block-end: 0.7rem;
-                // .filters-btn{display: none;}
                 .carusel-filter-main{
-                    display: flex;
-                    min-width: 71rem;
                     margin-right: -3.62rem;
-                    height: 3.688rem;
                     box-shadow: 1px 1px 6px -2px rgb(160 160 160 / 55%);
                     position: absolute;
-
-                    ;
                     .swiper-button-next{display: none;}
                 }
             }
             .stay-list{
+                margin-block-start: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
                 .stay-preview{
                     .swiper-button-next,
                     .swiper-button-prev{
                         display: none;
                     }
+                }
+            }
+        }
+        .stay-details{
+            margin-block-start: 2rem;
+            .deatils-header{
+                display: none;
+                flex-wrap: wrap;
+            }
+            .details-container{
+                flex-direction: column;
+                margin-block-start: 3rem;
+                .left{
+                    .host-details{
+                        .main-details{
+                            .main-details-text{
+                                h2{font-size: 1.2rem;}
+                            }
+                        }
+                    }
+                    .stay-amenities{
+                        ul{
+                            li{
+                                font-size: 0.8rem;
+                            }
+                        }
+                        .show-all{
+                            font-size: 14px;
+                            padding: 9px 20px;
+                        }
+                    }
+                }
+                .right{
+                    margin-inline-start: 0;
+                    margin-block-start: 1rem;
+                    .order-section{
+                        .order-container{
+                            width: 100%;
+                        }
+                    }
+                    .order-section .date-picker .rdrDateRangePickerWrapper{
+                        right: 5%;
+                    }
+                    .rdrMonths{
+                        flex-direction: column;
+                    }
+                }
+            }
+            .detalis-imgs-main{
+                display: none;
+            }
+            .details-img-container{
+                display: block;
+                img{
+                    height: 300px;
+                    width: 100vw;
                 }
             }
         }
@@ -55,6 +110,25 @@
         border: 5px solid black;
         border-radius: 15px;
         margin-left: -109px;
+    }
+    .trips{
+        h1{
+            margin-bottom: 0;
+            margin: 30px 0;
+        }
+        .trips-grid-container{
+            li{
+                img{
+                    width: 150px;
+                    height: 150px;
+                }
+                .trip-text-container{
+                    .upper-section{
+                        p{font-size: 0.9rem;}
+                    }
+                }
+            }
+        }
     }
     .bottom-nav{
         display: inline;

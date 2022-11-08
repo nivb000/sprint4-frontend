@@ -28,11 +28,7 @@
 
 .carusel-filter-main {
     display: inline-block;
-    // if we will use iphone 12 :
-    // width: 81rem;
-    width: 120rem;
-    min-width: 93rem;
-    align-items: center;
+    width: 110rem;
     .swiper-button-next {
         border: 0.5px solid rgba(0, 0, 0, 0.3);
         border-radius: 30px;
@@ -40,8 +36,8 @@
         height: 27px;
         font-size: 13px;
         color: black;
-        margin-right: 16px;
-        margin-top: -14px;
+        background-color: white;
+        margin-top: -15px;
     }
 
     .swiper-button-next:hover {
@@ -69,8 +65,7 @@
         color: black;
         margin-left: 20px;
         margin-top: -14px;
-        display: flex;
-        
+        display: none;
     }
 
     .swiper-button-prev::after {

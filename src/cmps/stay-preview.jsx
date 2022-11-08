@@ -1,44 +1,35 @@
-import { utilService } from '../services/util.service'
 import { Link } from 'react-router-dom'
 import { Rating } from './rating'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Parallax, Pagination, Navigation } from "swiper";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useDispatch } from 'react-redux';
-import { updateStay } from "../store/stay.action"
-import { useSelector } from 'react-redux';
-import { useState } from 'react'
 
 export const StayPreview = ({ stay }) => {
 
-  const user = useSelector(state => state.userModule.user)
-  const dispatch = useDispatch()
-  const [btnsHover, setBtnsHover] = useState(false)
+  // const onUpdateStay = () => {
+  //   stay.likedByUsers.push(user.fullname)
+  //   dispatch(updateStay(stay))
+  // }
 
-  const onUpdateStay = () => {
-    stay.likedByUsers.push(user.fullname)
-    dispatch(updateStay(stay))
-  }
+  // const handleHover = (ev, value) => {
+  //   ev.stopPropagation();
+  //   ev.nativeEvent.stopImmediatePropagation();
+  // }
 
-  const handleHover = (ev, value) => {
-    ev.stopPropagation();
-    ev.nativeEvent.stopImmediatePropagation();
-  }
-
-
-  return <section className="stay-preview" onMouseOver={() => setBtnsHover(true)} onMouseOut={() => setBtnsHover(false)}>
+  return <section className="stay-preview">
     <>
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
           "--swiper-pagination-size": "10px",
+          "--swiper-navigation-size": "12px"
         }}
         speed={600}
         loop={true}
         parallax={true}
         pagination={{ clickable: true }}
-        navigation={btnsHover}
+        navigation={true}
         modules={[Parallax, Pagination, Navigation]}
         className="mySwiper">
         <div slot="container-start"></div>
@@ -65,9 +56,8 @@ export const StayPreview = ({ stay }) => {
       </div>
     </div>
     <div className="preview-subtitle">
-      {/* <p>{utilService.getRandomIntInclusive(500,3000).toLocaleString('en-US')} Kilometers</p> */}
       <p>Hosted by {stay.host.fullname}</p>
-      <p>Sep 29 - 31</p>
+      <p>Oct 9 - 11</p>
     </div>
     <div className="preview-price">
       <p><span >${stay.price.toLocaleString('en-US')}</span> night</p>

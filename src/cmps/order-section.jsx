@@ -12,16 +12,12 @@ import 'react-date-range/dist/theme/default.css';
 import { DateRangePicker } from 'react-date-range';
 import { addDays } from 'date-fns'
 import Slide from '@mui/material/Slide';
+import { socketService, SOCKET_EVENT_ORDER_UPDATED } from '../services/socket.service'
 
 
 const Alert = forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-
-function SlideTransition(props) {
-    return <Slide {...props} direction="up" />;
-}
-
 
 export const OrderSection = ({ stay }) => {
 
@@ -29,8 +25,8 @@ export const OrderSection = ({ stay }) => {
     const [confirmIsOpen, setConfirmIsOpen] = useState(false)
     const user = useSelector(state => state.userModule.user)
     const [openAlert, setOpenAlert] = useState(false)
-    const [guestsIsOpen, setGuestsIsOpen] = useState(false);
-    const [datePickerIsOpen, setDatePickerIsOpen] = useState(false);
+    const [guestsIsOpen, setGuestsIsOpen] = useState(false)
+    const [datePickerIsOpen, setDatePickerIsOpen] = useState(false)
     const [dates, setDates] = useState([
         {
             startDate: new Date(),
@@ -50,7 +46,7 @@ export const OrderSection = ({ stay }) => {
 
     const [order, setOrder] = useState({
         hostId: stay.host._id,
-        totalPrice: stay.price,
+        totalPrice: stay.price * calcOrderNights(),
         guests: {
             adults: 1,
             children: 0,
@@ -81,14 +77,12 @@ export const OrderSection = ({ stay }) => {
                 fullname: user.fullname
             }
             dispatch(addOrder(order))
-            calcOrderNights()
             setConfirmIsOpen(true)
-            console.log('sending order...')
         } else {
             setOpenAlert(true)
             setTimeout(() => {
                 setOpenAlert(false)
-            }, 3000);
+            }, 3000)
         }
     }
 
@@ -132,7 +126,7 @@ export const OrderSection = ({ stay }) => {
             </div>
 
             <div className="btn-container" onClick={handleReserve}>
-                {Array(79).fill(<div className="cell"></div>)}
+                {Array.from(Array(79), (_, i) => <div className='cell' key={i}></div>)}
                 <div className="content">
                     <button className="action-btn">
                         <span>Reserve</span>

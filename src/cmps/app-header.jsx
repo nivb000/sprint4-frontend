@@ -56,7 +56,7 @@ export const AppHeader = () => {
                     <div>Add guests</div>
                     <ThemeProvider theme={theme}>
                         <Fab size='small' sx={{ transform: 'scale(0.8)' }}>
-                            <SearchIcon fontSize='small' sx={{ color: 'white' }} />
+                            <SearchIcon fontSize='small' sx={{ color: 'white', marginBottom: '1.5px' }} />
                         </Fab>
                     </ThemeProvider>
                 </div>
@@ -77,6 +77,7 @@ export const AppHeader = () => {
             open={backDrop}>
             <LoginSignup handleClose={() => setBackDrop(false)} />
         </Backdrop>
+        
         {userNavIsOpen &&
             <UserNav
                 setUserNav={() => setUserNavIsOpen(prev => !prev)}

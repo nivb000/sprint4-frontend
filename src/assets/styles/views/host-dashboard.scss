@@ -45,10 +45,6 @@ text-align: left;
     }
 }
 
-.card-header-txt{
-  
-}
-
 .income-card {
     height: 180px;
     width: 380px;
@@ -131,15 +127,19 @@ text-align: right;
   
   .selected-status{
     margin-right: -25px;
-    color: #e57373;
+    color: $clr-black;
+    background-color: transparent;
+    border: 1px solid $clr-grey;
     border-radius: 10px;
     width: 85px;
     height: 40px;
     box-shadow: 0px -1px 10px -5px rgb(0 0 0 / 32%);
-
-  }
-
-  .mmm{
-    display: flex;
-    flex-direction: column-reverse;
+    &.approved{
+      color: green;
+      border-color: green;
+    }
+    &.reject{
+      color: $clr-pink;
+      border-color: $clr-pink;
+    }
   }

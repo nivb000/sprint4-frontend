@@ -1,10 +1,8 @@
 .confirmation-header {
-
     margin-top: 15px;
     display: flex;
     color: rgb(34, 34, 34);
-    margin-left: 11px;
-
+    margin-left: 40px;
 }
 
 .confirmation-header-txt {
@@ -15,12 +13,9 @@
     padding-top: 1px;
     align-items: center;
     justify-content: center;
-    margin-left: 9.8rem;
-
 }
 
 .close-btn-confirmation {
-  
     display: flex;
     font-size: 1.3rem;
     margin-right: -15px;
@@ -34,8 +29,6 @@
 .reviews-confirmation {
     display: flex;
     font-size: 1rem;
-    
-
     span {
         margin-left: 5px;
     }

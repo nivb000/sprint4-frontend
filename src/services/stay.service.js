@@ -13,7 +13,7 @@ async function query(filterBy) {
     try {
         let stays = await httpService.get(KEY)
         if (Object.keys(filterBy).length !== 0) {
-            let { type, location, guests } = filterBy
+            let { type, location, adults,children } = filterBy
             stays = stays.filter(stay => 
                 (stay.type.toLowerCase().includes(type.toLowerCase()) ||
                 stay.amenities.includes(type.toLowerCase())) &&
@@ -21,7 +21,7 @@ async function query(filterBy) {
                 stay.loc.countryCode.toLowerCase().includes(location.toLowerCase()) ||
                 stay.loc.city.toLowerCase().includes(location.toLowerCase()) ||
                 stay.loc.address.toLowerCase().includes(location.toLowerCase())) &&
-                stay.capacity >= guests
+                stay.capacity >= (+adults + (+children))
             )
         }
         return stays

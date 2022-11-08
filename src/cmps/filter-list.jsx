@@ -12,8 +12,6 @@ import { Pagination, Navigation } from "swiper";
 
 export const FilterList = () => {
 
-
-
     const labels = [
         'beaches',
         'Amazing views',
@@ -26,10 +24,10 @@ export const FilterList = () => {
         'desert',
         'Amazing pools',
         'iconic citys',
-        'island',
+        'shared homes',
         'mansions',
         'national park',
-        'shared homes',
+        'island',
         'ski',
         'surfing',
         'tiny homes',
@@ -55,8 +53,8 @@ export const FilterList = () => {
             <div className="carusel-filter-main">
                 <>
                     <Swiper
-                    slidesPerView={9.9}
-                    spaceBetween={-85}
+                    slidesPerView={15}
+                    spaceBetween={0}
                     slidesPerGroup={1}
                     loopFillGroupWithBlank={false}
                     pagination={{

@@ -13,7 +13,6 @@
     display: flex;
     margin-bottom: 25px;
     align-items: center;
-    
     .star-icon{
     font-size: 22px !important;
   }
@@ -21,7 +20,6 @@
 
   .reviewers {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
     gap: 10%;
