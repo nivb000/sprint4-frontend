@@ -18,7 +18,7 @@ export var Reviews = ({ reviews, rating }) => {
   const truncate = (input) => input.length > 100 ? `${input.substring(0, 250)}...` : input;
 
   return (
-    <section className="reviews-section">
+    <section className="reviews-section" id='reviews'>
       <div className='reviews-rating-container'>
         <Rating fontSize="large" ratingCount={reviews.length} rate={rating} />
         <span className='dot-separator'>·</span>
@@ -77,7 +77,7 @@ export var Reviews = ({ reviews, rating }) => {
           <ul className="reviews-list-modal">
             {reviews
               .sort((x, y) => new Date(y.at) - new Date(x.at))
-              .map((review,idx) => {
+              .map((review, idx) => {
                 var d = new Date(review.at)
                 var reviewerImg = require(`../assets/imgs/square-profile-imgs/${utilService.getRandomIntInclusive(1, 20)}.jpg`)
                 return <li className="review" key={idx}>

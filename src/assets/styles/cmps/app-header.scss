@@ -7,19 +7,23 @@
   background-color: white;
   height: 80px;
   margin-block-end: 1rem;
+
   .main-header {
     display: flex;
     justify-content: space-between;
     padding-block-start: 1.3rem;
+
     .logo {
       width: 100px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-block-start: 0.2rem;
+
       :first-child {
         width: 105px;
       }
+
       :last-child {
         display: none;
       }
@@ -36,6 +40,7 @@
       margin: -5px;
 
       cursor: pointer;
+
       >* {
         border: 0;
         background-color: transparent;
@@ -49,19 +54,28 @@
         }
 
       }
-      
-      .left{
-        div {padding: 0 15px 0 15px;}
+
+      .left {
+        div {
+          padding: 0 15px 0 15px;
+        }
       }
-      .middle{
-        div{padding: 0 15px 0 5px}
+
+      .middle {
+        div {
+          padding: 0 15px 0 5px
+        }
       }
+
       .right {
         display: flex;
         align-items: center;
         color: $clr-grey;
         font-size: 0.9rem;
-        div{padding: 0 15px 0 5px;} 
+
+        div {
+          padding: 0 15px 0 5px;
+        }
       }
     }
 
@@ -69,6 +83,7 @@
       display: flex;
       align-items: center;
       height: min-content;
+
       span {
         font-size: 0.9rem;
       }

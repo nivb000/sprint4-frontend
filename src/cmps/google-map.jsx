@@ -7,10 +7,10 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
 const AnyReactComponent = () => <ThemeProvider theme={theme}>
-        <Fab size='large' sx={{ transform: 'scale(0.8)' }}>
-            <HomeIcon fontSize='large' sx={{ color: 'white' }} />
-        </Fab>
-    </ThemeProvider>
+    <Fab size='large' sx={{ transform: 'scale(0.8)' }}>
+        <HomeIcon fontSize='large' sx={{ color: 'white' }} />
+    </Fab>
+</ThemeProvider>
 
 const theme = createTheme({
     components: {
@@ -40,11 +40,11 @@ export function GoogleMap({ pos }) {
     }
 
     return (
-        <div style={{ height: '50vh', width: '100%', paddingBlockStart: '27px' }}>
+        <div style={{ height: '50vh', width: '100%', paddingBlockStart: '27px' }} id='location'>
             <div style={{ color: '#494949', fontSize: '1.5rem', fontFamily: 'cereal-medium', marginBottom: '27px' }}> Where you’ll be</div>
             <GoogleMapReact
                 onClick={onClick}
-                bootstrapURLKeys={{ key: ""}}
+                bootstrapURLKeys={{ key: "" }}
                 defaultCenter={coordinates}
                 center={coordinates}
                 defaultZoom={zoom}>

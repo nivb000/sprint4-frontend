@@ -1,6 +1,6 @@
 @media (max-width: 850px) {
     .app-header {
-        .main-header{
+        .main-header {
             justify-content: space-between;
             padding-block-start: 1rem;
 
@@ -8,34 +8,43 @@
                 margin-block-start: 0.5rem;
                 margin-inline-end: 1.5rem;
                 width: 30px;
+
                 :first-child {
                     display: none;
                 }
+
                 :last-child {
                     display: inline;
                     width: 30px;
                 }
             }
-            .search-container{
+
+            .search-container {
                 margin-right: auto;
+                margin-top: 0;
             }
-            .header-user{
+
+            .header-user {
                 margin-block-start: 0.2rem;
             }
         }
-        .expended-search{
-            .bar{
+
+        .expended-search {
+            .bar {
                 width: 650px;
             }
         }
-        .locations-modal{
+
+        .locations-modal {
             left: 12%;
             width: 400px;
-            .locations-modal-map{
-                div p{
+
+            .locations-modal-map {
+                div p {
                     font-size: 0.8rem;
                 }
-                img{
+
+                img {
                     height: 100px;
                 }
             }

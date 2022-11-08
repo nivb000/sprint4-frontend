@@ -77,7 +77,7 @@ export const AppHeader = () => {
             open={backDrop}>
             <LoginSignup handleClose={() => setBackDrop(false)} />
         </Backdrop>
-        
+
         {userNavIsOpen &&
             <UserNav
                 setUserNav={() => setUserNavIsOpen(prev => !prev)}

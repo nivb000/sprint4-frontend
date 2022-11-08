@@ -18,26 +18,26 @@ export const RootCmp = () => {
   const location = useLocation()
 
   useEffect(() => {
-    socketService.on('order-status-updated',(order) => console.log('sockektetetet', order))
+    socketService.on('order-status-updated', (order) => console.log('sockektetetet', order))
   }, [])
-  
+
 
   useEffect(() => {
     setFilter()
     dispatch(loadStays())
-}, [location.search])
+  }, [location.search])
 
   const setFilter = () => {
     const filter = queryString.parse(location.search)
     dispatch(setFilterState(filter))
-}
+  }
 
 
 
   return (
     <div className="App">
       <AppHeader />
-      
+
       <div className='overlay'></div>
       <main className='main-layout'>
         <Routes>

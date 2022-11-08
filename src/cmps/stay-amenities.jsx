@@ -91,7 +91,7 @@ export const StayAmenities = ({ amenities }) => {
   const setAmenitiesModal = () => setAmenitiesModalIsOpen(prev => !prev)
 
   return (
-    <section className="stay-amenities">
+    <section className="stay-amenities" id='amenities'>
       <h1>What this place offers</h1>
       <ul className="amenities-list">
         {amenities.slice(0, 10).map(amenity => {
@@ -105,16 +105,16 @@ export const StayAmenities = ({ amenities }) => {
         }
       </ul>
       <button className="show-all" onClick={() => handleOnClick(setAmenitiesModal)}>{`Show all ${amenities.length} amenities`}</button>
-        <Backdrop
-          sx={{ color: '#222', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-          open={amenitiesModalIsOpen}>
+      <Backdrop
+        sx={{ color: '#222', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={amenitiesModalIsOpen}>
         <div className="stay-amenities-modal">
           <div className="modal-close-btn-container">
             <button className="modal-close-btn" onClick={setAmenitiesModal}><CloseIcon /></button>
           </div>
           <ul className="amenities-list-modal">
-          <h1>What this place offers</h1>
-            {amenities.map((amenity,idx) => {
+            <h1>What this place offers</h1>
+            {amenities.map((amenity, idx) => {
               return (
                 <li className='amenities-item' key={idx}>
                   {matchIcon(amenity, amenitiesIcons)}
@@ -122,10 +122,10 @@ export const StayAmenities = ({ amenities }) => {
                 </li>
               )
             })
-          }
+            }
           </ul>
         </div>
-        </Backdrop>
+      </Backdrop>
     </section>
   )
 }
