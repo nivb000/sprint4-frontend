@@ -7,7 +7,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Paper from '@mui/material/Paper';
 import { LoginSignup } from './login-signup';
-import { Trips } from '../views/trips';
 import { Link } from 'react-router-dom'
 
 
@@ -32,14 +31,10 @@ export const BottomNav = () => {
             setValue(newValue);
           }}>
 
-
-          <Link to={`/`}><BottomNavigationAction label="Explore" icon={<SearchIcon />} />
-
-            
-              <BottomNavigationAction label="My trips" icon={<FavoriteBorderIcon />} /></Link>
-
-            <BottomNavigationAction onClick={handleClick} label="Log in" icon={<AccountCircleIcon />} />
-            {isShown && <LoginSignup />}
+          <BottomNavigationAction label="Explore" icon={<SearchIcon />} />
+          <BottomNavigationAction label="My trips" icon={<FavoriteBorderIcon />} />
+          <BottomNavigationAction onClick={handleClick} label="Log in" icon={<AccountCircleIcon />} />
+          {isShown && <LoginSignup />}
         </BottomNavigation>
       </Paper>
     </Box>
