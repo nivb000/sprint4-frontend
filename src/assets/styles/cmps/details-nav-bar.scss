@@ -1,11 +1,12 @@
 .details-nav-bar {
-
+  position: fixed;
+  top: 0;
+  background-color: aqua;
   nav {
     display: flex;
     gap: 20px;
     font-weight: 700;
     border-bottom: 1px solid $clr-light-grey;
-
     &>* {
       text-decoration: none;
       padding: 30px 0;
@@ -13,7 +14,6 @@
       border-bottom: solid transparent 4px;
       transition: all 0.2s;
     }
-
     &>*:hover {
       border-bottom: solid $clr-black 4px;
     }

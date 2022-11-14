@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 export const DetailsImgs = React.forwardRef(({ imgs }, ref) => {
 
     const navigate = useNavigate()
-
-
     const onGoBack = () => {
         navigate(-1)
     }

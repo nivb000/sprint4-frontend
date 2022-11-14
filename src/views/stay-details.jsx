@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DetailsImgs } from '../cmps/details-imgs'
 import { HostDetails } from "../cmps/host-details";
 import { DetailsNavBar } from "../cmps/details-nav-bar";
@@ -19,9 +19,7 @@ import Stack from '@mui/material/Stack';
 export const StayDetails = () => {
 
     const [stay, setStay] = useState()
-    const ref = useRef(null)
     const params = useParams()
-    const imgsContainer = ref.current
 
     useEffect(() => {
         loadStay()
@@ -29,7 +27,7 @@ export const StayDetails = () => {
         return () => {
             changeLayout('1760px')
         }
-    }, [ref])
+    }, [])
 
     const changeLayout = (value) => {
         document.documentElement.style.setProperty('--layoutWidth', value);
@@ -41,10 +39,6 @@ export const StayDetails = () => {
         setStay(stay)
     }
 
-    const observer = new IntersectionObserver(entries => {
-        console.log('entries:', entries)
-    })
-
     if (!stay) return (
         <Stack spacing={1}>
             <Skeleton variant="rounded" width={'auto'} height={300} />
@@ -55,13 +49,10 @@ export const StayDetails = () => {
         </Stack>
     )
 
-    console.log('imgsContainer:', imgsContainer)
-
 
     return (
         <section className='stay-details'>
             <DetailsNavBar />
-            {ref.current && console.log('imgsContainer:', imgsContainer)}
             <div className='deatils-header'>
                 <h1> {stay.name} </h1>
                 <div className='deatils-sub-header'>
@@ -82,7 +73,7 @@ export const StayDetails = () => {
                     </div>
                 </div>
             </div>
-            <DetailsImgs ref={ref} id="details-img" imgs={stay.imgUrls} />
+            <DetailsImgs id="details-img" imgs={stay.imgUrls} />
             <div className='details-container'>
                 <div className='left'>
                     <HostDetails stay={stay} />
