@@ -20,7 +20,9 @@ export const UserNav = ({ setUserNav, setBackDrop }) => {
         window.location.reload()
     }
 
-    return <div className="user-nav">
+    return (
+    <section className="nav-container main-layout"> 
+    <div className="user-nav">
         <ul>
             {!user ?
             <>
@@ -37,4 +39,5 @@ export const UserNav = ({ setUserNav, setBackDrop }) => {
             <li>Host Your Home</li>
         </ul>
     </div >
-}
+    </section>
+)}

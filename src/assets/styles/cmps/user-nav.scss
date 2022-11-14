@@ -1,32 +1,35 @@
-.user-nav{
+.nav-container {
+
+  .user-nav {
     position: relative;
-    right: -84%;
+    right: -85%;
     top: 5px;
     box-shadow: $boxShadow;
     width: 240px;
     background-color: white;
     z-index: 3;
     border-radius: 15px;
- 
-    ul{
-        list-style: none;
-        :first-child{
-            font-family: 'cereal-light';
+
+    ul {
+      list-style: none;
+      :first-child {
+        font-family: "cereal-light";
+      }
+      a {
+        text-decoration: none;
+        color: $clr-black;
+      }
+      li {
+        padding: 15px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        &:hover {
+          background-color: rgba(219, 219, 219, 0.279);
         }
-        a{
-            text-decoration: none;
-            color: $clr-black;
-        }
-        li{
-            padding: 15px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            &:hover{
-                background-color: rgba(219, 219, 219, 0.279);
-            }
-        }
-        hr{
-            color: #00000050;
-        }
+      }
+      hr {
+        color: #00000050;
+      }
     }
+  }
 }
