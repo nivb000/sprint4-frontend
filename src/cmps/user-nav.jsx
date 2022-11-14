@@ -17,6 +17,7 @@ export const UserNav = ({ setUserNav, setBackDrop }) => {
 
     const handleLogout = () => {
         dispatch(logoutUser())
+        window.location.reload()
     }
 
     return <div className="user-nav">

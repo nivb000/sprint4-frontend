@@ -40,12 +40,12 @@ export const Trips = () => {
           </div>
         </li>
       </ul>
-
     </Stack>
-  ) 
+  )
 
   return <section className="trips">
     <h1 className='trips-title'>My trips</h1>
+    {orders.length < 1 && <p>No Trips booked</p>}
     <ul className="trips-grid-container">
       {orders.reverse().map((order,idx) => {
           return <li key={idx}>
