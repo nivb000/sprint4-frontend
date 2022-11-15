@@ -25,9 +25,9 @@ export const StayDetails = () => {
 
     useEffect(() => {
         loadStay()
-        changeLayout('1280px')
+        changeLayout('1200px')
         return () => {
-            changeLayout('1760px')
+            changeLayout('1800px')
         }
     },[])
 

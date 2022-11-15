@@ -37,7 +37,6 @@ export const RootCmp = () => {
   return (
     <div className="App">
       <AppHeader />
-      
       <div className='overlay'></div>
       <main className='main-layout'>
         <Routes>
