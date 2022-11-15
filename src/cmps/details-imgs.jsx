@@ -1,10 +1,9 @@
-import React from "react"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Parallax, Pagination, Navigation } from "swiper";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from "react-router-dom";
 
-export const DetailsImgs = React.forwardRef(({ imgs }, ref) => {
+export const DetailsImgs = ({ imgs }) => {
 
     const navigate = useNavigate()
 
@@ -16,7 +15,7 @@ export const DetailsImgs = React.forwardRef(({ imgs }, ref) => {
     return (
         <>
             <div className='detalis-imgs-main' id='photos'>
-                <div ref={ref} className='detalis-img1'>
+                <div className='detalis-img1'>
                     <img className='img1' src={imgs[0]} alt="preview stay" />
                 </div>
                 <div className='detalis-imgs-sub'>
@@ -55,5 +54,5 @@ export const DetailsImgs = React.forwardRef(({ imgs }, ref) => {
             </Swiper>
         </>
     )
-})
+}
 

@@ -17,11 +17,10 @@ import Stack from '@mui/material/Stack';
 
 
 export const StayDetails = () => {
-
     const [stay, setStay] = useState()
-    const ref = useRef(null)
+    const ref = useRef()
+    let element = ref.current
     const params = useParams()
-    const imgsContainer = ref.current
 
     useEffect(() => {
         loadStay()
@@ -29,7 +28,7 @@ export const StayDetails = () => {
         return () => {
             changeLayout('1760px')
         }
-    }, [ref])
+    }, [])
 
     const changeLayout = (value) => {
         document.documentElement.style.setProperty('--layoutWidth', value);
@@ -42,8 +41,12 @@ export const StayDetails = () => {
     }
 
     const observer = new IntersectionObserver(entries => {
-        console.log('entries:', entries)
+        entries.forEach(entery => {
+            const intersecting = entery.isIntersecting
+            entery.target.style.backgroundColor = intersecting ? "blue" : "orange"
+        })
     })
+
 
     if (!stay) return (
         <Stack spacing={1}>
@@ -55,14 +58,13 @@ export const StayDetails = () => {
         </Stack>
     )
 
-    console.log('imgsContainer:', imgsContainer)
-
+    console.log(element)
+    // observer.observe(element)
 
     return (
         <section className='stay-details'>
             <DetailsNavBar />
-            {ref.current && console.log('imgsContainer:', imgsContainer)}
-            <div className='deatils-header'>
+            <div ref={ref} className='deatils-header'>
                 <h1> {stay.name} </h1>
                 <div className='deatils-sub-header'>
                     <div className='subheader-title'>
@@ -82,7 +84,7 @@ export const StayDetails = () => {
                     </div>
                 </div>
             </div>
-            <DetailsImgs ref={ref} id="details-img" imgs={stay.imgUrls} />
+            <DetailsImgs id="details-img" imgs={stay.imgUrls} />
             <div className='details-container'>
                 <div className='left'>
                     <HostDetails stay={stay} />
