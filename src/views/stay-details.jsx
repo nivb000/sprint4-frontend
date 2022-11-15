@@ -27,7 +27,7 @@ export const StayDetails = () => {
         loadStay()
         changeLayout('1200px')
         return () => {
-            changeLayout('1800px')
+            changeLayout('2400px')
         }
     },[])
 
