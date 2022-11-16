@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DetailsImgs } from '../cmps/details-imgs'
 import { HostDetails } from "../cmps/host-details";
 import { DetailsNavBar } from "../cmps/details-nav-bar";
@@ -18,8 +18,6 @@ import Stack from '@mui/material/Stack';
 
 export const StayDetails = () => {
     const [stay, setStay] = useState()
-    const ref = useRef()
-    let element = ref.current
     const params = useParams()
 
     useEffect(() => {
@@ -40,14 +38,6 @@ export const StayDetails = () => {
         setStay(stay)
     }
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entery => {
-            const intersecting = entery.isIntersecting
-            entery.target.style.backgroundColor = intersecting ? "blue" : "orange"
-        })
-    })
-
-
     if (!stay) return (
         <Stack spacing={1}>
             <Skeleton variant="rounded" width={'auto'} height={300} />
@@ -58,13 +48,11 @@ export const StayDetails = () => {
         </Stack>
     )
 
-    console.log(element)
-    // observer.observe(element)
 
     return (
         <section className='stay-details'>
             <DetailsNavBar />
-            <div ref={ref} className='deatils-header'>
+            <div className='deatils-header'>
                 <h1> {stay.name} </h1>
                 <div className='deatils-sub-header'>
                     <div className='subheader-title'>
