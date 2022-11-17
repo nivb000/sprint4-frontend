@@ -14,13 +14,14 @@ async function query(filterBy) {
         let stays = await httpService.get(KEY)
         if (Object.keys(filterBy).length !== 0) {
             let { type, location, adults,children } = filterBy
+            const regex = new RegExp(type || location,'i')
             stays = stays.filter(stay => 
-                (stay.type.toLowerCase().includes(type.toLowerCase()) ||
-                stay.amenities.includes(type.toLowerCase())) &&
-                (stay.loc.country.toLowerCase().includes(location.toLowerCase()) ||
-                stay.loc.countryCode.toLowerCase().includes(location.toLowerCase()) ||
-                stay.loc.city.toLowerCase().includes(location.toLowerCase()) ||
-                stay.loc.address.toLowerCase().includes(location.toLowerCase())) &&
+                (regex.test(stay.type) ||
+                regex.test(stay.amenities) ||
+                regex.test(stay.loc.country) ||
+                regex.test(stay.loc.countryCode) ||
+                regex.test(stay.loc.city) ||
+                regex.test(stay.loc.address)) &&
                 stay.capacity >= (+adults + (+children))
             )
         }
