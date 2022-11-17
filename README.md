@@ -7,9 +7,9 @@
 <h3>App features</h3>
 <ul>
   <li>Full ordering system with order confirmation</li>
-  <li>Backoffice for the stay host to confirm / reject orders and view stats about all of his stays</li>
+  <li>Backoffice for the stay host to manage (confirm / reject) orders and view stats about all of his stays</li>
   <li>Login system with cookie saving</li>
-  <li>Complex search/filter system</li>
+  <li>Complex search/filter system with RegExp</li>
 </ul>
   
 
