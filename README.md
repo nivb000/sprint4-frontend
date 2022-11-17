@@ -15,10 +15,10 @@
 
 <h3>Tech stack</h3>
 <ul>
-  <li>React.js</li>
-  <li>Express.js</li>
-  <li>Node.js</li>
   <li>MongoDB</li>
+  <li>Express.js</li>
+  <li>React.js</li>
+  <li>Node.js</li>
   <li><a href="#fullstacklist">Full list here</a></li>
  </ul>
  
