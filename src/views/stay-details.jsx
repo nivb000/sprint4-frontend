@@ -51,7 +51,7 @@ export const StayDetails = () => {
 
     return (
         <section className='stay-details'>
-            <DetailsNavBar />
+            <DetailsNavBar stay={stay} />
             <div className='deatils-header'>
                 <h1> {stay.name} </h1>
                 <div className='deatils-sub-header'>
