@@ -1,4 +1,4 @@
-.footer{
+.footer {
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -6,30 +6,37 @@
   z-index: 2;
   border-top: $clr-light-grey solid 1px;
   padding: 14px 0;
-  .main-footer{
+
+  .main-footer {
     display: flex;
     justify-content: space-between;
-    .footer-details{
+
+    .footer-details {
       font-size: 0.9rem;
     }
-    .footer-settings{
+
+    .footer-settings {
       display: flex;
       align-items: center;
-        .footer-lang, 
-        .footer-currency,
-        .footer-support{
-          font-size: 0.9rem;
-          display: flex;
-          align-items: center;
-          margin: 0 0.9rem;
-          a{
-            text-decoration: none;
-            color: black;
-          }
-          p{
-            margin-inline-start: 0.4rem;
-          }
+
+      .footer-about,
+      .footer-lang,
+      .footer-currency,
+      .footer-support {
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        margin: 0 0.9rem;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: black;
         }
+
+        p {
+          margin-inline-start: 0.4rem;
+        }
+      }
 
     }
   }

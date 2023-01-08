@@ -2,7 +2,7 @@
   position: sticky;
   width: 100%;
   top: 0;
-  z-index: 5;
+  z-index: 4;
   border-bottom: 1px solid $clr-border;
   background-color: white;
   height: 80px;
@@ -45,6 +45,7 @@
       .left,
       .middle {
         div {
+          color: $clr-black;
           border-right: 1px solid $clr-light-grey;
         }
 

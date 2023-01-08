@@ -1,0 +1,32 @@
+.project-about{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    a{color: black;}
+    h1{
+        margin: 1rem 0;
+    }
+    h3{
+        margin: 0 0 1rem 0;
+    }
+    .about-info{
+        align-self: flex-start;
+        margin-inline-start: 1rem;
+        margin-block-end: 5rem;
+        ul{
+            list-style: none;
+            margin-block-end: 3rem;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+}
