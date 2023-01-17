@@ -17,7 +17,7 @@ export const Footer = () => {
             </div>
             <div className="footer-settings">
                 <div className='footer-about' onClick={handleOpen}>
-                    <p>About Project</p>
+                    <p>About the project</p>
                 </div>
                 {/* <div className='footer-lang'>
                     <LanguageIcon fontSize='small' />
