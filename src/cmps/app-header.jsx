@@ -11,14 +11,16 @@ import { LoginSignup } from './login-signup';
 import { useSelector } from 'react-redux';
 import { UserNav } from './user-nav';
 import { ExpendedHeader } from './expended-header'
-import Backdrop from '@mui/material/Backdrop';
+import { Modal } from '@mui/material';
 
 export const AppHeader = () => {
 
     const user = useSelector(state => state.userModule.user)
     const [userNavIsOpen, setUserNavIsOpen] = useState(false)
+    const [loginModal, setLoginModal] = useState(false)
     const [expendedIsOpen, setExpendedIsOpen] = useState(false)
-    const [backDrop, setBackDrop] = useState(false)
+    const handleOpen = () => setExpendedIsOpen(true);
+    const handleClose = () => setExpendedIsOpen(false);
 
     const theme = createTheme({
         components: {
@@ -45,7 +47,7 @@ export const AppHeader = () => {
                     <img src={logo} alt='logo' />
                 </div>
             </Link >
-            <div className='search-container' onClick={() => setExpendedIsOpen(prev => !prev)}>
+            <div className='search-container' onClick={handleOpen}>
                 <button className='left'>
                     <div>Anywhere</div>
                 </button>
@@ -68,20 +70,21 @@ export const AppHeader = () => {
                         : <img src={userProfilePic} style={{ opacity: '0.5' }} alt="user profile" />}
                 </div>
             </div>
-        </section> : <ExpendedHeader setExpendedIsOpen={setExpendedIsOpen} />
+        </section> : 
+            <Modal open={expendedIsOpen} onClose={handleClose}>
+                <ExpendedHeader setExpendedIsOpen={setExpendedIsOpen} />
+            </Modal>
         }
 
 
-        <Backdrop
-            sx={{ color: '#222', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={backDrop}>
-            <LoginSignup handleClose={() => setBackDrop(false)} />
-        </Backdrop>
+        <Modal open={loginModal} onClose={() => setLoginModal(false)}>
+            <LoginSignup handleClose={() => setLoginModal(false)} />
+        </Modal>
         
         {userNavIsOpen &&
             <UserNav
                 setUserNav={() => setUserNavIsOpen(prev => !prev)}
-                setBackDrop={() => setBackDrop(prev => !prev)}
+                setLoginModal={() => setLoginModal(prev => !prev)}
             />}
     </header>
 }

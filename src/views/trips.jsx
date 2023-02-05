@@ -6,6 +6,7 @@ import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
+import { socketService } from '../services/socket.service';
 
 export const Trips = () => {
 
@@ -24,6 +25,10 @@ export const Trips = () => {
 
   useEffect(() => {
     dispatch(loadOrders())
+  }, [])
+
+  useEffect(() => {
+    socketService.on('order-status-updated',(order) => console.log('socket', order))
   }, [])
 
   if (!orders) return (

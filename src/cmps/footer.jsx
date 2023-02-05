@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import LanguageIcon from '@mui/icons-material/Language';
-import Modal from '@mui/material/Modal';
 import { ProjectAbout } from './project-about'
+import Modal from '@mui/material/Modal';
+import LanguageIcon from '@mui/icons-material/Language';
 
 export const Footer = () => {
 

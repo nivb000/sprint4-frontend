@@ -3,12 +3,12 @@ import { logoutUser } from '../store/user.action'
 import { Link } from 'react-router-dom'
 
 
-export const UserNav = ({ setUserNav, setBackDrop }) => {
+export const UserNav = ({ setUserNav, setLoginModal }) => {
 
     const dispatch = useDispatch()
 
     const user = useSelector(state => state.userModule.user)
-    const handleOnClick = (func) => {
+    const handleClick = (func) => {
         setUserNav()
         func()
     }
@@ -27,12 +27,12 @@ export const UserNav = ({ setUserNav, setBackDrop }) => {
             {!user ?
             <>
                 <li>Sign up</li>
-                <li onClick={() => handleOnClick(setBackDrop)}>Log in</li>
+                <li onClick={() => handleClick(setLoginModal)}>Log in</li>
             </> 
             : <>
                 <Link to={`/trips/${user._id}`} onClick={setUserNav}><li>Trips</li></Link>
                 <Link to={`/host/${user._id}`} onClick={setUserNav}><li>Dashboard</li></Link>
-                <li onClick={() => handleOnClick(handleLogout)}>Logout</li>
+                <li onClick={() => handleClick(handleLogout)}>Logout</li>
             </>
             }
             <hr />
