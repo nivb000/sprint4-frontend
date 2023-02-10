@@ -52,10 +52,10 @@
   
   <h3 id="fullstacklist">All tech stacks</h3>
   
-  <h4>Framework: React.js <img src="https://skillicons.dev/icons?i=react" /></h4>
+  <h4>🔵Framework: React.js <img src="https://skillicons.dev/icons?i=react" /></h4>
   <ul>
-  <li>React router</li>
-  <li> Style with SCSS <img src="https://skillicons.dev/icons?i=sass" /></li>
+  <li>Style with SCSS <img src="https://skillicons.dev/icons?i=sass" /></li>
+  <li>Routing with React router</li>
   </ul>
   <h4>🔵Libraries</h4>
   <ul>
@@ -72,9 +72,9 @@
   </ul>
   
   <h4>🔵State management wtih Redux <img src="https://skillicons.dev/icons?i=redux" /></h4>
-  <h4>🔵API with REST using Axios</h4>
   <h4>🔵Node.js server with express.js <img src="https://skillicons.dev/icons?i=nodejs,express" /></h4>
   <h4>🔵Full CRUD with MongoDB <img src="https://skillicons.dev/icons?i=mongodb" /></h4>
+  <h4>🔵API with REST using Axios</h4>
   <h4>🔵PWA app</h4>
   
   <hr>
