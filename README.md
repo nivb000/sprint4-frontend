@@ -74,7 +74,7 @@
   <h4>🔵Node.js server with express.js <img src="https://skillicons.dev/icons?i=nodejs,express" /></h4>
   <h4>🔵State management wtih Redux <img src="https://skillicons.dev/icons?i=redux" /></h4>
   <h4>🔵Database on MongoDB <img src="https://skillicons.dev/icons?i=mongodb" /></h4>
-  <h4>🔵Full CRUD REST api using Axios</h4>
+  <h4>🔵Full CRUD rest api using Axios</h4>
   <h4>🔵PWA app</h4>
   
   <hr>
