@@ -16,7 +16,7 @@
 
 <h3>Tech stack</h3>
 <ul>
-  <li>MongoDB</li>
+  <li>MongoDB [![MongoDB](https://skillicons.dev/icons?i=mongodb)](https://skillicons.dev)</li>
   <li>Express.js</li>
   <li>React.js</li>
   <li>Node.js</li>
