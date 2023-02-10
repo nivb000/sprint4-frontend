@@ -17,9 +17,9 @@
 <h3>Tech stack</h3>
 <ul>
   <li>MongoDB <img src="https://skillicons.dev/icons?i=mongodb" /></li>
-  <li>Express.js</li>
-  <li>React.js</li>
-  <li>Node.js</li>
+  <li>Express.js <img src="https://skillicons.dev/icons?i=express" /></li>
+  <li>React.js <img src="https://skillicons.dev/icons?i=react" /></li>
+  <li>Node.js <img src="https://skillicons.dev/icons?i=nodejs" /></li>
   <li><a href="#fullstacklist">Full list here</a></li>
  </ul>
  
